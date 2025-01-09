@@ -21,9 +21,13 @@ export default function decorate(block){
             let spanText;
             let inputEle;
             let label;
+            let picture;
+            const cardHeaderDiv = document.createElement('div');
+            cardHeaderDiv.classList.add('card-header', 'cat-card-header');
+
             [...row.children].forEach((col,c)=>{
                 if(c==0){
-                    const picture = col.querySelector('picture');
+                    picture = col.querySelector('picture');
                     console.log(picture);
                 } else{
                     customDiv = document.createElement('div');
@@ -61,7 +65,9 @@ export default function decorate(block){
             customDiv.appendChild(inputEle);
             customDiv.appendChild(label);
             console.log(customDiv);
-            cardParentDiv.appendChild(customDiv);
+            cardHeaderDiv.appendChild(customDiv);
+            cardHeaderDiv.appendChild(picture);
+            cardParentDiv.appendChild(cardHeaderDiv);
 
         } else if(r%3==1){
             const cardBody = document.createElement('div');
