@@ -627,6 +627,28 @@ function decorateBlocks(main) {
   main.querySelectorAll('div.section > div > div').forEach(decorateBlock);
 }
 
+function createAemElement(tag, classes, attributes, elementId){
+  const tagElement = document.createElement(tag);
+
+  if(classes!==null){
+      for(let cls of classes){
+          tagElement.classList.add(cls);
+      }
+  }
+
+  if(attributes!==null){
+      for(let attr in attributes){
+          tagElement.setAttribute(attr,attributes[attr]);
+      }
+  }
+
+  if(elementId!==null){
+      tagElement.id = elementId;
+  }
+  return tagElement;
+
+}
+
 /**
  * Loads a block named 'header' into header
  * @param {Element} header header element
@@ -731,4 +753,5 @@ export {
   toClassName,
   waitForFirstImage,
   wrapTextNodes,
+  createAemElement
 };
