@@ -90,6 +90,7 @@ export default function decorate(block){
                     }
                 })
             })
+            console.log(list);
             cardBody.appendChild(h5);
             cardBody.appendChild(para);
             cardBody.appendChild(h6);
