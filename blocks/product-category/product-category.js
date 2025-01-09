@@ -146,4 +146,5 @@ export default function decorate(block){
     })
 
     console.log(cardParentDiv);
+    block.appendChild(cardParentDiv);
 }
