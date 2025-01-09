@@ -8,7 +8,7 @@ export default function decorate(block){
         
         if(r==0){
             [...row.children].forEach((col,c)=>{
-                const picture = col.textContent.trim();
+                const picture = col.querySelector('picture');
                 console.log(picture);
                 [...col.children].forEach((child,i)=>{
                     console.log(child.textContent.trim())
