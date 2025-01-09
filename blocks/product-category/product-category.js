@@ -19,11 +19,15 @@ export default function decorate(block){
             })
         } else if(r==1){
             [...row.children].forEach((col,c)=>{
-                console.log(col.textContent.trim());
+                [...col.children].forEach((child,i)=>{
+                    console.log(child.textContent.trim())
+                })
             })
         } else if(r==2){
             [...row.children].forEach((col,c)=>{
-                console.log(col.textContent.trim());
+                [...col.children].forEach((child,i)=>{
+                    console.log(child.textContent.trim())
+                })
             })
         }
     })
