@@ -6,6 +6,12 @@ export default function decorate(block){
     block.innerHTML = '';
     console.log(container);
 
+    const sectionDiv = document.createElement('div');
+    sectionDiv.classList.add('col-md-6', 'col-lg-4');
+
+    const cardParentDiv = document.createElement('div');
+    cardParentDiv.classList.add('card', 'card-equal-h', 'h-100', 'chkboxcard', 'card-border-color', 'mt-2', 'mb-3');
+
     [...container.children].forEach((row,r)=>{
         
         if(r==0){
@@ -132,4 +138,11 @@ export default function decorate(block){
             console.log(cardFooter);
         }
     })
+
+    sectionDiv.appendChild(cardParentDiv);
+    cardParentDiv.appendChild(customDiv);
+    cardParentDiv.appendChild(cardBody);
+    cardParentDiv.appendChild(cardFooter)
+
+    console.log(cardParentDiv);
 }
