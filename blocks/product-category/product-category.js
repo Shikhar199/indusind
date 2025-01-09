@@ -12,6 +12,8 @@ export default function decorate(block){
     const cardParentDiv = document.createElement('div');
     cardParentDiv.classList.add('card', 'card-equal-h', 'h-100', 'chkboxcard', 'card-border-color', 'mt-2', 'mb-3');
 
+    sectionDiv.appendChild(cardParentDiv);
+    
     [...container.children].forEach((row,r)=>{
         
         if(r==0){
@@ -59,6 +61,7 @@ export default function decorate(block){
             customDiv.appendChild(inputEle);
             customDiv.appendChild(label);
             console.log(customDiv);
+            cardParentDiv.appendChild(customDiv);
 
         } else if(r==1){
             const cardBody = document.createElement('div');
@@ -104,6 +107,7 @@ export default function decorate(block){
             cardBody.appendChild(h6);
             cardBody.appendChild(list);
             console.log(cardBody);
+            cardParentDiv.appendChild(cardBody);
 
         } else if(r==2){
             let cardFooter = document.createElement('div');
@@ -136,13 +140,10 @@ export default function decorate(block){
             alignItemsDiv.appendChild(anchor);
             alignItemsDiv.appendChild(anchor2);
             console.log(cardFooter);
+            cardParentDiv.appendChild(cardFooter)
+
         }
     })
-
-    sectionDiv.appendChild(cardParentDiv);
-    cardParentDiv.appendChild(customDiv);
-    cardParentDiv.appendChild(cardBody);
-    cardParentDiv.appendChild(cardFooter)
 
     console.log(cardParentDiv);
 }
