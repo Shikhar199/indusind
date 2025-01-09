@@ -76,19 +76,21 @@ export default function decorate(block){
             let list;
 
             [...row.children].forEach((col,c)=>{
-                [...col.children].forEach((child,i)=>{
-                    if(i==0){
-                        anchor.textContent = child.textContent.trim();
-                    } else if(i==1){
-                        anchor.setAttribute('href', child.textContent.trim());
-                    } else if(i==2){
-                        span.textContent = child.textContent.trim();
-                    } else if(i==3){
-                        h6.textContent = child.textContent.trim();
-                    } else{
-                        list = child.querySelector('ul');
-                    }
-                })
+                if(c==1){
+                    [...col.children].forEach((child,i)=>{
+                        if(i==0){
+                            anchor.textContent = child.textContent.trim();
+                        } else if(i==1){
+                            anchor.setAttribute('href', child.textContent.trim());
+                        } else if(i==2){
+                            span.textContent = child.textContent.trim();
+                        } else if(i==3){
+                            h6.textContent = child.textContent.trim();
+                        } else{
+                            list = col.querySelector('ul');
+                        }
+                    })
+                }
             })
             console.log(list);
             cardBody.appendChild(h5);
