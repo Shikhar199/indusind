@@ -76,7 +76,7 @@ export default function decorate(block){
             let list;
 
             [...row.children].forEach((col,c)=>{
-                if(c==1){
+                
                     [...col.children].forEach((child,i)=>{
                         if(i==0){
                             anchor.textContent = child.textContent.trim();
@@ -90,7 +90,7 @@ export default function decorate(block){
                             list = col.querySelector('ul');
                         }
                     })
-                }
+                
             })
             console.log(list);
             cardBody.appendChild(h5);
