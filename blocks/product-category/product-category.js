@@ -8,11 +8,14 @@ export default function decorate(block){
         
         if(r==0){
             [...row.children].forEach((col,c)=>{
-                const picture = col.querySelector('picture');
-                console.log(picture);
-                [...col.children].forEach((child,i)=>{
-                    console.log(child.textContent.trim())
-                })
+                if(c==0){
+                    const picture = col.querySelector('picture');
+                    console.log(picture);
+                } else{
+                    [...col.children].forEach((child,i)=>{
+                        console.log(child.textContent.trim())
+                    })
+                }
             })
         }
     })
