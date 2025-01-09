@@ -13,10 +13,10 @@ export default function decorate(block){
     cardParentDiv.classList.add('card', 'card-equal-h', 'h-100', 'chkboxcard', 'card-border-color', 'mt-2', 'mb-3');
 
     sectionDiv.appendChild(cardParentDiv);
-    
+
     [...container.children].forEach((row,r)=>{
         
-        if(r==0){
+        if(r%3==0){
             let customDiv;
             let spanText;
             let inputEle;
@@ -63,7 +63,7 @@ export default function decorate(block){
             console.log(customDiv);
             cardParentDiv.appendChild(customDiv);
 
-        } else if(r==1){
+        } else if(r%3==1){
             const cardBody = document.createElement('div');
             cardBody.classList.add('card-body');
 
@@ -109,7 +109,7 @@ export default function decorate(block){
             console.log(cardBody);
             cardParentDiv.appendChild(cardBody);
 
-        } else if(r==2){
+        } else if(r%3==2){
             let cardFooter = document.createElement('div');
             cardFooter.classList.add('card-footer', 'border-0', 'pt-0');
 
