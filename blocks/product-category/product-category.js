@@ -104,7 +104,7 @@ export default function decorate(block){
             cardFooter.classList.add('card-footer', 'border-0', 'pt-0');
 
             let alignItemsDiv = document.createElement('div');
-            alignItemsDiv.classList('d-flex', 'justify-content-between', 'align-items-center');
+            alignItemsDiv.classList.add('d-flex', 'justify-content-between', 'align-items-center');
 
             let anchor = document.createElement('a');
             anchor.classList.add('btn', 'py-2', 'btn-sm', 'btn-primary', 'card-btn', 'text-uppercase', 'btn-primary-option');
