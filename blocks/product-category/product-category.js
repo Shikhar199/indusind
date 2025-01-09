@@ -55,7 +55,7 @@ export default function decorate(block){
             console.log(customDiv);
 
         } else if(r==1){
-            const cardBody = document.createElementNS('div');
+            const cardBody = document.createElement('div');
             cardBody.classList.add('card-body');
 
             const h5 = document.createElement('h5');
