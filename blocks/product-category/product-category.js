@@ -6,9 +6,14 @@ export default function decorate(block){
 
     [...container.children].forEach((row,r)=>{
         
-        if(r==0 || r==1 || r==2){
-            console.log(row);
-            console.log(row.textContent.trim())
+        if(r==0){
+            [...row.children].forEach((col,c)=>{
+                const picture = col.textContent.trim();
+                console.log(picture);
+                [...col.children].forEach((child,i)=>{
+                    console.log(child.textContent.trim())
+                })
+            })
         }
     })
 }
