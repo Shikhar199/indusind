@@ -181,6 +181,6 @@ export default function decorate(block){
         rowDiv.appendChild(sectionDiv);
     })
 
-    block.appendChild(sectionDiv);
+    block.appendChild(tabContentDiv);
     console.log(tabContentDiv);
 }
