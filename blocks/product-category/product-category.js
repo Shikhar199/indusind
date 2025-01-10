@@ -49,12 +49,12 @@ export default function decorate(block){
                     label.setAttribute('for', inputId);
 
                     const tagDiv = document.createElement('div');
-                    tag.classList.add('tag');
+                    tagDiv.classList.add('tag');
 
                     [...col.children].forEach((child,i)=>{
                         if(col.children.length==5){
                             if(i==0&&child.textContent.startsWith('tag')){
-                                tag.textContent = child.textContent.substring(4);
+                                tagDiv.textContent = child.textContent.substring(4);
                             } else if(i==1){
                                 spanText.textContent = child.textContent.trim();
                             } else if(i==2){
@@ -82,6 +82,9 @@ export default function decorate(block){
             customDiv.appendChild(inputEle);
             customDiv.appendChild(label);
             console.log(customDiv);
+            if(col.children.length==5){
+                cardHeaderDiv.appendChild(tagDiv); 
+            }
             cardHeaderDiv.appendChild(customDiv);
             cardHeaderDiv.appendChild(picture);
             cardParentDiv.appendChild(cardHeaderDiv);
