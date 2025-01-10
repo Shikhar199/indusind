@@ -33,7 +33,7 @@ export default function decorate(block){
                     customDiv = document.createElement('div');
                     customDiv.classList.add('custom-control', 'custom-checkbox');
 
-                    const inputId = "compare_check"+row;
+                    const inputId = "compare_check"+r;
 
                     spanText = document.createElement('span');
                     spanText.classList.add('addtoCompareTxt');
