@@ -424,3 +424,74 @@ color: #797979;
     .compare_modal .card .btn-primary{margin-bottom: 15px;}
 
 }
+
+
+
+
+.link_view{
+	position: relative;
+	display: inline-block;
+	padding-right: 35px;
+	font-size: .875rem;
+	font-weight: bold;
+    line-height: 24px;
+    color: #832625;
+}
+.link_view:hover{
+    color: #832625;
+}
+.link_view.normal-text{
+    font-weight: 600;
+}
+.link_view:after{
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	content: "";
+	right: 0;
+	top: 0;
+	border: 2px solid #dedede;
+ border-radius: .425rem;
+}
+.link_view:before{
+	position: absolute;
+	content: "\f105";
+	font-family: "Font Awesome 5 Pro"!important;
+	font-size: 1.125rem;
+	font-weight: 400;
+	right: 8px;
+	top: 0px;
+	color: #832625;
+}
+
+.ddlogin_link ul{
+    display: none;
+    padding-bottom: 10px;
+}
+.ddlogin_link.active ul{
+    display: block;
+}
+.ddlogin_link:last-child ul{
+    border: none;
+}
+.ddlogin_link h5{
+    font-size: 1rem;
+    font-weight: normal;
+    font-size: 80%;
+}
+.ddlogin_link ul li{
+    font-size: 1rem;
+}
+.ddlogin_link .btn-primary, .ddlogin_link .btn-outline-primary{
+    padding: 0 10px;
+    font-weight: 500;
+    font-size: 80%;
+}
+.ddlogin_link .btn-outline-primary:hover{
+	color: #fff!important;
+}
+@media (max-width: 767px){
+.ddlogin_link .btn-outline-primary:hover{
+	color: #832625!important;
+}
+}
