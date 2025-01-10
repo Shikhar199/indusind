@@ -11,6 +11,7 @@ import {
   loadSection,
   loadSections,
   loadCSS,
+  loadScript
 } from './aem.js';
 
 /**
@@ -72,6 +73,12 @@ export function decorateMain(main) {
  * @param {Element} doc The container element
  */
 async function loadEager(doc) {
+  try{
+    await loadScript(`${window.hlx.codeBasePath}/scripts/product-category-clientlibs.js`, null);
+    await loadCSS("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+  } catch(err){
+    console.log(err);
+  }
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
