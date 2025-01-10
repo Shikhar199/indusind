@@ -76,7 +76,9 @@ export default function decorate(block){
                             }
                         }
                     })
-                    cardHeaderDiv.appendChild(tagDiv); 
+                    if(tagDiv.textContent.trim()>0){
+                        cardHeaderDiv.appendChild(tagDiv);
+                    } 
                 }
             })
             customDiv.appendChild(spanText);
