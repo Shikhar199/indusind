@@ -76,15 +76,13 @@ export default function decorate(block){
                             }
                         }
                     })
+                    cardHeaderDiv.appendChild(tagDiv); 
                 }
             })
             customDiv.appendChild(spanText);
             customDiv.appendChild(inputEle);
             customDiv.appendChild(label);
             console.log(customDiv);
-            if(tagDiv.textContent.trim().length>0){
-                cardHeaderDiv.appendChild(tagDiv); 
-            }
             cardHeaderDiv.appendChild(customDiv);
             cardHeaderDiv.appendChild(picture);
             cardParentDiv.appendChild(cardHeaderDiv);
