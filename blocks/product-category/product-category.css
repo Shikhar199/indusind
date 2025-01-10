@@ -435,7 +435,7 @@ color: #797979;
 	font-size: .875rem;
 	font-weight: bold;
     line-height: 24px;
-    color: #832625;
+    color: #832625 !important;
 }
 .link_view:hover{
     color: #832625;
