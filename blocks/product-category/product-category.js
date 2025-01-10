@@ -48,15 +48,32 @@ export default function decorate(block){
                     label.classList.add('custom-control-label');
                     label.setAttribute('for', inputId);
 
+                    const tagDiv = document.createElement('div');
+                    tag.classList.add('tag');
+
                     [...col.children].forEach((child,i)=>{
-                        if(i==0){
-                            spanText.textContent = child.textContent.trim();
-                        } else if(i==1){
-                            inputEle.setAttribute('data-title', child.textContent.trim());
-                        } else if(i==2){
-                            inputEle.setAttribute('data-page-path', child.textContent.trim());
-                        } else if(i==3){
-                            inputEle.setAttribute('data-thumbnail', child.textContent.trim());
+                        if(col.children.length==5){
+                            if(i==0&&child.textContent.startsWith('tag')){
+                                tag.textContent = child.textContent.substring(4);
+                            } else if(i==1){
+                                spanText.textContent = child.textContent.trim();
+                            } else if(i==2){
+                                inputEle.setAttribute('data-title', child.textContent.trim());
+                            } else if(i==3){
+                                inputEle.setAttribute('data-page-path', child.textContent.trim());
+                            } else if(i==4){
+                                inputEle.setAttribute('data-product-type', child.textContent.trim());
+                            }
+                        } else{
+                            if(i==0){
+                                spanText.textContent = child.textContent.trim();
+                            } else if(i==1){
+                                inputEle.setAttribute('data-title', child.textContent.trim());
+                            } else if(i==2){
+                                inputEle.setAttribute('data-page-path', child.textContent.trim());
+                            } else if(i==3){
+                                inputEle.setAttribute('data-product-type', child.textContent.trim());
+                            }
                         }
                     })
                 }
