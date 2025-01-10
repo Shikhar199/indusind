@@ -5,7 +5,39 @@ export default function decorate(block){
     container.innerHTML = block.innerHTML;
     block.innerHTML = '';
     console.log(container);
-    
+
+    const tabContainerDiv = document.createElement('div');
+    tabContainerDiv.classList.add('tabs-container');
+
+    const unorderedList = createAemElement('ul', ['nav', 'tabs-withdot', 'twotabsonly', 'flex-column', 'flex-sm-row', 'justify-content-center', 'mb-4'], {'role':'tablist'}, null);
+
+    const li1 = document.createElement('li');
+    li1.classList.add('nav-item');
+    li1.setAttribute('id','recm');
+    const a1 = createAemElement('a', ['nav-link', 'tabs-navs', 'mr-3', 'active', 'show'], {'data-toggle':'tab', 'href': '#card-recommended', 'role': 'tab', 'aria-controls': 'card-recommended', 'aria-selected':'true'}, "card-recommended-tab");
+    a1.textContent = "Recommended";
+    li1.appendChild(a1);
+
+    const li2 = document.createElement('li');
+    li2.classList.add('nav-item');
+    li2.setAttribute('id','tab2');
+    const a2 = createAemElement('a', ['nav-link', 'tabs-navs', 'ml-3'], {'data-toggle':'tab', 'href': '#card-tab2', 'role': 'tab', 'aria-controls': 'card-recommended', 'aria-selected':'true'}, "card-tab2-tab");
+    a2.textContent = "Digital";
+    li2.appendChild(a2);
+
+    const li3 = document.createElement('li');
+    li3.classList.add('nav-item');
+    li3.setAttribute('id','allCards');
+    const a3 = createAemElement('a', ['nav-link', 'tabs-navs', 'ml-3'], {'data-toggle':'tab', 'href': '#card-all', 'role': 'tab', 'aria-controls': 'card-all', 'aria-selected':'false'}, "card-all-tab");
+    a3.textContent = "Digital";
+    li3.appendChild(a3);
+
+    unorderedList.appendChild(li1);
+    unorderedList.appendChild(li2);
+    unorderedList.appendChild(li3);
+
+    tabContainerDiv.appendChild(unorderedList);
+
     let sectionDiv;
     let cardParentDiv;
 
@@ -186,6 +218,7 @@ export default function decorate(block){
         rowDiv.appendChild(sectionDiv);
     })
 
-    block.appendChild(tabContentDiv);
-    console.log(tabContentDiv);
+    tabContainerDiv.appendChild(tabContentDiv);
+    block.appendChild(tabContainerDiv);
+    console.log(tabContainerDiv);
 }
