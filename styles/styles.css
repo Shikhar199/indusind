@@ -18356,7 +18356,7 @@ textarea[resize=horizontal] {
 }
 
 .nav-link {
-  color: #000;
+  color: #000 !important;
 }
 
 .nav-link:hover {
