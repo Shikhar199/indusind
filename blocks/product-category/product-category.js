@@ -82,7 +82,7 @@ export default function decorate(block){
             customDiv.appendChild(inputEle);
             customDiv.appendChild(label);
             console.log(customDiv);
-            if(col.children.length==5){
+            if(tagDiv.textContent.trim.length>0){
                 cardHeaderDiv.appendChild(tagDiv); 
             }
             cardHeaderDiv.appendChild(customDiv);
