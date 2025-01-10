@@ -86,39 +86,39 @@ $(document).ready(function () {
     /**
      * Disable Tags AJAX
      */
-    disableTags = function (categoryPath, listOfTags) {
-        let data = {
-            categoryPath: categoryPath,
-            listOfTags: listOfTags,
-            reqType: "onLoad"
-        };
-        let jsonData = JSON.stringify(data);
-        $.ajax({
-            url: '/bin/product/category',
-            type: "POST",
-            data: jsonData,
-            contentType: "application/json",
-            success: function (res) {
-                if (res.status === 200) {
-                    let onLoadDisabledTags = JSON.parse(res.onLoadDisabledTags);
-                    let tagList = listOfTags.filter(function (obj) {
-                        return onLoadDisabledTags.indexOf(obj) == -1;
-                    });
-                    tagList.forEach(function (element) {
-                        $("input[data-tag-val='" + element + "']").attr("disabled", true);
-                    });
+    // disableTags = function (categoryPath, listOfTags) {
+    //     let data = {
+    //         categoryPath: categoryPath,
+    //         listOfTags: listOfTags,
+    //         reqType: "onLoad"
+    //     };
+    //     let jsonData = JSON.stringify(data);
+    //     $.ajax({
+    //         url: '/bin/product/category',
+    //         type: "POST",
+    //         data: jsonData,
+    //         contentType: "application/json",
+    //         success: function (res) {
+    //             if (res.status === 200) {
+    //                 let onLoadDisabledTags = JSON.parse(res.onLoadDisabledTags);
+    //                 let tagList = listOfTags.filter(function (obj) {
+    //                     return onLoadDisabledTags.indexOf(obj) == -1;
+    //                 });
+    //                 tagList.forEach(function (element) {
+    //                     $("input[data-tag-val='" + element + "']").attr("disabled", true);
+    //                 });
 
-                }
-            },
-            error: function (er) {
-                console.log("Error :: ", er);
-            }
-        });
-    }
+    //             }
+    //         },
+    //         error: function (er) {
+    //             console.log("Error :: ", er);
+    //         }
+    //     });
+    // }
 
-    setTimeout(function () {
-        disableTags(categoryPath, listOfTags);
-    }, 0);
+    // setTimeout(function () {
+    //     disableTags(categoryPath, listOfTags);
+    // }, 0);
 
     /**
      * Checkbox Click Event
@@ -217,61 +217,61 @@ $(document).ready(function () {
     /**
      * Function to fetch the product cards on the basis of list of tags
      */
-    loadData = function (tagsList, categoryPath, listOfTags) {
-        let data = {
-            inputTags: tagsList,
-            categoryPath: categoryPath,
-            listOfTags: listOfTags,
-            reqType: "loadData"
-        };
-        let jsonData = JSON.stringify(data);
-        $.ajax({
-            url: '/bin/product/category',
-            type: "POST",
-            data: jsonData,
-            contentType: "application/json",
-            success: function (res) {
-                if (res.data && res.status === 200) {
-                    let tagList = JSON.parse(res.disabledTags);
-                    //console.log("Disable Tag List");
-                    //console.log(tagList);
-                    tagList.forEach(function (element) {
-                        $("input[data-tag-val='" + element + "']").prop('checked', false);
-                        $("input[data-tag-val='" + element + "']").attr("disabled", true);
-                    });
-                    let enabledTagList = listOfTags.filter(function (e) {
-                        return tagList.indexOf(e) == -1;
-                    });
-                    //console.log("Enabled Tag List");
-                    //console.log(enabledTagList);
-                    enabledTagList.forEach(function (element) {
-                        $("input[data-tag-val='" + element + "']").prop("disabled", false);
-                    });
-                    $(".product-category-allCards").remove();
-                    data = res.data;
+    // loadData = function (tagsList, categoryPath, listOfTags) {
+    //     let data = {
+    //         inputTags: tagsList,
+    //         categoryPath: categoryPath,
+    //         listOfTags: listOfTags,
+    //         reqType: "loadData"
+    //     };
+    //     let jsonData = JSON.stringify(data);
+    //     $.ajax({
+    //         url: '/bin/product/category',
+    //         type: "POST",
+    //         data: jsonData,
+    //         contentType: "application/json",
+    //         success: function (res) {
+    //             if (res.data && res.status === 200) {
+    //                 let tagList = JSON.parse(res.disabledTags);
+    //                 //console.log("Disable Tag List");
+    //                 //console.log(tagList);
+    //                 tagList.forEach(function (element) {
+    //                     $("input[data-tag-val='" + element + "']").prop('checked', false);
+    //                     $("input[data-tag-val='" + element + "']").attr("disabled", true);
+    //                 });
+    //                 let enabledTagList = listOfTags.filter(function (e) {
+    //                     return tagList.indexOf(e) == -1;
+    //                 });
+    //                 //console.log("Enabled Tag List");
+    //                 //console.log(enabledTagList);
+    //                 enabledTagList.forEach(function (element) {
+    //                     $("input[data-tag-val='" + element + "']").prop("disabled", false);
+    //                 });
+    //                 $(".product-category-allCards").remove();
+    //                 data = res.data;
 
-                    cardsData = JSON.parse(data);
-                    if (cardsData.length > itemsTodisplay) {
-                        $(".load-more-btn2").show();
-                        populateResults(cardsData);
-                        $(".product-category-tagCards").slice(0, itemsTodisplay).show();
-                    } else {
-                        $(".load-more-btn2").hide();
-                        populateResults(cardsData);
-                        $(".product-category-tagCards").show();
-                    }
-                } else if (res.status === 204) {
-                    $(".product-category-tagCards").hide();
-                    $(".product-category-allCards").hide();
-                    $(".load-more-btn2").hide();
-                    //$(".product-cross-seller-banner").hide();
-                }
-            },
-            error: function (e) {
-                console.log("Error :: ", e);
-            }
-        });
-    }
+    //                 cardsData = JSON.parse(data);
+    //                 if (cardsData.length > itemsTodisplay) {
+    //                     $(".load-more-btn2").show();
+    //                     populateResults(cardsData);
+    //                     $(".product-category-tagCards").slice(0, itemsTodisplay).show();
+    //                 } else {
+    //                     $(".load-more-btn2").hide();
+    //                     populateResults(cardsData);
+    //                     $(".product-category-tagCards").show();
+    //                 }
+    //             } else if (res.status === 204) {
+    //                 $(".product-category-tagCards").hide();
+    //                 $(".product-category-allCards").hide();
+    //                 $(".load-more-btn2").hide();
+    //                 //$(".product-cross-seller-banner").hide();
+    //             }
+    //         },
+    //         error: function (e) {
+    //             console.log("Error :: ", e);
+    //         }
+    //     });
+    // }
 
     /**
      * Function to display the hidden cards
