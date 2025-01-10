@@ -10,7 +10,7 @@ export default function decorate(block){
     tabContentDiv.classList.add('tab-content', 'tab-content-number');
     tabContentDiv.setAttribute('data-number',6);
 
-    const tabPaneDiv = document.createAemElement('div', ['tab-pane', 'fade', 'active', 'show',  'position-relative'], {'role':'tabpanel', 'aria-labelledby':'card-recommended-tab'}, "card-recommended");
+    const tabPaneDiv = createAemElement('div', ['tab-pane', 'fade', 'active', 'show',  'position-relative'], {'role':'tabpanel', 'aria-labelledby':'card-recommended-tab'}, "card-recommended");
  
     const rowDiv = document.createElement('div');
     rowDiv.classList.add('row');
