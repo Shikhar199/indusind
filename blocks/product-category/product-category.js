@@ -5,6 +5,9 @@ export default function decorate(block){
     container.innerHTML = block.innerHTML;
     block.innerHTML = '';
     console.log(container);
+    
+    let sectionDiv;
+    let cardParentDiv;
 
     const tabContentDiv = document.createElement('div');
     tabContentDiv.classList.add('tab-content', 'tab-content-number');
@@ -19,9 +22,6 @@ export default function decorate(block){
     tabPaneDiv.appendChild(rowDiv);
 
     [...container.children].forEach((row,r)=>{
-
-        let sectionDiv;
-        let cardParentDiv;
 
 
         if(r%3==0){
