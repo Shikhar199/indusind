@@ -29,7 +29,7 @@ export default function decorate(block){
     li3.classList.add('nav-item');
     li3.setAttribute('id','allCards');
     const a3 = createAemElement('a', ['nav-link', 'tabs-navs', 'ml-3'], {'data-toggle':'tab', 'href': '#card-all', 'role': 'tab', 'aria-controls': 'card-all', 'aria-selected':'false'}, "card-all-tab");
-    a3.textContent = "Digital";
+    a3.textContent = "All";
     li3.appendChild(a3);
 
     unorderedList.appendChild(li1);
