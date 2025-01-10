@@ -111,7 +111,7 @@ $(document).ready(function () {
                 }
             },
             error: function (er) {
-                console.log("Error :: ", e);
+                console.log("Error :: ", er);
             }
         });
     }
