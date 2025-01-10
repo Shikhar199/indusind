@@ -76,6 +76,7 @@ async function loadEager(doc) {
   try{
     await loadScript(`${window.hlx.codeBasePath}/scripts/jquery.js`, null);
     await loadScript(`${window.hlx.codeBasePath}/scripts/product-category-clientlibs.js`, null);
+    await loadScript(`${window.hlx.codeBasePath}/scripts/global.js`, null);
     await loadCSS("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
   } catch(err){
     console.log(err);
