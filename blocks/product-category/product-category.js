@@ -26,8 +26,6 @@ export default function decorate(block){
             cardHeaderDiv.classList.add('card-header', 'cat-card-header');
 
             [...row.children].forEach((col,c)=>{
-                console.log(col.children.length);
-                console.log(col.childElementCount);
                 if(c==0){
                     picture = col.querySelector('picture');
                 } else{
@@ -77,6 +75,7 @@ export default function decorate(block){
                             }
                         }
                     })
+                    console.log(tagDiv.textContent.trim()>0);
                     if(tagDiv.textContent.trim()>0){
                         cardHeaderDiv.appendChild(tagDiv);
                     } 
