@@ -6,15 +6,27 @@ export default function decorate(block){
     block.innerHTML = '';
     console.log(container);
 
-    const sectionDiv = document.createElement('div');
-    sectionDiv.classList.add('col-md-6', 'col-lg-4');
+    const tabContentDiv = document.createElement('div');
+    tabContentDiv.classList.add('tab-content', 'tab-content-number');
+    tabContentDiv.setAttribute('data-number',6);
 
-    const cardParentDiv = document.createElement('div');
-    cardParentDiv.classList.add('card', 'card-equal-h', 'h-100', 'chkboxcard', 'card-border-color', 'mt-2', 'mb-3');
+    const tabPaneDiv = document.createAemElement('div', ['tab-pane', 'fade', 'active', 'show',  'position-relative'], {'role':'tabpanel', 'aria-labelledby':'card-recommended-tab'}, "card-recommended");
+ 
+    const rowDiv = document.createElement('div');
+    rowDiv.classList.add('row');
 
-    sectionDiv.appendChild(cardParentDiv);
+    tabContentDiv.appendChild(tabPaneDiv);
+    tabPaneDiv.appendChild(rowDiv);
 
     [...container.children].forEach((row,r)=>{
+
+        const sectionDiv = document.createElement('div');
+        sectionDiv.classList.add('col-md-6', 'col-lg-4');
+
+        const cardParentDiv = document.createElement('div');
+        cardParentDiv.classList.add('card', 'card-equal-h', 'h-100', 'chkboxcard', 'card-border-color', 'mt-2', 'mb-3');
+
+        sectionDiv.appendChild(cardParentDiv);
         
         if(r%3==0){
             let customDiv;
@@ -75,8 +87,6 @@ export default function decorate(block){
                             }
                         }
                     })
-                    console.log(tagDiv.textContent.trim());
-                    console.log(tagDiv.textContent.trim()>0);
                     if(tagDiv.textContent.trim().length>0){
                         cardHeaderDiv.appendChild(tagDiv);
                     } 
@@ -123,6 +133,7 @@ export default function decorate(block){
                             h6.textContent = child.textContent.trim();
                         } else{
                             list = col.querySelector('ul');
+                            list.classList.add('list-arrow-bullet', 'pl-0', 'ml-0');
                         }
                     })
                 
@@ -166,8 +177,10 @@ export default function decorate(block){
             cardParentDiv.appendChild(cardFooter)
 
         }
+
+        rowDiv.appendChild(sectionDiv);
     })
 
-    console.log(cardParentDiv);
-    block.appendChild(cardParentDiv);
+    block.appendChild(sectionDiv);
+    console.log(tabContentDiv);
 }
