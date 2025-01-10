@@ -509,16 +509,16 @@ $(document).ready(function () {
 		/*
 		 * Function to populate the product cards
 		 */
-		populateResults2 = function (result) {
-			source2 = $("#modal-cards-template").html();
-			if (source2 != undefined) {
-				template2 = Handlebars.compile(source2);
-			}
-			$(".popCards").html(template2({
-				objects: result
-			}));
-			result = '';
-		}
+		// populateResults2 = function (result) {
+		// 	source2 = $("#modal-cards-template").html();
+		// 	if (source2 != undefined) {
+		// 		template2 = Handlebars.compile(source2);
+		// 	}
+		// 	$(".popCards").html(template2({
+		// 		objects: result
+		// 	}));
+		// 	result = '';
+		// }
 	} else {
 		//mobile
 
