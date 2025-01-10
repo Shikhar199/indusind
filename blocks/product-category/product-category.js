@@ -20,20 +20,25 @@ export default function decorate(block){
 
     [...container.children].forEach((row,r)=>{
 
-        const sectionDiv = document.createElement('div');
-        sectionDiv.classList.add('col-md-6', 'col-lg-4');
+        let sectionDiv;
+        let cardParentDiv;
 
-        const cardParentDiv = document.createElement('div');
-        cardParentDiv.classList.add('card', 'card-equal-h', 'h-100', 'chkboxcard', 'card-border-color', 'mt-2', 'mb-3');
 
-        sectionDiv.appendChild(cardParentDiv);
-        
         if(r%3==0){
             let customDiv;
             let spanText;
             let inputEle;
             let label;
             let picture;
+
+            sectionDiv = document.createElement('div');
+            sectionDiv.classList.add('col-md-6', 'col-lg-4');
+    
+            cardParentDiv = document.createElement('div');
+            cardParentDiv.classList.add('card', 'card-equal-h', 'h-100', 'chkboxcard', 'card-border-color', 'mt-2', 'mb-3');
+    
+            sectionDiv.appendChild(cardParentDiv);
+
             const cardHeaderDiv = document.createElement('div');
             cardHeaderDiv.classList.add('card-header', 'cat-card-header');
 
