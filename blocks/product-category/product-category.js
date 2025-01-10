@@ -77,7 +77,7 @@ export default function decorate(block){
                     })
                     console.log(tagDiv.textContent.trim());
                     console.log(tagDiv.textContent.trim()>0);
-                    if(tagDiv.textContent.trim()>0){
+                    if(tagDiv.textContent.trim().length>0){
                         cardHeaderDiv.appendChild(tagDiv);
                     } 
                 }
