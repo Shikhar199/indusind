@@ -28,7 +28,6 @@ export default function decorate(block){
             [...row.children].forEach((col,c)=>{
                 if(c==0){
                     picture = col.querySelector('picture');
-                    console.log(picture);
                 } else{
                     customDiv = document.createElement('div');
                     customDiv.classList.add('custom-control', 'custom-checkbox');
@@ -84,7 +83,6 @@ export default function decorate(block){
             customDiv.appendChild(spanText);
             customDiv.appendChild(inputEle);
             customDiv.appendChild(label);
-            console.log(customDiv);
             cardHeaderDiv.appendChild(customDiv);
             cardHeaderDiv.appendChild(picture);
             cardParentDiv.appendChild(cardHeaderDiv);
@@ -127,12 +125,10 @@ export default function decorate(block){
                     })
                 
             })
-            console.log(list);
             cardBody.appendChild(h5);
             cardBody.appendChild(para);
             cardBody.appendChild(h6);
             cardBody.appendChild(list);
-            console.log(cardBody);
             cardParentDiv.appendChild(cardBody);
 
         } else if(r%3==2){
@@ -165,7 +161,6 @@ export default function decorate(block){
             cardFooter.appendChild(alignItemsDiv);
             alignItemsDiv.appendChild(anchor);
             alignItemsDiv.appendChild(anchor2);
-            console.log(cardFooter);
             cardParentDiv.appendChild(cardFooter)
 
         }
