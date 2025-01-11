@@ -1,18 +1,18 @@
 
-.accordion details {
+.faqs details {
   border: 1px solid #dadada;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
-.accordion details + details {
+.faqs details + details {
   margin-top: 24px;
 }
 
-.accordion details p {
+.faqs details p {
   margin-bottom: 0.8em;
 }
 
-.accordion details summary {
+.faqs details summary {
   position: relative;
   padding: 0 16px;
   padding-right: 46px;
@@ -22,20 +22,20 @@
   transition: background-color 0.2s;
 }
 
-.accordion details[open] summary {
+.faqs details[open] summary {
   background-color: var(--light-color);
 }
 
-.accordion details summary:focus,
-.accordion details summary:hover {
+.faqs details summary:focus,
+.faqs details summary:hover {
   background-color: var(--light-color);
 }
 
-.accordion details summary::-webkit-details-marker {
+.faqs details summary::-webkit-details-marker {
   display: none;
 }
 
-.accordion details summary::after {
+.faqs details summary::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -48,20 +48,20 @@
   transition: transform 0.2s;
 }
 
-.accordion details[open] summary::after {
+.faqs details[open] summary::after {
   transform: translateY(-50%) rotate(-45deg);
 }
 
-.accordion details .accordion-item-body {
+.faqs details .faqs-item-body {
   padding: 0 16px;
 }
 
-.accordion details[open] .accordion-item-body {
+.faqs details[open] .faqs-item-body {
   border-top: 1px solid #dadada;
   background-color: var(--background-color);
 }
 
-.accordion-item-label {
+.faqs-item-label {
 	border: solid 1px #eaeaea;
     border-bottom: none;
     border-radius: .375rem .375rem 0 0;

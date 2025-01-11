@@ -9,14 +9,14 @@ export default function decorate(block) {
     // decorate accordion item label
     const label = row.children[0];
     const summary = document.createElement('summary');
-    summary.className = 'accordion-item-label';
+    summary.className = 'faqs-item-label';
     summary.append(...label.childNodes);
     // decorate accordion item body
     const body = row.children[1];
-    body.className = 'accordion-item-body';
+    body.className = 'faqs-item-body';
     // decorate accordion item
     const details = document.createElement('details');
-    details.className = 'accordion-item';
+    details.className = 'faqs-item';
     details.append(summary, body);
     row.replaceWith(details);
   });
