@@ -29,11 +29,12 @@ export default function decorate(block){
             swiperDiv.appendChild(blogDescription);
 
         } else if(r%3==2){
+            const targetAttribute = '#bod_profile'+(r+1);
             const linkPTag = document.createElement('p');
             const linkText = row.querySelector('p').textContent.trim();
             const link = row.querySelector('a');
             link.textContent = linkText;
-            link.setAttribute('data-target','#bod_profile1');
+            link.setAttribute('data-target', targetAttribute);
             link.classList.add('link_view');
             linkPTag.appendChild(link);
             swiperDiv.appendChild(linkPTag);
