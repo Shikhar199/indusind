@@ -75,7 +75,7 @@ export function decorateMain(main) {
 async function loadEager(doc) {
   try{
     await loadScript(`${window.hlx.codeBasePath}/scripts/jquery.js`, null);
-    await loadScript(`${window.hlx.codeBasePath}/scripts/global.js`, null);
+    await loadScript(`${window.hlx.codeBasePath}/scripts/swiper-slider.js`, null);
   } catch(err){
     console.log(err);
   }
