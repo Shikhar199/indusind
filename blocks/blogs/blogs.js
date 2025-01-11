@@ -29,7 +29,7 @@ export default function decorate(block){
             swiperDiv.appendChild(blogDescription);
 
         } else if(r%3==2){
-            const targetAttribute = '#bod_profile'+(r+1);
+            const targetAttribute = '#bod_profile'+((r%3)-1);
             const linkPTag = document.createElement('p');
             const linkText = row.querySelector('p').textContent.trim();
             const link = row.querySelector('a');
