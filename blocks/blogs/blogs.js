@@ -6,6 +6,17 @@ export default function decorate(block){
     block.innerHTML = '';
     console.log(container);
 
+    const sectionDiv = createAemElement('div', ['trending_topics', 'bg-white', 'page-section', 'is-active'], {'data-component':'blade', 'data-nav-waypoint':'Blogs'}, 'mf_learn');
+    const containerDiv = createAemElement('div', ['container', 'px-50px'], null, null);
+    const headingDiv = createAemElement('div', ['heading', 'mb-4', 'pt-5'], null, null);
+
+    const rwoDiv = createAemElement('div', ['row'], null, null);
+    const colDiv = createAemElement('div', ['col-sm-12'], null, null);
+    const swiperContainerDiv = createAemElement('div', ['swiper-container', 'carrow', 'trending-topics-slider', 'py-5', 'swiper-initialized', 'swiper-horizontal', 'swiper-free-mode', 'swiper-backface-hidden'], null, null);
+
+    rowDiv.appendChild(colDiv);
+    colDiv.appendChild(swiperContainerDiv);
+
     const swiperWrapperDiv = createAemElement('div', ['swiper-wrapper'], null, 'swiper-wrapper-7a2ee8ee17749ddf');
     let swiperDiv;
 
@@ -41,5 +52,6 @@ export default function decorate(block){
         }
         swiperWrapperDiv.appendChild(swiperDiv);
     })
-    console.log(swiperWrapperDiv);
+    swiperContainerDiv.appendChild(swiperWrapperDiv);
+    console.log(swiperContainerDiv);
 }
