@@ -1502,10 +1502,9 @@
     ,
     S.readyException = function(e) {
         C.setTimeout(function() {
-            throw e
+            throw e;
         })
     }
-    ;
     var F = S.Deferred();
     function B() {
         E.removeEventListener("DOMContentLoaded", B),
