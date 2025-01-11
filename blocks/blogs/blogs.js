@@ -17,8 +17,8 @@ export default function decorate(block){
     // sectionDiv.appendChild(containerDiv);
     // container.appendChild(headingDiv);
     // container.appendChild(rowDiv);
-    // rowDiv.appendChild(colDiv);
-    // colDiv.appendChild(swiperContainerDiv);
+    rowDiv.appendChild(colDiv);
+    colDiv.appendChild(swiperContainerDiv);
 
 
     const swiperWrapperDiv = createAemElement('div', ['swiper-wrapper'], null, 'swiper-wrapper-7a2ee8ee17749ddf');
@@ -63,8 +63,8 @@ export default function decorate(block){
             swiperWrapperDiv.appendChild(swiperDiv);
         }
     })
-    console.log(swiperWrapperDiv);
-    // swiperContainerDiv.appendChild(swiperWrapperDiv);
+    swiperContainerDiv.appendChild(swiperWrapperDiv);
+    console.log(rowDiv);
     // containerDiv.appendChild(rowDiv);
     // console.log(sectionDiv);
     // block.appendChild(sectionDiv);
