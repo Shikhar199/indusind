@@ -89,6 +89,7 @@ export default function decorate(block){
 
 
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("Inside swiper slider");
     const swiper = new Swiper('.swiper-container', {
         // Core parameters
         slidesPerView: 3,         // Number of slides visible at a time
