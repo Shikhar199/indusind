@@ -64,8 +64,25 @@ export default function decorate(block){
         }
     })
     swiperContainerDiv.appendChild(swiperWrapperDiv);
+
+    // Create pagination
+
+    const swiperPaginationDiv = createAemElement('div', ['swiper-pagination', 'swiper-pagination-info', 'swiper-pagination-bullets', 'swiper-pagination-horizontal'], null, null);
+    const paginationBullet1 = createAemElement('span', ['swiper-pagination-bullet', 'swiper-pagination-bullet-active'], {"aria-current":"true"}, null);
+    const paginationBullet2 = createAemElement('span', ['swiper-pagination-bullet'], null,null); 
+
+    swiperPaginationDiv.appendChild(paginationBullet1);
+    swiperPaginationDiv.appendChild(paginationBullet2);
+
+    const swiperBtnNext = createAemElement('div', ['swiper-button-next'], {'tabindex':'0',  'role':'button', 'aria-label':'Next slide', 'aria-controls':'swiper-wrapper-7a2ee8ee17749ddf', 'aria-disabled':'false'}, null);
+    const swiperBtnPrev = createAemElement('div', ['swiper-button-prev', 'swiper-button-disabled'], {'tabindex':'-1', 'role':'button', 'aria-label':'Previous slide', 'aria-controls':'swiper-wrapper-7a2ee8ee17749ddf', 'aria-disabled':'true'}, null);
+    const swiperNotification = createAemElement('span', ['swiper-notification'], {'aria-live':'assertive', 'aria-atomic':'true'}, null);
+
+    swiperContainerDiv.appendChild(swiperPaginationDiv);
+    swiperContainerDiv.appendChild(swiperBtnNext);
+    swiperContainerDiv.appendChild(swiperBtnPrev);
+    swiperContainerDiv.appendChild(swiperNotification);
+
     console.log(sectionDiv);
-    // containerDiv.appendChild(rowDiv);
-    // console.log(sectionDiv);
     block.appendChild(sectionDiv);
 }
