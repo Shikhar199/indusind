@@ -61,7 +61,7 @@
   background-color: var(--background-color);
 }
 
-accordion-item-label {
+.accordion-item-label {
 	border: solid 1px #eaeaea;
     border-bottom: none;
     border-radius: .375rem .375rem 0 0;
