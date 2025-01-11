@@ -14,7 +14,7 @@ export default function decorate(block){
     const colDiv = createAemElement('div', ['col-sm-12'], null, null);
     const swiperContainerDiv = createAemElement('div', ['swiper-container', 'carrow', 'trending-topics-slider', 'py-5', 'swiper-initialized', 'swiper-horizontal', 'swiper-free-mode', 'swiper-backface-hidden'], null, null);
 
-    // sectionDiv.appendChild(containerDiv);
+    sectionDiv.appendChild(containerDiv);
     containerDiv.appendChild(headingDiv);
     containerDiv.appendChild(rowDiv);
     rowDiv.appendChild(colDiv);
@@ -64,8 +64,8 @@ export default function decorate(block){
         }
     })
     swiperContainerDiv.appendChild(swiperWrapperDiv);
-    console.log(containerDiv);
+    console.log(sectionDiv);
     // containerDiv.appendChild(rowDiv);
     // console.log(sectionDiv);
-    // block.appendChild(sectionDiv);
+    block.appendChild(sectionDiv);
 }
