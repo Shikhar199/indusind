@@ -6,7 +6,7 @@ export default function decorate(block){
     block.innerHTML = '';
     console.log(container);
 
-    const sectionDiv = createAemElement('div', ['trending_topics', 'bg-white', 'page-section', 'is-active'], {'data-component':'blade', 'data-nav-waypoint':'Blogs'}, 'mf_learn');
+    const sectionDiv = createAemElement('section', ['trending_topics', 'bg-white', 'page-section', 'is-active'], {'data-component':'blade', 'data-nav-waypoint':'Blogs'}, 'mf_learn');
     const containerDiv = createAemElement('div', ['container', 'px-50px'], null, null);
     const headingDiv = createAemElement('div', ['heading', 'mb-4', 'pt-5'], null, null);
 
@@ -21,6 +21,8 @@ export default function decorate(block){
 
     rowDiv.appendChild(colDiv);
     colDiv.appendChild(swiperContainerDiv);
+
+    console.log(rowDiv);
 
     const swiperWrapperDiv = createAemElement('div', ['swiper-wrapper'], null, 'swiper-wrapper-7a2ee8ee17749ddf');
     let swiperDiv;
@@ -64,7 +66,7 @@ export default function decorate(block){
             console.log(swiperDiv);
         }
         console.log(swiperDiv);
-        swiperWrapperDiv.appendChild(swiperDiv);
+        // swiperWrapperDiv.appendChild(swiperDiv);
     })
     // swiperContainerDiv.appendChild(swiperWrapperDiv);
     // containerDiv.appendChild(rowDiv);
