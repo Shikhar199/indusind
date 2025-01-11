@@ -17,6 +17,8 @@ export default function decorate(block){
     sectionDiv.appendChild(containerDiv);
     container.appendChild(headingDiv);
 
+    console.log(sectionDiv)
+
     rowDiv.appendChild(colDiv);
     colDiv.appendChild(swiperContainerDiv);
 
@@ -64,8 +66,8 @@ export default function decorate(block){
         console.log(swiperDiv);
         swiperWrapperDiv.appendChild(swiperDiv);
     })
-    swiperContainerDiv.appendChild(swiperWrapperDiv);
-    containerDiv.appendChild(rowDiv);
-    console.log(sectionDiv);
-    block.appendChild(sectionDiv);
+    // swiperContainerDiv.appendChild(swiperWrapperDiv);
+    // containerDiv.appendChild(rowDiv);
+    // console.log(sectionDiv);
+    // block.appendChild(sectionDiv);
 }
