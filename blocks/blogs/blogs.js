@@ -57,6 +57,7 @@ export default function decorate(block){
             linkPTag.appendChild(link);
             swiperDiv.appendChild(linkPTag);
         }
+        console.log(swiperDiv);
         swiperWrapperDiv.appendChild(swiperDiv);
     })
     swiperContainerDiv.appendChild(swiperWrapperDiv);
