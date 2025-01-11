@@ -7,12 +7,13 @@ export default function decorate(block){
     console.log(container);
 
     const swiperWrapperDiv = createAemElement('div', ['swiper-wrapper'], null, 'swiper-wrapper-7a2ee8ee17749ddf');
+    let swiperDiv;
 
     [...container.children].forEach((row,r)=>{
 
-        const swiperDiv = createAemElement('div', ['swiper-slide'], {'role':'group'}, null);
-
         if(r%3==0){
+            swiperDiv = createAemElement('div', ['swiper-slide'], {'role':'group'}, null);
+
             const blogTitle = row.querySelector('p').textContent.trim();
             const blogPicture = row.querySelector('picture');   
             
