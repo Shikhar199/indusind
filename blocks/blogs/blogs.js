@@ -10,10 +10,13 @@ export default function decorate(block){
     const containerDiv = createAemElement('div', ['container', 'px-50px'], null, null);
     const headingDiv = createAemElement('div', ['heading', 'mb-4', 'pt-5'], null, null);
 
-    const rwoDiv = createAemElement('div', ['row'], null, null);
+    const rowDiv = createAemElement('div', ['row'], null, null);
     const colDiv = createAemElement('div', ['col-sm-12'], null, null);
     const swiperContainerDiv = createAemElement('div', ['swiper-container', 'carrow', 'trending-topics-slider', 'py-5', 'swiper-initialized', 'swiper-horizontal', 'swiper-free-mode', 'swiper-backface-hidden'], null, null);
 
+    sectionDiv.appendChild(containerDiv);
+    container.appendChild(headingDiv);
+    containerDiv.appendChild(rowDiv);
     rowDiv.appendChild(colDiv);
     colDiv.appendChild(swiperContainerDiv);
 
@@ -22,7 +25,11 @@ export default function decorate(block){
 
     [...container.children].forEach((row,r)=>{
 
-        if(r%3==0){
+        if(r==0){
+            const blogHeading = row.querySelector('h2');
+            headingDiv.appendChild(blogHeading);
+
+        } else if(r%3==1){
             swiperDiv = createAemElement('div', ['swiper-slide'], {'role':'group'}, null);
 
             const blogTitle = row.querySelector('p').textContent.trim();
@@ -34,12 +41,12 @@ export default function decorate(block){
             swiperDiv.appendChild(blogPicture);
             swiperDiv.appendChild(h5);
 
-        } else if(r%3==1){
+        } else if(r%3==2){
             const blogDescription = row.querySelector('p');
             blogDescription.classList.add('card-text');
             swiperDiv.appendChild(blogDescription);
 
-        } else if(r%3==2){
+        } else if(r%3==0){
             const targetAttribute = '#bod_profile'+((r%3)-1);
             const linkPTag = document.createElement('p');
             const linkText = row.querySelector('p').textContent.trim();
@@ -53,5 +60,6 @@ export default function decorate(block){
         swiperWrapperDiv.appendChild(swiperDiv);
     })
     swiperContainerDiv.appendChild(swiperWrapperDiv);
-    console.log(swiperContainerDiv);
+    console.log(sectionDiv);
+    block.appendChild(sectionDiv);
 }
