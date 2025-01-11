@@ -27,6 +27,7 @@ export default function decorate(block){
 
         if(r==0){
             const blogHeading = row.querySelector('h2');
+            blogHeading.classList.add('text-bold', 'text-primary');
             headingDiv.appendChild(blogHeading);
 
         } else if(r%3==1){
@@ -47,7 +48,7 @@ export default function decorate(block){
             swiperDiv.appendChild(blogDescription);
 
         } else if(r%3==0){
-            const targetAttribute = '#bod_profile'+((r%3)-1);
+            const targetAttribute = '#bod_profile'+((r/3));
             const linkPTag = document.createElement('p');
             const linkText = row.querySelector('p').textContent.trim();
             const link = row.querySelector('a');
