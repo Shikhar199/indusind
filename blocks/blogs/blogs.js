@@ -85,5 +85,31 @@ export default function decorate(block){
 
     console.log(sectionDiv);
     block.appendChild(sectionDiv);
+
+    callSwiper();
 }
 
+function callSwiper(){
+    console.log("Inside swiper slider");
+    const swiper = new Swiper('.swiper-container', {
+        slidesPerView: 3, // Number of slides to show
+        spaceBetween: 20, // Space between slides (optional)
+        autoplay: {
+          delay: 3000, // Delay in milliseconds
+          disableOnInteraction: false, // Keep autoplay active after user interaction
+        },
+        breakpoints: {
+          760: {
+            slidesPerView: 3, // Show 3 slides for width >= 760px
+          },
+          0: {
+            slidesPerView: 2, // Show 2 slides for smaller screens
+          },
+        },
+        loop: false, // Enables infinite scrolling
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+    });
+}
