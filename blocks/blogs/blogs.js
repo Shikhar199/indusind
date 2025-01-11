@@ -107,6 +107,7 @@ function callSwiper(){
           },
         },
         loop: false, // Enables infinite scrolling
+        speed: 1000,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
