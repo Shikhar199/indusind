@@ -91,28 +91,24 @@ export default function decorate(block){
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Inside swiper slider");
     const swiper = new Swiper('.swiper-container', {
-        // Core parameters
-        slidesPerView: 3,         // Number of slides visible at a time
-        spaceBetween: 10,         // Space between slides (px)
-        loop: false,               // Enable loop
-        pagination: {
-          el: '.swiper-pagination', // Enable pagination
-          clickable: true,          // Allow clicking on pagination bullets
+        slidesPerView: 3, // Number of slides to show
+        spaceBetween: 20, // Space between slides (optional)
+        autoplay: {
+          delay: 3000, // Delay in milliseconds
+          disableOnInteraction: false, // Keep autoplay active after user interaction
         },
-        navigation: {
-          nextEl: '.swiper-button-next', // Next button
-          prevEl: '.swiper-button-prev', // Previous button
-        },
-        breakpoints: { // Responsive breakpoints
-          340: {        // When the screen width is >= 340px
-            slidesPerView: 2,
+        breakpoints: {
+          760: {
+            slidesPerView: 3, // Show 3 slides for width >= 760px
           },
-          768: { // When the screen width is >= 768px
-            slidesPerView: 3,
-          }
-        //   1024: { // When the screen width is >= 1024px
-        //     slidesPerView: 3,
-        //   },
+          0: {
+            slidesPerView: 2, // Show 2 slides for smaller screens
+          },
         },
-      });
+        loop: false, // Enables infinite scrolling
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+    });
 })
