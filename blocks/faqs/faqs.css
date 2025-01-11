@@ -36,20 +36,18 @@
 }
 
 .faqs details summary::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: 18px;
-  transform: translateY(-50%) rotate(135deg);
-  width: 6px;
-  height: 6px;
-  border: 2px solid;
-  border-width: 2px 2px 0 0;
-  transition: transform 0.2s;
+  content: "+";
 }
 
 .faqs details[open] summary::after {
-  transform: translateY(-50%) rotate(-45deg);
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  margin-top: -1rem;
+  content: "\2013";
+  font-size: 2rem;
+  line-height: 1;
+  transition: all 0.5s;
 }
 
 .faqs details .faqs-item-body {
