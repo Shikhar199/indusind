@@ -35,6 +35,10 @@
   display: none;
 }
 
+.faqs details[open] summary::after {
+  transform: translateY(-50%) rotate(-45deg);
+}
+
 .faqs details summary::after {
   content: '';
   position: absolute;
@@ -46,10 +50,6 @@
   border: 2px solid;
   border-width: 2px 2px 0 0;
   transition: transform 0.2s;
-}
-
-.faqs details[open] summary::after {
-  transform: translateY(-50%) rotate(-45deg);
 }
 
 .faqs details .faqs-item-body {
