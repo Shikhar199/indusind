@@ -41,11 +41,13 @@ export default function decorate(block){
 
             swiperDiv.appendChild(blogPicture);
             swiperDiv.appendChild(h5);
+            console.log(swiperDiv);
 
         } else if(r%3==2){
             const blogDescription = row.querySelector('p');
             blogDescription.classList.add('card-text');
             swiperDiv.appendChild(blogDescription);
+            console.log(swiperDiv);
 
         } else if(r%3==0){
             const targetAttribute = '#bod_profile'+((r/3));
@@ -57,6 +59,7 @@ export default function decorate(block){
             link.classList.add('link_view');
             linkPTag.appendChild(link);
             swiperDiv.appendChild(linkPTag);
+            console.log(swiperDiv);
         }
         console.log(swiperDiv);
         swiperWrapperDiv.appendChild(swiperDiv);
