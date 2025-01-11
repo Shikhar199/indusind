@@ -86,3 +86,32 @@ export default function decorate(block){
     console.log(sectionDiv);
     block.appendChild(sectionDiv);
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const swiper = new Swiper('.swiper-container', {
+        // Core parameters
+        slidesPerView: 3,         // Number of slides visible at a time
+        spaceBetween: 10,         // Space between slides (px)
+        loop: false,               // Enable loop
+        pagination: {
+          el: '.swiper-pagination', // Enable pagination
+          clickable: true,          // Allow clicking on pagination bullets
+        },
+        navigation: {
+          nextEl: '.swiper-button-next', // Next button
+          prevEl: '.swiper-button-prev', // Previous button
+        },
+        breakpoints: { // Responsive breakpoints
+          340: {        // When the screen width is >= 340px
+            slidesPerView: 2,
+          },
+          768: { // When the screen width is >= 768px
+            slidesPerView: 3,
+          }
+        //   1024: { // When the screen width is >= 1024px
+        //     slidesPerView: 3,
+        //   },
+        },
+      });
+})
