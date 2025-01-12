@@ -233,7 +233,9 @@ export default function decorate(block){
     tabContainerDiv.appendChild(tabContentDiv);
     parentContainer.appendChild(tabContainerDiv);
     const scriptDiv = getScript();
+    const compareModel = createCompareModel();
     productCategoryDiv.appendChild(scriptDiv);
+    productCategoryDiv.appendChild(compareModel);
     block.appendChild(productCategoryDiv);
     console.log(productCategoryDiv);
 }
@@ -277,5 +279,53 @@ function getScript(){
     `;
 
     return scriptElement;
+
+}
+
+function createCompareModel(){
+    // Create the main container div
+    const compareModal = document.createElement("div");
+    compareModal.className = "compare_modal w-100";
+
+    // Create the inner container div
+    const container = document.createElement("div");
+    container.className = "container position-relative";
+
+    // Create the close button
+    const closeButton = document.createElement("a");
+    closeButton.className = "close";
+    closeButton.id = "mainClose";
+    closeButton.href = "#";
+
+    // Create the SVG inside the close button
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    svg.setAttribute("version", "1");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.style.width = "40px";
+    svg.style.height = "40px";
+
+    // Create the path for the SVG
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", "M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z");
+
+    // Append the path to the SVG
+    svg.appendChild(path);
+
+    // Append the SVG to the close button
+    closeButton.appendChild(svg);
+
+    // Create the row div
+    const row = document.createElement("div");
+    row.className = "row popCards";
+
+    // Append the close button and row to the container
+    container.appendChild(closeButton);
+    container.appendChild(row);
+
+    // Append the container to the main modal div
+    compareModal.appendChild(container);
+
+    return compareModal;
 
 }
