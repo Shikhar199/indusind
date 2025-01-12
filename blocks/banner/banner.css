@@ -293,9 +293,9 @@
   }
 
   #mainDivBan .swiper-slide{
-    width: 817px;
-    opacity: 1;
-    transform: translate3d(0px, 0px, 0px);
-    background: rgb(247, 247, 247);
-    transition-duration: 0ms;
+    width: 817px !important;
+    opacity: 1 !important;
+    transform: translate3d(0px, 0px, 0px) !important;
+    background: rgb(247, 247, 247) !important;
+    transition-duration: 0ms !important;
   }
