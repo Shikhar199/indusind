@@ -26,7 +26,7 @@ export default function decorate(block) {
 	// Create the unordered list
 	const list = document.createElement("ul");
 	list.className = "relatedQuestionBoxes";
-	innerContainer.appendChild(list);
+	searchBoxContainer.appendChild(list);
 	
 	// Loop through the data and create list items
 	const boxes = row.children[1];
@@ -34,6 +34,8 @@ export default function decorate(block) {
 		const listItem = document.createElement("li");
 		listItem.className = "relatedQuestionRedirect";
 	});
+	
+	row.replaceWith(container);
 	
     /* // decorate block's item body
     const boxes = row.children[1];
