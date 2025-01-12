@@ -1,4 +1,4 @@
-/* .errormessagep, .successmessagep{
+.errormessagep, .successmessagep{
 	font-size: 1.125rem;
 	padding: 34px 0 18px;
 	text-align: center;
@@ -20,7 +20,7 @@
 .spotlight picture img {
 	top:9px;
     margin-bottom:9px;
-} */
+}
 
 
 .swiper-button-prev-next {
