@@ -166,26 +166,58 @@ function callBannerSwipper(){
     //     },
     // });
 
-    var swiper = new Swiper('.swiper-container', {
-        spaceBetween: 30,
-        effect: 'fade', // Enable fade effect
-        fadeEffect: {
-          crossFade: true, // Smooth fade transitions
+    // var swiper = new Swiper('.swiper-container', {
+    //     spaceBetween: 30,
+    //     effect: 'fade', // Enable fade effect
+    //     fadeEffect: {
+    //       crossFade: true, // Smooth fade transitions
+    //     },
+    //     // autoplay: {
+    //     //   delay: 2000, // Delay in milliseconds
+    //     //   disableOnInteraction: false, // Keep autoplay active after user interaction
+    //     // },
+    //     loop: true, // Enable loop for continuous autoplay
+    //     navigation: {
+    //       nextEl: '.swiper-button-next',
+    //       prevEl: '.swiper-button-prev',
+    //     },
+    //     pagination: {
+    //       el: '.swiper-pagination-main',
+    //       clickable: true,
+    //     },
+    //   });
+
+
+    var swipermain = new Swiper('.main-slider', {
+        spaceBetween: 0,
+        // simulateTouch:false,
+        autoplayDisableOnInteraction: false,
+        effect: 'fade',
+        autoplay: {
+            delay: 10000,
+            disableOnInteraction: false,
         },
-        // autoplay: {
-        //   delay: 2000, // Delay in milliseconds
-        //   disableOnInteraction: false, // Keep autoplay active after user interaction
-        // },
-        loop: true, // Enable loop for continuous autoplay
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
+        speed: 1000,
         pagination: {
-          el: '.swiper-pagination-main',
-          clickable: true,
+            el: '.swiper-pagination-main',
+            clickable: true,
         },
-      });
+        navigation: {
+            nextEl: '.swiper-button-next-white',
+            prevEl: '.swiper-button-prev-white',
+        },
+        
+    });
+    
+        //var data-attr-bg = $('.swiper-slide').attr('data-bgcolor');
+    
+        $('.swiper-slide').each(function(){
+            var slidebgcolor = $(this).attr('data-bgcolor');
+                //console.log(slidebgcolor)
+            $(this).css('background', slidebgcolor)
+    
+    
+        })
       
 }
 
