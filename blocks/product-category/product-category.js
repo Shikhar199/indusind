@@ -6,6 +6,18 @@ export default function decorate(block){
     block.innerHTML = '';
     console.log(container);
 
+    const productCategoryDiv = createAemElement('div', ['productCategoryGeneric'], null, null);
+
+    const parentSection = createAemElement('section', ['card_select_wrap', 'bg-grey', 'product-category-section', 'is-active'], {'data-component': 'blade', 'data-category-path':'/content/indusind-corporate/en/business/accounts/current-account', 'data-alertmsg':'Maximum 3 Cards can be selected'}, null);
+
+    const parentContainer = createAemElement('div', ['container', 'px-50px', 'bg-white', 'pt-2'], null, null);
+
+    const headingDiv = createAemElement('div', ['heading', 'mb-4', 'text-center'], null, null);
+
+    productCategoryDiv.appendChild(parentSection);
+    parentSection.appendChild(parentContainer);
+    parentContainer.appendChild(headingDiv);
+
     const tabContainerDiv = document.createElement('div');
     tabContainerDiv.classList.add('tabs-container');
 
@@ -219,6 +231,51 @@ export default function decorate(block){
     })
 
     tabContainerDiv.appendChild(tabContentDiv);
-    block.appendChild(tabContainerDiv);
-    console.log(tabContainerDiv);
+    parentContainer.appendChild(tabContainerDiv);
+    const scriptDiv = getScript();
+    productCategoryDiv.appendChild(scriptDiv);
+    block.appendChild(productCategoryDiv);
+    console.log(productCategoryDiv);
+}
+
+
+function getScript(){
+    // Create a script element
+    const scriptElement = document.createElement("script");
+
+    // Set attributes for the script element
+    scriptElement.id = "modal-cards-template";
+    scriptElement.type = "text/x-handlebars-template";
+
+    // Add the content of the Handlebars template
+    scriptElement.innerHTML = `
+    {{#each objects}}
+    <div class="col-md-6 col-6 col-lg-3">
+        <div class="card border-0">
+            <a class="close cardclose" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24" style="width: 16px; height: 16px;">
+                    <path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path>
+                </svg>
+            </a>
+            <figure>
+                <img src="{{thumbnail}}" class="rounded" alt="">
+            </figure>
+            <h5>{{title}}</h5>
+        </div>
+    </div>
+    {{/each}}
+    <div class="col-md-6 col-6 col-lg-3 d-lg-flex d-md-none d-none" id="addCard">
+        <div class="card h-100 border-0">
+            <a class="add_card_btn" href="javascript://" class="w-100 h-100 text-center">Click on product checkbox above to compare</a>
+        </div>
+    </div>
+    <div class="col-md-12 col-lg-3 text-center">
+        <div class="card d-inline-flex h-100 border-0 justify-content-center" id="compareNow">
+            <a href="/content/indusind-corporate/en/business/accounts/product-compare-current-account.html" class="btn btn-primary w-auto">Compare</a>
+        </div>
+    </div>
+    `;
+
+    return scriptElement;
+
 }
