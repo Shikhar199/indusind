@@ -33,6 +33,7 @@ export default function decorate(block) {
 	boxes.forEach(search => {
 		const listItem = document.createElement("li");
 		listItem.className = "relatedQuestionRedirect";
+		listItem.appendChild(document.createTextNode(search));
 	});
 	
 	row.replaceWith(container);
