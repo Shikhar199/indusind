@@ -43,6 +43,7 @@ export default function decorate(block) {
 		listItem.appendChild(search);
 		console.log(listItem);
 		list.appendChild(listItem);
+		console.log(list);
 	});
 	
 	row.replaceWith(container);
