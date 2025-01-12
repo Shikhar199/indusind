@@ -6,6 +6,9 @@ export default function decorate(block) {
   [...block.children].forEach((row) => {
     // decorate label
     const label = row.children[0];
+
+	console.log(label);
+	console.log(label.textContent.trim());
 	
 	// Create the outer container
 	const container = document.createElement("div");
