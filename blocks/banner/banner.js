@@ -131,7 +131,7 @@ function callBannerSwipper(){
         },
         
         loop: false, // Enables infinite scrolling
-        speed: 2000,
+        // speed: 2000,
         effect: 'fade', // Optional: Adds a fade effect instead of sliding
         fadeEffect: {
             crossFade: true, // Smooth fade transition
