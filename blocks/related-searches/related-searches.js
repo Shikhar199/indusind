@@ -41,6 +41,7 @@ export default function decorate(block) {
 		listItem.className = "relatedQuestionRedirect";
 
 		listItem.appendChild(search);
+		console.log(listItem);
 		list.appendChild(listItem);
 	});
 	
