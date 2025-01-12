@@ -172,10 +172,10 @@ function callBannerSwipper(){
         fadeEffect: {
           crossFade: true, // Smooth fade transitions
         },
-        autoplay: {
-          delay: 2000, // Delay in milliseconds
-          disableOnInteraction: false, // Keep autoplay active after user interaction
-        },
+        // autoplay: {
+        //   delay: 2000, // Delay in milliseconds
+        //   disableOnInteraction: false, // Keep autoplay active after user interaction
+        // },
         loop: true, // Enable loop for continuous autoplay
         navigation: {
           nextEl: '.swiper-button-next',
