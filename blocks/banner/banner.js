@@ -149,7 +149,7 @@ function callBannerSwipper(){
     //     // },
     // });
 
-    var swiper = new Swiper(".mySwiper", {
+    var swiper = new Swiper('.swiper-container', {
         spaceBetween: 30,
         effect: "fade",
         navigation: {
@@ -157,7 +157,7 @@ function callBannerSwipper(){
           prevEl: ".swiper-button-prev",
         },
         pagination: {
-          el: ".swiper-pagination",
+          el: ".swiper-pagination-main",
           clickable: true,
         },
     });
