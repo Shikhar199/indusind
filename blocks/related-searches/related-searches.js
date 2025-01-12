@@ -6,6 +6,9 @@ export default function decorate(block) {
   [...block.children].forEach((row) => {
     // decorate label
     const label = row.children[0];
+
+	console.log(label);
+	console.log(label.textContent.trim());
 	
 	// Create the outer container
 	const container = document.createElement("div");
@@ -30,7 +33,9 @@ export default function decorate(block) {
 	
 	// Loop through the data and create list items
 	const boxes = row.children[1];
+	console.log(boxes);
 	boxes.forEach(search => {
+		console.log(search);
 		const listItem = document.createElement("li");
 		listItem.className = "relatedQuestionRedirect";
 		listItem.appendChild(document.createTextNode(search));
