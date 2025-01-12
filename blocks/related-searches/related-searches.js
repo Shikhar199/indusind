@@ -35,6 +35,7 @@ export default function decorate(block) {
 	const boxes = row.children[1];
 	console.log(boxes);
 	boxes.forEach(search => {
+		console.log(search);
 		const listItem = document.createElement("li");
 		listItem.className = "relatedQuestionRedirect";
 	});
