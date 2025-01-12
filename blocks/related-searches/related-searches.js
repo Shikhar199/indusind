@@ -33,6 +33,7 @@ export default function decorate(block) {
 	
 	// Loop through the data and create list items
 	const boxes = row.children[1];
+	console.log(boxes);
 	boxes.forEach(search => {
 		const listItem = document.createElement("li");
 		listItem.className = "relatedQuestionRedirect";
