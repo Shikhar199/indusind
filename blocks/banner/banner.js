@@ -132,6 +132,10 @@ function callBannerSwipper(){
         
         loop: false, // Enables infinite scrolling
         speed: 2000,
+        effect: 'fade', // Optional: Adds a fade effect instead of sliding
+        fadeEffect: {
+            crossFade: true, // Smooth fade transition
+        },
         pagination: {
             el: '.swiper-pagination-main', // Use your existing pagination element
             clickable: true, // Allow pagination bullets to be clickable
