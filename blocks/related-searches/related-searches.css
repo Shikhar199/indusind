@@ -1,0 +1,82 @@
+.related-question-wrap{
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+.relatedQuestionHeading{
+    color: #832625;
+    font-weight: 700;
+    line-height: 30px;
+    margin: 0 0 25px 0;
+    font-size: 22px;
+    text-align: start;
+}
+.relatedQuestionRedirect:hover {
+    background:#832625;
+    color:white;
+}
+.relatedQuestionBoxes{
+    display: flex;
+    column-gap: 25px;
+    row-gap: 25px;
+    padding: 0;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+}
+.relatedQuestionRedirect{
+    font-size: 16px;
+    line-height: 24px;
+    color: grey;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background: #d9d9d9;
+    cursor: pointer;
+    position: relative;
+}
+@media screen and (max-width:992px) {
+    .relatedQuestionHeading{
+        text-align: center;
+        margin: 0 0 20px 0;
+    }
+}
+@media screen and (max-width:576px) {
+    .relatedQuestionRedirect{
+        font-size: 14px;
+        line-height: 20px;
+        padding: 6px 8px;
+    }
+    .related-question-wrap{
+        padding-top: 35px;
+        padding-bottom: 35px;
+    }
+    .relatedQuestionBoxes{
+        column-gap: 10px;
+        row-gap: 16px;
+        justify-content: center;
+    }
+    .relatedQuestionHeading{
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+.relatedQuestionRedirect a{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+.relatedQuestionRedirect::before{
+font-family: "Font Awesome 5 Pro";
+font-weight: 400;
+font-style: normal;
+font-size: 14px;
+display: inline-block;
+content: "\f002";
+margin-right: 6px;
+}
+
+.text-bold {
+    font-family: 'Lucida Sans' !important;
+    font-weight: bold !important
+}
