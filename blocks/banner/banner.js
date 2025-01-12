@@ -149,3 +149,19 @@ function callBannerSwipper(){
         // },
     });
 }
+
+
+const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1, // Number of slides to show
+    // autoplay: {
+    //   delay: 10000, // Delay in milliseconds
+    //   disableOnInteraction: false, // Keep autoplay active after user interaction
+    // },
+    
+    loop: false, // Enables infinite scrolling
+    effect: 'fade', // Optional: Adds a fade effect instead of sliding
+    fadeEffect: {
+        crossFade: true, // Smooth fade transition
+    },
+    
+});
