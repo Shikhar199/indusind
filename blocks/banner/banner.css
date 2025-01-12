@@ -291,3 +291,11 @@
   .swiper-button-prev-next:has(.swiper-button-prev-white.swiper-button-disabled + .swiper-button-next-white.swiper-button-disabled) {
     display:none;
   }
+
+  #mainDivBan .swiper-slide{
+    width: 817px;
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+    background: rgb(247, 247, 247);
+    transition-duration: 0ms;
+  }
