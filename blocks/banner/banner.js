@@ -139,10 +139,10 @@ function callBannerSwipper(){
         pagination: {
             el: '.swiper-pagination-main', // Use your existing pagination element
             clickable: true, // Allow pagination bullets to be clickable
-            renderBullet: function (index, className) {
-              return `<span class="${className}" role="button" aria-label="Go to slide ${index + 1}"></span>`;
-            },
-          },
+            // renderBullet: function (index, className) {
+            //   return `<span class="${className}" role="button" aria-label="Go to slide ${index + 1}"></span>`;
+            // },
+        },
         // navigation: {
         //   nextEl: '.swiper-button-next',
         //   prevEl: '.swiper-button-prev',
