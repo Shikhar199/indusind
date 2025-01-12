@@ -36,6 +36,7 @@ export default function decorate(block) {
 	console.log(boxes);
 	const searchBoxTexts = boxes.querySelectorAll("p");
 	searchBoxTexts.forEach(search => {
+		console.log("Inside loop");
 		console.log(search);
 		const listItem = document.createElement("li");
 		listItem.className = "relatedQuestionRedirect";
@@ -43,6 +44,7 @@ export default function decorate(block) {
 		listItem.replaceWith(search);
 		console.log(listItem);
 		list.appendChild(listItem);
+		console.log(list);
 	});
 	
 	row.replaceWith(container);
