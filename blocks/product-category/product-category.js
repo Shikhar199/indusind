@@ -81,7 +81,7 @@ export default function decorate(block){
                     customDiv = document.createElement('div');
                     customDiv.classList.add('custom-control', 'custom-checkbox');
 
-                    const inputId = "compare_check"+r;
+                    const inputId = "compare_check"+(r+1);
 
                     spanText = document.createElement('span');
                     spanText.classList.add('addtoCompareTxt');
@@ -90,7 +90,7 @@ export default function decorate(block){
                     inputEle.type = 'checkbox';
                     inputEle.classList.add('custom-control-input', 'cardSelectCheck', 'cardsLabel');
                     inputEle.id = inputId;
-                    inputEle.setAttribute('value', r)
+                    inputEle.setAttribute('value', r+1)
 
                     label = document.createElement('label');
                     label.classList.add('custom-control-label');
