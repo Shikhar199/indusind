@@ -90,7 +90,7 @@ export default function decorate(block){
 }
 
 function callSwiper(){
-    console.log("Inside swiper slider");
+    console.log("Inside swiper slider function");
     const swiper = new Swiper('.swiper-container', {
         slidesPerView: 3, // Number of slides to show
         spaceBetween: 20, // Space between slides (optional)
