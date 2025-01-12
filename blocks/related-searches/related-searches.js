@@ -40,7 +40,7 @@ export default function decorate(block) {
 		const listItem = document.createElement("li");
 		listItem.className = "relatedQuestionRedirect";
 
-		listItem.appendChild(search);
+		listItem.replaceWith(search);
 		console.log(listItem);
 		list.appendChild(listItem);
 	});
