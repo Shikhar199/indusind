@@ -124,21 +124,21 @@ function callBannerSwipper(){
     console.log("Inside swiper slider function.........");
     const swiper = new Swiper('.swiper-container', {
         slidesPerView: 1, // Number of slides to show
-        spaceBetween: 20, // Space between slides (optional)
+        // spaceBetween: 50, // Space between slides (optional)
         autoplay: {
-          delay: 7000, // Delay in milliseconds
+          delay: 10000, // Delay in milliseconds
           disableOnInteraction: false, // Keep autoplay active after user interaction
         },
-        breakpoints: {
-          760: {
-            slidesPerView: 1, // Show 3 slides for width >= 760px
-          },
-          0: {
-            slidesPerView: 1, // Show 2 slides for smaller screens
-          },
-        },
+        
         loop: false, // Enables infinite scrolling
-        speed: 1000,
+        speed: 2000,
+        pagination: {
+            el: '.swiper-pagination-main', // Use your existing pagination element
+            clickable: true, // Allow pagination bullets to be clickable
+            renderBullet: function (index, className) {
+              return `<span class="${className}" role="button" aria-label="Go to slide ${index + 1}"></span>`;
+            },
+          },
         // navigation: {
         //   nextEl: '.swiper-button-next',
         //   prevEl: '.swiper-button-prev',
