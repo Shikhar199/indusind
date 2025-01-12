@@ -34,11 +34,12 @@ export default function decorate(block) {
 	// Loop through the data and create list items
 	const boxes = row.children[1];
 	console.log(boxes);
-	boxes.forEach(search => {
+	const searchBoxTexts = boxes.querySelectorAll("p");
+	searchBoxTexts.forEach(search => {
 		console.log(search);
 		const listItem = document.createElement("li");
 		listItem.className = "relatedQuestionRedirect";
-		listItem.appendChild(document.createTextNode(search));
+		listItem.appendChild(search);
 	});
 	
 	row.replaceWith(container);
