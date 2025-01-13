@@ -73,7 +73,7 @@ export function decorateMain(main) {
  */
 async function loadEager(doc) {
   try{
-	await loadScript("https://kit.fontawesome.com/9de073df3e.js");
+    await loadScript(`${window.hlx.codeBasePath}/scripts/fa_9de073df3e.js`, null);
   } catch(err){
     console.log(err);
   }
