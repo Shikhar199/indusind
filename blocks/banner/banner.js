@@ -216,7 +216,6 @@ function callBannerSwipper(){
 
             
                 // Execute on window resize
-                window.addEventListener("resize", resizeSlides);
 
 }
 
