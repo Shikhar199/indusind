@@ -187,7 +187,7 @@ function callBannerSwipper(){
             disableOnInteraction: true, // Keep autoplay active after user interaction
         },
         slidesPerView: 1, // Fix the typo; it should be slidesPerView
-        speed: 1000, // Transition speed
+        // speed: 1000, // Transition speed
         navigation: {
             nextEl: ".swiper-button-next", // Navigation button for next slide
             prevEl: ".swiper-button-prev", // Navigation button for previous slide
