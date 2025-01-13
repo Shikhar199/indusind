@@ -56,7 +56,7 @@ export default function decorate(block){
 
     // window.addEventListener("resize", adjustSlidesWidth);
 
-    window.addEventListener("resize", adjustSlidesWidth);
+    // window.addEventListener("resize", adjustSlidesWidth);
 
     callBannerSwipper();
 }
@@ -149,32 +149,6 @@ function adjustSlidesWidth(){
 
 function callBannerSwipper(){
     console.log("Inside swiper slider function.........");
-    // const swiper = new Swiper('.swiper-container', {
-    //     slidesPerView: 1, // Number of slides to show
-    //     // spaceBetween: 50, // Space between slides (optional)
-    //     autoplay: {
-    //       delay: 10000, // Delay in milliseconds
-    //       disableOnInteraction: false, // Keep autoplay active after user interaction
-    //     },
-        
-    //     loop: false, // Enables infinite scrolling
-    //     // speed: 2000,
-    //     effect: 'fade', // Optional: Adds a fade effect instead of sliding
-    //     fadeEffect: {
-    //         crossFade: true, // Smooth fade transition
-    //     },
-    //     // pagination: {
-    //         // el: '.swiper-pagination-main', // Use your existing pagination element
-    //         // clickable: true, // Allow pagination bullets to be clickable
-    //         // renderBullet: function (index, className) {
-    //         //   return `<span class="${className}" role="button" aria-label="Go to slide ${index + 1}"></span>`;
-    //         // },
-    //     // },
-    //     // navigation: {
-    //     //   nextEl: '.swiper-button-next',
-    //     //   prevEl: '.swiper-button-prev',
-    //     // },
-    // });
 
     var swiper = new Swiper('.swiper-container', {
         spaceBetween: 30,
