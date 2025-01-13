@@ -73,11 +73,7 @@ export function decorateMain(main) {
  */
 async function loadEager(doc) {
   try{
-    await loadScript(`${window.hlx.codeBasePath}/scripts/jquery.js`, null);
-    await loadScript(`${window.hlx.codeBasePath}/scripts/swiper-slider.js`, null);
-    await loadScript(`${window.hlx.codeBasePath}/scripts/handlebars.min.js`, null);
-    await loadScript(`${window.hlx.codeBasePath}/scripts/product-category-clientlibs.js`, null);
-	await loadScript("https://kit.fontawesome.com/9de073df3e.js", null);
+	await loadScript("https://kit.fontawesome.com/9de073df3e.js");
   } catch(err){
     console.log(err);
   }
