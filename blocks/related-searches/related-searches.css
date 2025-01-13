@@ -67,8 +67,9 @@
     top: 0;
     bottom: 0;
     width: 100%;
-	color: #000;
+	color: inherit;
 }
+
 .relatedQuestionRedirect::before{
 font-family: "Font Awesome 5 Pro";
 font-weight: 400;
