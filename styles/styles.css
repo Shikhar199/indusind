@@ -254,3 +254,7 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+ul li::marker {
+    color: #832625;
+}

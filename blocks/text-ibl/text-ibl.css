@@ -23,16 +23,24 @@
     color: #832625 !important;
 }
 
+.text-ibl a {
+	text-decoration: underline;
+	target-name:new;
+	target-new:tab;
+}
+
 .text-ibl a.button:hover,
 .text-ibl a.button:focus,
 .text-ibl button:hover,
 .text-ibl button:focus {
-  cursor: pointer;
+	background-color: transparent;
+	cursor: pointer;
 }
 
 .text-ibl button:disabled,
 .text-ibl button:disabled:hover {
-  cursor: unset;
+	background-color: transparent;
+	cursor: unset;
 }
 
 .howReadMore {
