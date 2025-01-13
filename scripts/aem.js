@@ -711,7 +711,7 @@ async function loadSection(section, loadCallback) {
 }
 
 function loadBanner(){
-  var swiper = new Swiper('.swiper-container', {
+  var swiper = new Swiper('.main-slider', {
   spaceBetween: 30,
   effect: "fade", // Fade effect
   fadeEffect: {
