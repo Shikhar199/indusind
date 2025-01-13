@@ -54,6 +54,8 @@ export default function decorate(block){
 
     setTimeout(adjustSlidesWidth,3000);
 
+    window.addEventListener("resize", adjustSlidesWidth);
+
     callBannerSwipper();
 }
 
