@@ -23,6 +23,12 @@
     color: #832625 !important;
 }
 
+.text-ibl h5 {
+	font-family: 'Lucida Sans' !important;
+    font-weight: bold !important;
+    color: #832625 !important;
+}
+
 .text-ibl a {
 	text-decoration: underline;
 	target-name:new;
