@@ -136,7 +136,7 @@ function adjustSlidesWidth(){
 
         // Set the width of each swiper-slide to match the swiper-wrapper
         swiperSlides.forEach((slide) => {
-            slide.style.width = `${wrapperWidth}px`;
+            slide.style.setProperty("width", `${wrapperWidth}px`, "important");
         });
 
         console.log("Swiper slides resized to wrapper width:", wrapperWidth);
