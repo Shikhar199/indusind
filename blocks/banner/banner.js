@@ -176,22 +176,22 @@ function callBannerSwipper(){
     //     // },
     // });
 
-    // var swiper = new Swiper('.swiper-container', {
-    //     spaceBetween: 30,
-    //     // effect: "fade",
-    //     autoplay: {
-    //         delay: 2000, // Delay in milliseconds
-    //         disableOnInteraction: true, // Keep autoplay active after user interaction
-    //     },
-    //     navigation: {
-    //       nextEl: ".swiper-button-next",
-    //       prevEl: ".swiper-button-prev",
-    //     },
-    //     pagination: {
-    //       el: ".swiper-pagination-main",
-    //       clickable: true,
-    //     },
-    // });
+    var swiper = new Swiper('.swiper-container', {
+        spaceBetween: 30,
+        // effect: "fade",
+        autoplay: {
+            delay: 2000, // Delay in milliseconds
+            disableOnInteraction: true, // Keep autoplay active after user interaction
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination-main",
+          clickable: true,
+        },
+    });
 
     // var swiper = new Swiper('.swiper-container', {
     //     spaceBetween: 30,
