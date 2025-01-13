@@ -182,11 +182,12 @@ function callBannerSwipper(){
         fadeEffect: {
             crossFade: true
         },
-        loop:true,
         autoplay: {
-            delay: 2000, // Delay in milliseconds
+            delay: 2500, // Delay in milliseconds
             disableOnInteraction: true, // Keep autoplay active after user interaction
         },
+        slidesPreview: 1,
+        speed: 1000, 
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
