@@ -711,7 +711,7 @@ async function loadSection(section, loadCallback) {
 }
 
 function loadBanner(){
-  var swiper = new Swiper('.swiper-container', {
+  var swiper = new Swiper('.main-slider', {
   spaceBetween: 30,
   effect: "fade", // Fade effect
   fadeEffect: {
@@ -721,6 +721,7 @@ function loadBanner(){
       delay: 2000, // Delay in milliseconds
       disableOnInteraction: true, // Keep autoplay active after user interaction
   },
+  loop: true,
   slidesPerView: 1, // Fix the typo; it should be slidesPerView
   // speed: 1000, // Transition speed
   navigation: {
