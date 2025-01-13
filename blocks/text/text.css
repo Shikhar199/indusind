@@ -1,0 +1,36 @@
+
+
+
+.howReadMore {
+    cursor: pointer;
+    color: #832625;
+    font-size: 14px;
+    margin-left: 1px;
+}
+
+.howReadMore::after {
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    color: #832625;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.howReadLess {
+    display: none;
+    cursor: pointer;
+    color: #832625;
+    font-size: 14px;
+	
+	width: 100%;
+    text-align: right;
+}
+
+.howReadLess::after {
+    content: "\f106";
+    font-family: "Font Awesome 5 Free";
+    color: #832625;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
