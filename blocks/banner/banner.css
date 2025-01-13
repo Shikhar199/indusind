@@ -292,14 +292,14 @@
     display:none;
   }
 
-  /* #mainDivBan .swiper-slide{
+   #mainDivBan .swiper-slide{
     width: 100% !important;
-    opacity: 1 !important;
+    /* opacity: 1 !important;
     transform: translate3d(0px, 0px, 0px) !important;
     background: rgb(247, 247, 247) !important;
-    transition-duration: 0ms !important;
+    transition-duration: 0ms !important; */
   }
-
+/*
   .swiper-slide {
     background-position: center;
     background-size: cover;
