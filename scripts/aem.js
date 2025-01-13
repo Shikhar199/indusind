@@ -753,6 +753,5 @@ export {
   toClassName,
   waitForFirstImage,
   wrapTextNodes,
-  createAemElement,
-  loadBanner
+  createAemElement
 };
