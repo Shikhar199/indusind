@@ -52,6 +52,8 @@ export default function decorate(block){
     console.log(section);
     block.appendChild(section);
 
+    adjustSlidesWidth();
+
     callBannerSwipper();
 }
 
@@ -120,6 +122,25 @@ function getMaskContentDiv(){
 
 }
 
+function adjustSlidesWidth(){
+    const swiperWrapper = document.querySelector("#mainDivBan"); // Select the swiper-wrapper
+    const swiperSlides = document.querySelectorAll("#mainDivBan .swiper-slide");
+
+    if (swiperWrapper && swiperSlides.length > 0) {
+        // Get the computed width of the swiper-wrapper
+        const wrapperWidth = swiperWrapper.clientWidth;
+
+        // Set the width of each swiper-slide to match the swiper-wrapper
+        swiperSlides.forEach((slide) => {
+            slide.style.width = `${wrapperWidth}px`;
+        });
+
+        console.log("Swiper slides resized to wrapper width:", wrapperWidth);
+    } else {
+        console.error("Swiper-wrapper or slides not found!");
+    }
+}
+
 function callBannerSwipper(){
     console.log("Inside swiper slider function.........");
     // const swiper = new Swiper('.swiper-container', {
@@ -186,39 +207,82 @@ function callBannerSwipper(){
     //       clickable: true,
     //     },
     //   });
-
-
-    var swipermain = new Swiper('.main-slider', {
-        spaceBetween: 0,
-        // simulateTouch:false,
-        autoplayDisableOnInteraction: false,
-        effect: 'fade',
-        autoplay: {
-            delay: 10000,
-            disableOnInteraction: false,
-        },
-        speed: 1000,
-        pagination: {
-            el: '.swiper-pagination-main',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next-white',
-            prevEl: '.swiper-button-prev-white',
-        },
+        var swipermain = new Swiper('.main-slider', {
+            spaceBetween: 0,
+            // simulateTouch:false,
+            autoplayDisableOnInteraction: false,
+            effect: 'fade',
+            autoplay: {
+                delay: 10000,
+                disableOnInteraction: false,
+            },
+            speed: 1000,
+            pagination: {
+                el: '.swiper-pagination-main',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next-white',
+                prevEl: '.swiper-button-prev-white',
+            },
+            
+        });
         
-    });
-    
-        //var data-attr-bg = $('.swiper-slide').attr('data-bgcolor');
-    
-        $('.swiper-slide').each(function(){
-            var slidebgcolor = $(this).attr('data-bgcolor');
-                //console.log(slidebgcolor)
-            $(this).css('background', slidebgcolor)
-    
-    
-        })
-      
+            //var data-attr-bg = $('.swiper-slide').attr('data-bgcolor');
+        
+            $('.swiper-slide').each(function(){
+                var slidebgcolor = $(this).attr('data-bgcolor');
+                    //console.log(slidebgcolor)
+                $(this).css('background', slidebgcolor)
+        
+        
+            })
+
+            
+           var swipermain = new Swiper('.main-slider', {
+            spaceBetween: 0,
+            // simulateTouch:false,
+            autoplayDisableOnInteraction: false,
+            effect: 'fade',
+            autoplay: {
+                delay: 10000,
+                disableOnInteraction: false,
+            },
+            speed: 1000,
+            pagination: {
+                el: '.swiper-pagination-main',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        
+        });
+        
+            //var data-attr-bg = $('.swiper-slide').attr('data-bgcolor');
+        
+            $('.swiper-slide').each(function(){
+                var slidebgcolor = $(this).attr('data-bgcolor');
+                    console.log(slidebgcolor)
+                $(this).css('background', slidebgcolor)
+        
+        
+            })
+
+            $('.swiper-slide').each(function() {
+                var $slide = $(this);
+                var headingTextColor = $slide.attr('data-textcolor');
+                var $heading = $slide.find(".bannerHeading");
+                var $subHeading = $slide.find(".bannerSubHeading");
+                
+                if (headingTextColor) {
+                    $heading.css('color', headingTextColor);
+                    $subHeading.css('color', headingTextColor);
+                }
+            });
+
+
 }
 
 
