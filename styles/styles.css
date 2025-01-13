@@ -16,7 +16,7 @@
   --light-color: #f8f8f8;
   --dark-color: #505050;
   --text-color: #131313;
-  --link-color: #3b63fb;
+  --link-color: #832625;
   --link-hover-color: #1d3ecf;
 
   /* fonts */
@@ -75,9 +75,9 @@ body {
   margin: 0;
   background-color: var(--background-color);
   color: var(--text-color);
-  font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
-  line-height: 1.6;
+  font-family: "Myriad Pro";
+  font-size: var(--body-font-size-s);
+  line-height: 1.7;
 }
 
 body.appear {
@@ -165,7 +165,7 @@ a:hover {
 }
 
 /* buttons */
-a.button:any-link,
+/* a.button:any-link,
 button {
   box-sizing: border-box;
   display: inline-block;
@@ -186,7 +186,7 @@ button {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
+} */
 
 a.button:hover,
 a.button:focus,

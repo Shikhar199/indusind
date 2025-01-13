@@ -23,6 +23,18 @@
     color: #832625 !important;
 }
 
+.text-ibl a.button:hover,
+.text-ibl a.button:focus,
+.text-ibl button:hover,
+.text-ibl button:focus {
+  cursor: pointer;
+}
+
+.text-ibl button:disabled,
+.text-ibl button:disabled:hover {
+  cursor: unset;
+}
+
 .howReadMore {
     cursor: pointer;
     color: #832625;
