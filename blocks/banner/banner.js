@@ -178,25 +178,26 @@ function callBannerSwipper(){
 
     var swiper = new Swiper('.swiper-container', {
         spaceBetween: 30,
-        effect: "fade",
+        effect: "fade", // Fade effect
         fadeEffect: {
-            crossFade: true
+            crossFade: true // Ensures smooth transition between slides
         },
         autoplay: {
             delay: 2500, // Delay in milliseconds
             disableOnInteraction: true, // Keep autoplay active after user interaction
         },
-        slidesPerview: 1,
-        speed: 1000, 
+        slidesPerView: 1, // Fix the typo; it should be slidesPerView
+        speed: 1000, // Transition speed
         navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+            nextEl: ".swiper-button-next", // Navigation button for next slide
+            prevEl: ".swiper-button-prev", // Navigation button for previous slide
         },
         pagination: {
-          el: ".swiper-pagination-main",
-          clickable: true,
+            el: ".swiper-pagination-main", // Pagination bullets container
+            clickable: true, // Makes pagination bullets clickable
         },
     });
+    
 
     // var swiper = new Swiper('.swiper-container', {
     //     spaceBetween: 30,
