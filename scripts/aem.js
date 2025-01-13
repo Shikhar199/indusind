@@ -721,7 +721,6 @@ function loadBanner(){
       delay: 2000, // Delay in milliseconds
       disableOnInteraction: true, // Keep autoplay active after user interaction
   },
-  loop: true,
   slidesPerView: 1, // Fix the typo; it should be slidesPerView
   // speed: 1000, // Transition speed
   navigation: {
