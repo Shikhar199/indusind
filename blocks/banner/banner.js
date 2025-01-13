@@ -183,7 +183,7 @@ function callBannerSwipper(){
             crossFade: true // Ensures smooth transition between slides
         },
         autoplay: {
-            delay: 1000, // Delay in milliseconds
+            delay: 2000, // Delay in milliseconds
             disableOnInteraction: true, // Keep autoplay active after user interaction
         },
         slidesPerView: 1, // Fix the typo; it should be slidesPerView
