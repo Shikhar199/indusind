@@ -59,7 +59,7 @@ export default function decorate(block){
     // window.addEventListener("resize", adjustSlidesWidth);
 
     // callBannerSwipper();
-    loadBanner();
+    setTimeout(loadBanner,3000);
 }
 
 function getMaskContentDiv(){
