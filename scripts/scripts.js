@@ -11,6 +11,8 @@ import {
   loadSection,
   loadSections,
   loadCSS,
+  loadScript,
+  loadBanner
 } from './aem.js';
 
 /**
@@ -72,6 +74,17 @@ export function decorateMain(main) {
  * @param {Element} doc The container element
  */
 async function loadEager(doc) {
+  try{
+    await loadScript(`${window.hlx.codeBasePath}/scripts/jquery.js`, null);
+    await loadScript(`${window.hlx.codeBasePath}/scripts/swiper-slider.js`, null);
+    await loadScript(`${window.hlx.codeBasePath}/scripts/handlebars.min.js`, null);
+    // await loadScript(`${window.hlx.codeBasePath}/scripts/banner.js`, null);
+    await loadScript(`${window.hlx.codeBasePath}/scripts/font-awesome.js`, null);
+    await loadScript(`${window.hlx.codeBasePath}/scripts/product-category-clientlibs.js`, null);
+    await loadCSS(`${window.hlx.codeBasePath}/styles/swipper.css`, null);
+  } catch(err){
+    console.log(err);
+  }
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
@@ -102,6 +115,7 @@ async function loadLazy(doc) {
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
   if (hash && element) element.scrollIntoView();
+  loadBanner();
 
   loadHeader(doc.querySelector('header'));
   loadFooter(doc.querySelector('footer'));

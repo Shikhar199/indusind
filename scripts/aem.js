@@ -627,6 +627,28 @@ function decorateBlocks(main) {
   main.querySelectorAll('div.section > div > div').forEach(decorateBlock);
 }
 
+function createAemElement(tag, classes, attributes, elementId){
+  const tagElement = document.createElement(tag);
+
+  if(classes!==null){
+      for(let cls of classes){
+          tagElement.classList.add(cls);
+      }
+  }
+
+  if(attributes!==null){
+      for(let attr in attributes){
+          tagElement.setAttribute(attr,attributes[attr]);
+      }
+  }
+
+  if(elementId!==null){
+      tagElement.id = elementId;
+  }
+  return tagElement;
+
+}
+
 /**
  * Loads a block named 'header' into header
  * @param {Element} header header element
@@ -688,6 +710,39 @@ async function loadSection(section, loadCallback) {
   }
 }
 
+function loadBanner(){
+  var swiper = new Swiper('.swiper-container', {
+  spaceBetween: 30,
+  effect: "fade", // Fade effect
+  fadeEffect: {
+      crossFade: true // Ensures smooth transition between slides
+  },
+  autoplay: {
+      delay: 2000, // Delay in milliseconds
+      disableOnInteraction: true, // Keep autoplay active after user interaction
+  },
+  slidesPerView: 1, // Fix the typo; it should be slidesPerView
+  // speed: 1000, // Transition speed
+  navigation: {
+      nextEl: ".swiper-button-next", // Navigation button for next slide
+      prevEl: ".swiper-button-prev", // Navigation button for previous slide
+  },
+  pagination: {
+      el: ".swiper-pagination-main", // Pagination bullets container
+      clickable: true, // Makes pagination bullets clickable
+      type: "bullets", // Bullet style pagination
+      bulletClass: "swiper-pagination-bullet", // Optional: Custom class for bullets
+      renderBullet: function (index, className) {
+         // Only render the first 3 bullets
+         if (index < 3) {
+            return '<span class="' + className + '"></span>';
+         }
+         return ''; // Don't render additional bullets
+      }
+  },
+  })
+}
+
 /**
  * Loads all sections.
  * @param {Element} element The parent element of sections to load
@@ -731,4 +786,6 @@ export {
   toClassName,
   waitForFirstImage,
   wrapTextNodes,
+  createAemElement,
+  loadBanner
 };
