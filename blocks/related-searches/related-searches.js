@@ -6,9 +6,6 @@ export default function decorate(block) {
   [...block.children].forEach((row) => {
     // decorate label
     const label = row.children[0];
-
-	console.log(label);
-	console.log(label.textContent.trim());
 	
 	// Create the outer container
 	const container = document.createElement("div");
@@ -33,33 +30,21 @@ export default function decorate(block) {
 	
 	// Loop through the data and create list items
 	const boxes = row.children[1];
-	console.log(boxes);
 	const searchBoxTexts = boxes.querySelectorAll("p");
 	searchBoxTexts.forEach(search => {
-		console.log("Inside loop");
 		const anchorElement = search.firstChild;
 		anchorElement.className = "";
-		anchorElement.setAttribute("target","_blank");
-		console.log(search);
+		anchorElement.setAttribute("target","_blank
+		
 		const listItem = document.createElement("li");
 		listItem.className = "relatedQuestionRedirect";
 		listItem.textContent = anchorElement.textContent;
 		anchorElement.textContent = "";
 
 		listItem.appendChild(anchorElement);
-		console.log(listItem);
 		list.appendChild(listItem);
 	});
 	
 	row.replaceWith(container);
-	
-    /* // decorate block's item body
-    const boxes = row.children[1];
-    boxes.className = 'related-searchs-boxes';
-    // decorate each box item
-    const details = document.createElement('details');
-    details.className = 'faqs-item';
-    details.append(summary, body);
-    row.replaceWith(details); */
   });
 }
