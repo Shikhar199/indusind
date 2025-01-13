@@ -1,8 +1,9 @@
 /* Custom Text block for IBL */
 
 export default function decorate(block) {
+  [...block.children].forEach((row) => {	
 	// Select the component containing the "Read More" text
-	const component = document.querySelector('.textwithreadmore'); // Replace with the actual component selector
+	const component = document.querySelector('.textwithreadmore');
 
 	// Check if the component exists
 	if (component) {
@@ -60,5 +61,5 @@ export default function decorate(block) {
 	const moreText = component.querySelector(".howReadMore").insertAdjacentElement("afterend", pElementsBetween);
 	moreText.insertAdjacentElement("afterend", readLess);
 	
-	
+  });
 }
