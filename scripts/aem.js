@@ -730,6 +730,15 @@ function loadBanner(){
   pagination: {
       el: ".swiper-pagination-main", // Pagination bullets container
       clickable: true, // Makes pagination bullets clickable
+      type: "bullets", // Bullet style pagination
+      bulletClass: "swiper-pagination-bullet", // Optional: Custom class for bullets
+      renderBullet: function (index, className) {
+         // Only render the first 3 bullets
+         if (index < 3) {
+            return '<span class="' + className + '"></span>';
+         }
+         return ''; // Don't render additional bullets
+      }
   },
   })
 }
