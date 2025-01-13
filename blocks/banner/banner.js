@@ -179,6 +179,9 @@ function callBannerSwipper(){
     var swiper = new Swiper('.swiper-container', {
         spaceBetween: 30,
         effect: "fade",
+        fadeEffect: {
+            crossFade: true
+        },
         autoplay: {
             delay: 2000, // Delay in milliseconds
             disableOnInteraction: true, // Keep autoplay active after user interaction
