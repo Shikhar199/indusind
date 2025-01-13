@@ -186,7 +186,7 @@ button {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
+} */
 
 a.button:hover,
 a.button:focus,
@@ -207,7 +207,7 @@ button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
   color: var(--text-color);
-} */
+}
 
 main img {
   max-width: 100%;
