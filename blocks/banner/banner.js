@@ -1,4 +1,4 @@
-import { createAemElement } from "../../scripts/aem.js";
+import { createAemElement, loadBanner } from "../../scripts/aem.js";
 
 export default function decorate(block){
     const container = document.createElement('div');
@@ -58,7 +58,8 @@ export default function decorate(block){
 
     // window.addEventListener("resize", adjustSlidesWidth);
 
-    callBannerSwipper();
+    // callBannerSwipper();
+    loadBanner();
 }
 
 function getMaskContentDiv(){
