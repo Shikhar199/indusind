@@ -56,6 +56,8 @@ export default function decorate(block){
 
     // window.addEventListener("resize", adjustSlidesWidth);
 
+    window.addEventListener("resize", adjustSlidesWidth);
+
     callBannerSwipper();
 }
 
@@ -136,7 +138,7 @@ function adjustSlidesWidth(){
 
         // Set the width of each swiper-slide to match the swiper-wrapper
         swiperSlides.forEach((slide) => {
-            slide.style.setProperty("width", `${wrapperWidth}px`, "important");
+            element.style.setProperty("width", "100%", "important");
         });
 
         console.log("Swiper slides resized to wrapper width:", wrapperWidth);
@@ -212,32 +214,9 @@ function callBannerSwipper(){
     //     },
     //   })
 
-            document.addEventListener("DOMContentLoaded", function () {
-                const swiperWrapper = document.querySelector("#mainDivBan"); // Select the swiper-wrapper
-                const swiperSlides = document.querySelectorAll("#mainDivBan .swiper-slide"); // Select all swiper-slide elements
-            
-                function resizeSlides() {
-                    if (swiperWrapper && swiperSlides.length > 0) {
-                        // Get the computed width of the swiper-wrapper
-                        const wrapperWidth = swiperWrapper.clientWidth;
-            
-                        // Set the width of each swiper-slide to match the swiper-wrapper, with !important
-                        swiperSlides.forEach((slide) => {
-                            slide.style.setProperty("width", `${wrapperWidth}px`, "important");
-                        });
-            
-                        console.log("Swiper slides resized to wrapper width:", wrapperWidth);
-                    } else {
-                        console.error("Swiper-wrapper or slides not found!");
-                    }
-                }
-            
-                // Execute on page load
-                resizeSlides();
             
                 // Execute on window resize
                 window.addEventListener("resize", resizeSlides);
-            });
 
 }
 
