@@ -34,7 +34,7 @@ export default function decorate(block) {
 	searchBoxTexts.forEach(search => {
 		const anchorElement = search.firstChild;
 		anchorElement.className = "";
-		anchorElement.setAttribute("target","_blank
+		anchorElement.setAttribute("target","_blank");
 		
 		const listItem = document.createElement("li");
 		listItem.className = "relatedQuestionRedirect";
