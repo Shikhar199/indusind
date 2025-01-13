@@ -52,7 +52,7 @@ export default function decorate(block){
     console.log(section);
     block.appendChild(section);
 
-    adjustSlidesWidth();
+    setTimeout(adjustSlidesWidth,3000);
 
     callBannerSwipper();
 }
@@ -123,6 +123,8 @@ function getMaskContentDiv(){
 }
 
 function adjustSlidesWidth(){
+
+    console.log("Adjusting width");
     const swiperWrapper = document.querySelector("#mainDivBan"); // Select the swiper-wrapper
     const swiperSlides = document.querySelectorAll("#mainDivBan .swiper-slide");
 
