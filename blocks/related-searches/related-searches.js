@@ -37,12 +37,13 @@ export default function decorate(block) {
 	const searchBoxTexts = boxes.querySelectorAll("p");
 	searchBoxTexts.forEach(search => {
 		console.log("Inside loop");
-		search.className = "";
+		const anchorElement = search.firstChild;
+		anchorElement.className = "";
 		console.log(search);
 		const listItem = document.createElement("li");
 		listItem.className = "relatedQuestionRedirect";
 
-		listItem.appendChild(search.firstChild);
+		listItem.appendChild(anchorElement);
 		console.log(listItem);
 		list.appendChild(listItem);
 		console.log(list);
