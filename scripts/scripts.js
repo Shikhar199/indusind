@@ -111,8 +111,6 @@ async function loadLazy(doc) {
   const main = doc.querySelector('main');
   await loadSections(main);
 
-  await loadScript(`${window.hlx.codeBasePath}/scripts/banner-carousel.js`, null);
-
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
   if (hash && element) element.scrollIntoView();
