@@ -52,9 +52,9 @@ export default function decorate(block){
     console.log(section);
     block.appendChild(section);
 
-    setTimeout(adjustSlidesWidth,3000);
+    // setTimeout(adjustSlidesWidth,3000);
 
-    window.addEventListener("resize", adjustSlidesWidth);
+    // window.addEventListener("resize", adjustSlidesWidth);
 
     callBannerSwipper();
 }

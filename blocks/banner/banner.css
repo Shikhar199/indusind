@@ -304,3 +304,11 @@
     background-position: center;
     background-size: cover;
   }
+
+  #mainDivBan {
+    display: flex; /* Set the parent to flexbox */
+}
+
+#mainDivBan .swiper-slide {
+    flex: 1 0 auto; /* Allow the child to stretch and take the full width of the parent */
+}
