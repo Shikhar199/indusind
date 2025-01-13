@@ -39,6 +39,7 @@ export default function decorate(block) {
 		console.log("Inside loop");
 		const anchorElement = search.firstChild;
 		anchorElement.className = "";
+		anchorElement.setAttribute("target","_blank");
 		console.log(search);
 		const listItem = document.createElement("li");
 		listItem.className = "relatedQuestionRedirect";
@@ -46,7 +47,6 @@ export default function decorate(block) {
 		listItem.appendChild(anchorElement);
 		console.log(listItem);
 		list.appendChild(listItem);
-		console.log(list);
 	});
 	
 	row.replaceWith(container);
