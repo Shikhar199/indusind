@@ -67,10 +67,11 @@
     top: 0;
     bottom: 0;
     width: 100%;
-	color: #000;
+	color: inherit;
 }
+
 .relatedQuestionRedirect::before{
-font-family: "Font Awesome 5 Pro";
+font-family: "Font Awesome 5 Free";
 font-weight: 400;
 font-style: normal;
 font-size: 14px;

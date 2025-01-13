@@ -43,6 +43,8 @@ export default function decorate(block) {
 		console.log(search);
 		const listItem = document.createElement("li");
 		listItem.className = "relatedQuestionRedirect";
+		listItem.textContent = anchorElement.textContent;
+		anchorElement.textContent = "";
 
 		listItem.appendChild(anchorElement);
 		console.log(listItem);
