@@ -40,9 +40,9 @@ export default function decorate(block){
     const bulletSpan2 = createAemElement('span', ['swiper-pagination-bullet'], {'tabindex':'0', 'role':'button', 'aria-label':'Go to slide 2'}, null);
     const bulletSpan3 = createAemElement('span', ['swiper-pagination-bullet', 'swiper-pagination-bullet-active'], {'tabindex':'0', 'role':'button', 'aria-label':'Go to slide 3', 'aria-current':'true'}, null);
 
-    swiperPaginationDiv.appendChild(bulletSpan1);
-    swiperPaginationDiv.appendChild(bulletSpan2);
-    swiperPaginationDiv.appendChild(bulletSpan3);
+    // swiperPaginationDiv.appendChild(bulletSpan1);
+    // swiperPaginationDiv.appendChild(bulletSpan2);
+    // swiperPaginationDiv.appendChild(bulletSpan3);
 
     const notificationSpan = createAemElement('span', ['swiper-notification'], {'aria-live':'assertive', 'aria-atomic':'true'}, null);
 
