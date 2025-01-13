@@ -1,5 +1,32 @@
 
+.text-ibl h1 {
+	font-family: 'Lucida Sans' !important;
+    font-weight: bold !important;
+    color: #832625 !important;
+}
 
+.text-ibl h2 {
+	font-family: 'Lucida Sans' !important;
+    font-weight: bold !important;
+    color: #832625 !important;
+}
+
+.text-ibl h3 {
+	font-family: 'Lucida Sans' !important;
+    font-weight: bold !important;
+    color: #832625 !important;
+}
+
+.text-ibl h4 {
+	font-family: 'Lucida Sans' !important;
+    font-weight: bold !important;
+    color: #832625 !important;
+}
+
+.text-ibl a {
+    color: #832625;
+    text-decoration: underline;
+}
 
 .howReadMore {
     cursor: pointer;
