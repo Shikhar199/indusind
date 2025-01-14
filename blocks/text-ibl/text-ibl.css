@@ -1,0 +1,84 @@
+
+.text-ibl h1 {
+	font-family: 'Lucida Sans' !important;
+    font-weight: bold !important;
+    color: #832625 !important;
+}
+
+.text-ibl h2 {
+	font-family: 'Lucida Sans' !important;
+    font-weight: bold !important;
+    color: #832625 !important;
+}
+
+.text-ibl h3 {
+	font-family: 'Lucida Sans' !important;
+    font-weight: bold !important;
+    color: #832625 !important;
+}
+
+.text-ibl h4 {
+	font-family: 'Lucida Sans' !important;
+    font-weight: bold !important;
+    color: #832625 !important;
+}
+
+.text-ibl h5 {
+	font-family: 'Lucida Sans' !important;
+    font-weight: bold !important;
+    color: #832625 !important;
+}
+
+.text-ibl a {
+	text-decoration: underline;
+	target-name:new;
+	target-new:tab;
+}
+
+.text-ibl a.button:hover,
+.text-ibl a.button:focus,
+.text-ibl button:hover,
+.text-ibl button:focus {
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.text-ibl button:disabled,
+.text-ibl button:disabled:hover {
+	background-color: transparent;
+	cursor: unset;
+}
+
+.howReadMore {
+    cursor: pointer;
+    color: #832625;
+    font-size: 14px;
+    margin-left: 1px;
+}
+
+.howReadMore::after {
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    color: #832625;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.howReadLess {
+    display: none;
+    cursor: pointer;
+    color: #832625;
+    font-size: 14px;
+	
+	width: 100%;
+    text-align: right;
+}
+
+.howReadLess::after {
+    content: "\f106";
+    font-family: "Font Awesome 5 Free";
+    color: #832625;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
