@@ -1,4 +1,4 @@
-/* Custom Text block for IBL */
+/* Custom Page Nav block for IBL */
 
 export default function decorate(block) {
   [...block.children].forEach((row) => {	
@@ -11,7 +11,7 @@ export default function decorate(block) {
     const listItems = list.querySelectorAll("li"); //Can be appended later
     listItems.forEach(navItem => {
       navItem.className = "ui-carousel-item";
-      const data-layer-text = navItem.textContent.toLowerCase();
+      const dataLayerText = navItem.textContent.toLowerCase();
 
       //Create anchor element with required attributes
       const anchorElement = document.createElement("a");
@@ -20,7 +20,7 @@ export default function decorate(block) {
       anchorElement.setAttribute("data-layer-category", "in-page-menu");
       anchorElement.setAttribute("data-layer-location", "product-page");
       anchorElement.setAttribute("data-layer-type", "text");
-      anchorElement.setAttribute("data-layer-text", data-layer-text);
+      anchorElement.setAttribute("data-layer-text", dataLayerText);
       anchorElement.textContent = navItem.textContent;
       navItem.textContent = "";
 
