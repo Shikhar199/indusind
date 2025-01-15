@@ -63,5 +63,7 @@ export default function decorate(block) {
     containerDiv.appendChild(navElement);
     navOutlineDiv.appendChild(containerDiv);
 
+    row.replaceWith(navOutlineDiv);
+
   });
 }
