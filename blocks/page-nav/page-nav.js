@@ -34,7 +34,7 @@ export default function decorate(block) {
     const uiCarouselPaneDiv = document.createElement("div");
     uiCarouselPaneDiv.className = "ui-carousel-pane";
 
-    uiCarouselPaneDiv.appendChild(listItems);
+    listItems.forEach(listItem => uiCarouselPaneDiv.appendChild(listItem));
     uiCarouselViewportDiv.appendChild(uiCarouselPaneDiv);
     ulItem1.appendChild(uiCarouselViewportDiv);
 
@@ -42,7 +42,7 @@ export default function decorate(block) {
     const ulItem2 = ctaList.querySelectorAll("ul");  //Can be appended later
     ulItem2.className = "nav-cta -horizontal ml-auto";
     const ctaItems = ctaList.querySelectorAll("li");
-    listItems.forEach(cta => {
+    ctaItems.forEach(cta => {
       const ctaAnchorElement = cta.querySelector("a");
       ctaAnchorElement.className = "btn btn-primary-option text-white mb-0 radioyes";
     });
