@@ -3,13 +3,13 @@
 //Jumplink code for page nav block
 document.addEventListener('click', function (event) {
     // Code to remove existing is-active classes
-    if (event.target.tagName === 'A') {
+    if (event.target.tagName === 'LI') {
         // Find all elements with the "is-active" class
         const activeElements = document.querySelectorAll('.is-active');
 
-        // Remove the "is-active" class from each element's parent element
+        // Remove the "is-active" class from each element
         activeElements.forEach(element => {
-                element.parentElement.classList.remove('is-active');
+                element.classList.remove('is-active');
         });
     }
 
