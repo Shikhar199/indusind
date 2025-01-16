@@ -8,9 +8,10 @@ export default function decorate(block){
     console.log(container.children.length);
 
     [...container.children].forEach((row,r)=>{
-        if(row.querySelector('div').children.length===1 && row.querySelector('div').firstElementChild.tagName==='p'){
-            console.log(row.querySelector('div').querySelector('p').textContent.trim());
-        }
+        // if(row.querySelector('div').children.length===1 && row.querySelector('div').firstElementChild.tagName==='p'){
+        //     console.log(row.querySelector('div').querySelector('p').textContent.trim());
+        // }
+        console.log(row.querySelector('div').children.length);
     })
 
     // const productCategoryDiv = createAemElement('div', ['productCategoryGeneric'], null, null);
