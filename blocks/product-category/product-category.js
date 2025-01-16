@@ -7,6 +7,12 @@ export default function decorate(block){
     console.log(container);
     console.log(container.children.length);
 
+    [...container.children].forEach((row,r)=>{
+        if(row.querySelector('div').querySelectorAll('p').length==1){
+            console.log("You hit the bulls eye");
+        }
+    })
+
     // const productCategoryDiv = createAemElement('div', ['productCategoryGeneric'], null, null);
 
     // const parentSection = createAemElement('section', ['card_select_wrap', 'bg-grey', 'product-category-section', 'is-active'], {'data-component': 'blade', 'data-category-path':'/content/indusind-corporate/en/business/accounts/current-account', 'data-alertmsg':'Maximum 3 Cards can be selected'}, null);
