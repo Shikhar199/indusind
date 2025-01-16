@@ -5,6 +5,7 @@ export default function decorate(block){
     container.innerHTML = block.innerHTML;
     block.innerHTML = '';
     console.log(container);
+    console.log(container.children.length);
 
     // const productCategoryDiv = createAemElement('div', ['productCategoryGeneric'], null, null);
 
