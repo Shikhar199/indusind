@@ -72,7 +72,7 @@ export default function decorate(block) {
     componentPageNav.appendChild(navOutlineDiv);
     navSection.appendChild(componentPageNav);
 
-    row.replaceWith(navOutlineDiv);
+    row.replaceWith(navSection);
 
   });
 }
