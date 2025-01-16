@@ -1,15 +1,15 @@
-.page-nav {
+.component-page-nav {
 	width: 100%;
 	position: relative;
 	z-index: 80;
 }
 
-.page-nav .nav-outline {
+.component-page-nav .nav-outline {
 	width: 100%;
 	background-color: #f8f8f8;
 }
 
-.page-nav .nav-container {
+.component-page-nav .nav-container {
 	padding: 0;
 	max-width: 100%;
 	margin-left: auto;
@@ -19,28 +19,28 @@
 	overflow: hidden;
 }
 
-.page-nav .nav-container:after,
-.page-nav .nav-container:before {
+.component-page-nav .nav-container:after,
+.component-page-nav .nav-container:before {
 	content: " ";
 	display: table;
 }
 
-.page-nav .nav-container:after {
+.component-page-nav .nav-container:after {
 	clear: both;
 }
 
-.page-nav nav ul.nav-list li {
+.component-page-nav nav ul.nav-list li {
 	margin: 0;
 	font-size: 1rem;
 	line-height: 1.7;
 }
 
-.page-nav nav ul.nav-list li.is-active a {
+.component-page-nav nav ul.nav-list li.is-active a {
 	font-weight: 700;
 	color: #832625;
 }
 
-.page-nav nav ul.nav-list a {
+.component-page-nav nav ul.nav-list a {
 	padding: 20px 2rem;
 	display: block;
 	color: #000;
@@ -48,11 +48,11 @@
 	position: relative;
 }
 
-.page-nav nav ul.nav-list li:first-child a {
+.component-page-nav nav ul.nav-list li:first-child a {
 	padding-left: 0;
 }
 
-.page-nav nav ul.nav-list a:before {
+.component-page-nav nav ul.nav-list a:before {
 	position: absolute;
 	left: 2rem;
 	bottom: 0;
@@ -63,18 +63,18 @@
 	transition: all 0.3s;
 }
 
-.page-nav nav ul.nav-list li.is-active a:before {
+.component-page-nav nav ul.nav-list li.is-active a:before {
 	width: calc(100% - 4rem);
 	background-color: #f29d39;
 }
 
-.page-nav nav ul.nav-list li:first-child a:before {
+.component-page-nav nav ul.nav-list li:first-child a:before {
 	left: 0;
 	width: calc(100% - 2rem);
 	bottom: -1px;
 }
 
-.page-nav nav ul.nav-list li a:after {
+.component-page-nav nav ul.nav-list li a:after {
 	position: absolute;
 	right: 0;
 	top: 50%;
@@ -86,7 +86,7 @@
 	margin-top: -4px;
 }
 
-.page-nav nav ul.nav-list li:last-child a:after {
+.component-page-nav nav ul.nav-list li:last-child a:after {
 	display: none;
 }
 
@@ -94,7 +94,7 @@
 	border-bottom: solid 1px #ccc;
 }
 
-.page-nav nav ul.nav-list {
+.component-page-nav nav ul.nav-list {
 	padding-top: 0;
 	overflow: hidden;
 	opacity: 0;
@@ -104,14 +104,14 @@
 	transition-timing-function: cubic-bezier(.19, 1, .22, 1);
 }
 
-.page-nav nav ul.nav-cta li {
+.component-page-nav nav ul.nav-cta li {
 	margin-top: 14px;
 	white-space: nowrap;
 	display: flex;
 	margin-right: 10px;
 }
 
-.page-nav nav ul.nav-cta a {
+.component-page-nav nav ul.nav-cta a {
 	margin-right: 5px;
 	font-weight: 700;
 	color: #0064ac;
@@ -122,26 +122,26 @@
 
 @media all and (-ms-high-contrast: none),
 (-ms-high-contrast: active) {
-	.page-nav nav ul.nav-cta a {
+	.component-page-nav nav ul.nav-cta a {
 		padding-top: 8px !important;
 	}
 }
 
-.page-nav nav ul.nav-cta.-vertical {
+.component-page-nav nav ul.nav-cta.-vertical {
 	display: none;
 }
 
-.page-nav.is-active nav ul.nav-list {
+.component-page-nav.is-active nav ul.nav-list {
 	opacity: 1;
 	padding-left: 0;
 	margin-bottom: 0;
 }
 
-.page-nav.is-sticky {
+.component-page-nav.is-sticky {
 	height: auto;
 }
 
-.page-nav.is-sticky .nav-outline {
+.component-page-nav.is-sticky .nav-outline {
 	position: fixed;
 	top: 106px;
 	left: 0;
@@ -150,11 +150,11 @@
 	transform: translateY(0);
 }
 
-.page-nav .ui-carousel-viewport {
+.component-page-nav .ui-carousel-viewport {
 	overflow: visible;
 }
 
-.page-nav .ui-carousel-viewport:before {
+.component-page-nav .ui-carousel-viewport:before {
 	content: '';
 	width: 100%;
 	height: 20px;
@@ -167,16 +167,16 @@
 }
 
 @media screen and (max-width:48em) {
-	.page-nav nav {
+	.component-page-nav nav {
 		font-size: 1em;
 		line-height: 3em;
 	}
 
-	.page-nav nav ul a {
+	.component-page-nav nav ul a {
 		padding: 0 .833333em;
 	}
 
-	.page-nav nav ul.nav-cta {
+	.component-page-nav nav ul.nav-cta {
 		padding-left: .833333em;
 		padding-right: .833333em;
 	}
