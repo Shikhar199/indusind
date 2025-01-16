@@ -39,7 +39,7 @@ export default function decorate(block) {
     ulItem1.appendChild(uiCarouselViewportDiv);
 
     const ctaList = row.children[1];
-    const ulItem2 = ctaList.querySelectorAll("ul");  //Can be appended later
+    const ulItem2 = ctaList.querySelector("ul");  //Can be appended later
     ulItem2.className = "nav-cta -horizontal ml-auto";
     const ctaItems = ctaList.querySelectorAll("li");
     ctaItems.forEach(cta => {
