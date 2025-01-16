@@ -8,10 +8,9 @@ export default function decorate(block){
     console.log(container.children.length);
 
     [...container.children].forEach((row,r)=>{
-        // if(row.querySelector('div').children.length===1 && row.querySelector('div').firstElementChild.tagName==='p'){
-        //     console.log(row.querySelector('div').querySelector('p').textContent.trim());
-        // }
-        console.log(row.querySelector('div').children.length);
+        if(row.querySelector('div').children.length===1 && row.querySelector('div').firstElementChild.tagName==="P"){
+            console.log(row.querySelector('div').firstElementChild.textContent.trim());
+        }
     })
 
     // const productCategoryDiv = createAemElement('div', ['productCategoryGeneric'], null, null);
