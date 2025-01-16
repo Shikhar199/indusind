@@ -9,7 +9,7 @@ export default function decorate(block){
 
     [...container.children].forEach((row,r)=>{
         if(row.querySelector('div').children.length===1 && row.querySelector('div').firstElementChild.tagName==='p'){
-            console.log("You hit the bulls eye");
+            console.log(row.querySelector('div').querySelector('p').textContent.trim());
         }
     })
 
