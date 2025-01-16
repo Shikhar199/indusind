@@ -8,7 +8,7 @@ export default function decorate(block){
     console.log(container.children.length);
 
     [...container.children].forEach((row,r)=>{
-        if(row.querySelector('div').children.length==1 && row.querySelector('div').firstElementChild.tagName==='p'){
+        if(row.querySelector('div').children.length==1){
             console.log("You hit the bulls eye");
         }
     })
