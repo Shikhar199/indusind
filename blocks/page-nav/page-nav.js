@@ -1,5 +1,27 @@
 /* Custom Page Nav block for IBL */
 
+//Jumplink code for page nav block
+document.addEventListener('click', function (event) {
+    // Check if the clicked element is an <a> with a "data-layer-text" attribute
+    if (event.target.tagName === 'A' && event.target.hasAttribute('data-layer-text')) {
+        const layerTextValue = event.target.getAttribute('data-layer-text');
+
+        // Find the element with the matching "data-nav-waypoint" attribute
+        const targetElement = document.querySelector(`[data-nav-waypoint="${layerTextValue}"]`);
+        
+        if (targetElement) {
+            // Prevent the default link behavior
+            event.preventDefault();
+
+            // Scroll to the target element
+            targetElement.scrollIntoView({
+                behavior: 'smooth', // Smooth scrolling
+                block: 'start'     // Scroll to the top of the target element
+            });
+        }
+    }
+});
+
 export default function decorate(block) {
   [...block.children].forEach((row) => {	
     const list = row.children[0];
