@@ -5,10 +5,12 @@ document.addEventListener('click', function (event) {
     // Check if the clicked element is an <a> with a "data-layer-text" attribute
     if (event.target.tagName === 'A' && event.target.hasAttribute('data-layer-text')) {
         const layerTextValue = event.target.getAttribute('data-layer-text');
+        //Add is-active class to the parent of clicked element
+        event.target.parentElement.classList.add("is-active");
 
         // Find the element with the matching "data-nav-waypoint" attribute
         const targetElement = document.querySelector(`[data-nav-waypoint="${layerTextValue}"]`);
-        
+
         if (targetElement) {
             // Prevent the default link behavior
             event.preventDefault();
