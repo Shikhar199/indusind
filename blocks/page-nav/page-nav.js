@@ -15,6 +15,7 @@ export default function decorate(block) {
 
       //Create anchor element with required attributes
       const anchorElement = document.createElement("a");
+      anchorElement.setAttribute("href", "");
       anchorElement.setAttribute("data-hook", "nav-item");
       anchorElement.setAttribute("data-layer-event", "site-interaction");
       anchorElement.setAttribute("data-layer-category", "in-page-menu");
