@@ -2,6 +2,17 @@
 
 //Jumplink code for page nav block
 document.addEventListener('click', function (event) {
+    // Check if the clicked element is an <a> tag
+    if (event.target.tagName === 'A') {
+        // Find all elements with the "is-active" class
+        const activeElements = document.querySelectorAll('.is-active');
+
+        // Remove the "is-active" class from each element
+        activeElements.forEach(element => {
+                element.classList.remove('is-active');
+        });
+    }
+
     // Check if the clicked element is an <a> with a "data-layer-text" attribute
     if (event.target.tagName === 'A' && event.target.hasAttribute('data-layer-text')) {
         const layerTextValue = event.target.getAttribute('data-layer-text');
@@ -24,6 +35,7 @@ document.addEventListener('click', function (event) {
     }
 });
 
+//Code to fetch data from document and create the HTML structure
 export default function decorate(block) {
   [...block.children].forEach((row) => {	
     const list = row.children[0];
