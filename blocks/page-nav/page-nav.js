@@ -5,7 +5,7 @@ document.addEventListener('click', function (event) {
     // Code to remove existing is-active classes
     if (event.target.tagName === 'A') {
         // Find all elements with the "is-active" class
-        const activeElements = document.querySelectorAll('.is-active');
+        const activeElements = document.querySelectorAll('li.is-active');
 
         // Remove the "is-active" class from each element
         activeElements.forEach(element => {
