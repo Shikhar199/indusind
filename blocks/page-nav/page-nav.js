@@ -48,6 +48,13 @@ export default function decorate(block) {
     });
 
     //Creating outer elements of list items
+    const navSection = document.createElement("section");
+    navSection.className = "nav_section";
+
+    const componentPageNav = document.createElement("div");
+    componentPageNav.className = "component-page-nav is-active is-sticky";
+    componentPageNav.setAttribute("data-component", "page-nav");
+
     const navOutlineDiv = document.createElement("div");
     navOutlineDiv.className = "nav-outline";
     navOutlineDiv.setAttribute("data-hook","nav");
@@ -62,6 +69,8 @@ export default function decorate(block) {
     navElement.appendChild(ulItem2);
     containerDiv.appendChild(navElement);
     navOutlineDiv.appendChild(containerDiv);
+    componentPageNav.appendChild(navOutlineDiv);
+    navSection.appendChild(componentPageNav);
 
     row.replaceWith(navOutlineDiv);
 
