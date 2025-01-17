@@ -19,7 +19,7 @@ export default function decorate(block){
 
         if(r%3==1 && row.querySelectorAll('div').length>1){
         // if(r==1){
-            img = row.querySelector('picture');
+            img = row.querySelector('picture').outerHTML;
             let ptags = row.lastElementChild.querySelectorAll('p');
             if(ptags.length===4){
                 console.log("Inside IF");
