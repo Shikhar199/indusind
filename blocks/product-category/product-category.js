@@ -17,7 +17,7 @@ export default function decorate(block){
             cardType = row.querySelector('div').firstElementChild.textContent.trim();
         }
 
-        if(r%3==1 && row.querySelector('div').children.length!==1){
+        if(r%3==1 && row.querySelector('div').children.length>1){
             img = row.querySelector('picture');
             let ptags = row.lastElementChild.querySelectorAll('p');
             if(ptags.length===4){
