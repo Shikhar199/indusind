@@ -42,13 +42,14 @@ export default function decorate(block){
         // if(row.querySelector('div').children.length!==1 && row.querySelector('div').firstElementChild.tagName!=="P"){
         // if(r!==0 && r%3==0 && (row.querySelectorAll('div').length>1||row.querySelector('div').querySelectorAll('p').length>1)){
         if(r!==0 && r%3===0){
+            let tagHtml;
             console.log(img);
             console.log(tag);
             console.log(cardTitle)
             console.log(accountType) 
             console.log(compareText);
             console.log(pagePath);
-            cardHtml = `<div class="col-md-6 col-lg-4">
+            cardHtml = `<div class="col-md-6 col-lg-4" data-cardType="${cardType}">
                 <div class="card card-equal-h h-100 chkboxcard card-border-color mt-2 mb-3">
                 <div class="card-header cat-card-header">
                            
@@ -82,6 +83,11 @@ export default function decorate(block){
                 </div>
             </div>
         </div>`;
+
+        if(tag!==null){
+            tagHtml = `<div class="tag">${tag}</div>`;   
+            cardHtml.innerHTML = tagHtml + cardHtml.innerHTML;  
+        }
 
         console.log(cardHtml);
         }
