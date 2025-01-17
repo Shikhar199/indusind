@@ -26,19 +26,25 @@ export default function decorate(block){
                 tag = ptags[0].textContent.trim().substring(4);
                 compareText = ptags[1].textContent.trim();
                 cardTitle = ptags[2].querySelector('a').textContent.trim();
-                pagePath = ptags[2].querySelector('a').getAttribute('href').substring(23);
+                pagePath = ptags[2].querySelector('a').getAttribute('href').substring(24);
                 accountType = ptags[3].textContent.trim();
             } else if(ptags.length===3){
                 console.log("Inside else");
                 console.log(ptags);
                 compareText = ptags[0].textContent.trim();
                 cardTitle = ptags[1].querySelector('a').textContent.trim();
-                pagePath = ptags[1].querySelector('a').getAttribute('href').substring(23);
+                pagePath = ptags[1].querySelector('a').getAttribute('href').substring(24);
                 accountType = ptags[2].textContent.trim();
             }
         }
 
         if(row.querySelector('div').children.length!==1 && row.querySelector('div').firstElementChild.tagName!=="P"){
+            console.log(img);
+            console.log(tag);
+            console.log(cardTitle)
+            console.log(accountType) 
+            console.log(compareText);
+            console.log(pagePath);
             cardHtml = `<div class="col-md-6 col-lg-4">
                 <div class="card card-equal-h h-100 chkboxcard card-border-color mt-2 mb-3">
                 <div class="card-header cat-card-header">
@@ -74,8 +80,6 @@ export default function decorate(block){
             </div>
         </div>`;
         }
-        console.log(pagePath);
-        console.log(cardHtml);
     })
 
     // const productCategoryDiv = createAemElement('div', ['productCategoryGeneric'], null, null);
