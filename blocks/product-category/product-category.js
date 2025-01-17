@@ -96,7 +96,7 @@ export default function decorate(block){
             const cardHeader = wrapper.querySelector('.card-header');
             if (cardHeader) {
                 // Add the tagElement as the first child of card-header
-                cardHeader.insertBefore(tagElement, cardHeader.firstChild);
+                cardHeader.insertBefore(tagHtml, cardHeader.firstChild);
             }
             cardHtml = wrapper.innerHTML;
 
