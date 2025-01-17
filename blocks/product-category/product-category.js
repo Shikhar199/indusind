@@ -81,6 +81,8 @@ export default function decorate(block){
                 </div>
             </div>
         </div>`;
+
+        console.log(cardHtml);
         }
     })
 
