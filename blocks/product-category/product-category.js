@@ -19,6 +19,7 @@ export default function decorate(block){
         if(r%3==1){
             img = row.querySelector('picture');
             let ptags = row.lastElementChild.querySelectorAll('p');
+            console.log(ptags);
             if(ptags.length===4){
                 tag = ptags[0].textContent.trim().substring(4);
                 compareText = ptags[1].textContent.trim();
