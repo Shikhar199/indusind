@@ -85,8 +85,9 @@ export default function decorate(block){
         </div>`;
 
         if(tag!==null){
+            console.log(tagHtml);
             tagHtml = `<div class="tag">${tag}</div>`;   
-            cardHtml.innerHTML = tagHtml + cardHtml.innerHTML;  
+            cardHtml = tagHtml + cardHtml.innerHTML;  
         }
 
         console.log(cardHtml);
