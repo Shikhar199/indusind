@@ -40,7 +40,7 @@ export default function decorate(block){
         }
 
         // if(row.querySelector('div').children.length!==1 && row.querySelector('div').firstElementChild.tagName!=="P"){
-        if(r!==0 && r%3==0 && row.querySelectorAll('div').length>1){
+        if(r!==0 && r%3==0 && (row.querySelectorAll('div').length>1||row.querySelector('div').querySelectorAll('p').length>1)){
             console.log(img);
             console.log(tag);
             console.log(cardTitle)
