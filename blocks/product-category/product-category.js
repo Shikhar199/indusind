@@ -16,7 +16,7 @@ export default function decorate(block){
             cardType = row.querySelector('div').firstElementChild.textContent.trim();
         }
 
-        if(r%3==1 && row.querySelector('div').children.length!==1 && row.querySelector('div').firstElementChild.tagName!=="P"){
+        if(r%3==1 && row.querySelector('div').children.length!==1){
             img = row.querySelector('picture');
             let ptags = row.lastElementChild.querySelectorAll('p');
             if(ptags.length===4){
@@ -72,9 +72,9 @@ export default function decorate(block){
             </div>
         </div>`;
         }
+        console.log(pagePath);
+        console.log(cardHtml);
     })
-
-    console.log(pagePath);
 
     // const productCategoryDiv = createAemElement('div', ['productCategoryGeneric'], null, null);
 
