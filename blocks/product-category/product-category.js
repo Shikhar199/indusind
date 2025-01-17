@@ -19,14 +19,17 @@ export default function decorate(block){
         if(r%3==1){
             img = row.querySelector('picture');
             let ptags = row.lastElementChild.querySelectorAll('p');
-            console.log(ptags);
             if(ptags.length===4){
+                console.log("Inside IF");
+                console.log(ptags);
                 tag = ptags[0].textContent.trim().substring(4);
                 compareText = ptags[1].textContent.trim();
                 cardTitle = ptags[2].querySelector('a').textContent.trim();
                 pagePath = ptags[2].querySelector('a').getAttribute('href').substring(23);
                 accountType = ptags[3].textContent.trim();
             } else{
+                console.log("Inside else");
+                console.log(ptags);
                 compareText = ptags[0].textContent.trim();
                 cardTitle = ptags[1].querySelector('a').textContent.trim();
                 accountType = ptags[2].textContent.trim();
