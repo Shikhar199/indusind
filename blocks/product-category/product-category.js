@@ -85,8 +85,10 @@ export default function decorate(block){
         </div>`;
 
         if(tag!==null){
+            let tagWrapper = document.createElement('div');
             tagHtml = `<div class="tag">${tag}</div>`;
-            console.log(tagHtml);   
+            tagWrapper.innerHTML = tagHtml;
+            let tagElement = tagWrapper.querySelector('.tag');   
             // cardHtml.innerHTML = tagHtml + cardHtml.innerHTML; 
             // cardHeader.insertBefore(tagHtml, cardHeader.firstElementChild); 
             const wrapper = document.createElement('div');
@@ -96,7 +98,7 @@ export default function decorate(block){
             const cardHeader = wrapper.querySelector('.card-header');
             if (cardHeader) {
                 // Add the tagElement as the first child of card-header
-                cardHeader.insertBefore(tagHtml, cardHeader.firstChild);
+                cardHeader.insertBefore(tagElement, cardHeader.firstChild);
             }
             cardHtml = wrapper.innerHTML;
 
