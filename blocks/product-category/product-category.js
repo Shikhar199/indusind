@@ -16,7 +16,7 @@ export default function decorate(block){
             cardType = row.querySelector('div').firstElementChild.textContent.trim();
         }
 
-        if(r%3==1){
+        if(r%3==1 && row.querySelector('div').children.length!==1 && row.querySelector('div').firstElementChild.tagName!=="P"){
             img = row.querySelector('picture');
             let ptags = row.lastElementChild.querySelectorAll('p');
             if(ptags.length===4){
@@ -36,40 +36,42 @@ export default function decorate(block){
             }
         }
 
-        let cardHtml = `<div class="col-md-6 col-lg-4">
-  <div class="card card-equal-h h-100 chkboxcard card-border-color mt-2 mb-3">
-    <div class="card-header cat-card-header">
+        if(row.querySelector('div').children.length!==1 && row.querySelector('div').firstElementChild.tagName!=="P"){
+            let cardHtml = `<div class="col-md-6 col-lg-4">
+                <div class="card card-equal-h h-100 chkboxcard card-border-color mt-2 mb-3">
+                <div class="card-header cat-card-header">
                            
-      <div class="custom-control custom-checkbox">
-        <span class="addtoCompareTxt">${compareText}</span>
-        <input type="checkbox" class="custom-control-input cardSelectCheck cardsLabel" data-title="${cardTitle}" data-thumbnail="/content/dam/indusind-platform-images/banner-images/indus-select-current-business/Indus-Business_One_Tile.webp" data-page-path="/in/en/business/accounts/current-account/indus-one-business-account.html" data-product-type="${accountType}" id="${cardId}" value="${r+1}">
-        <label class="custom-control-label" for="${cardId}"></label>
-      </div>
-      ${img}
-    </div>
-    <div class="card-body">
-      <h5 class=" h5 mb-1 text-bold">
-        <a href="/in/en/business/accounts/current-account/indus-one-business-account.html" class="card-title text-primary">Indus One Business Account</a>
-      </h5>
-      <p class="card-text mt-2 three-lines"><span class="ellip">Indus One Business account revolutionize the way you manage business finances. Whether you <span class="ellip-line">are a start-up or an established business, our flexible banking solutions are designed with dynamic approach that evolves alongside your business needs. </span></span></p>
-      <h6>Key Features and Benefits</h6>
-      <ul class="list-arrow-bullet pl-0 ml-0">
-        <li>Zero non-maintenance charges.</li>
-        <li>Experience flexibility with 5 tiers benefits to meet evolving business needs.</li>
-        <li>Higher Cash and Non-Cash Transactions.</li>
-        <li>Lower Charges on Trade &amp; Forex, POS and CMS services.</li>
+                <div class="custom-control custom-checkbox">
+                    <span class="addtoCompareTxt">${compareText}</span>
+                    <input type="checkbox" class="custom-control-input cardSelectCheck cardsLabel" data-title="${cardTitle}" data-thumbnail="/content/dam/indusind-platform-images/banner-images/indus-select-current-business/Indus-Business_One_Tile.webp" data-page-path="/in/en/business/accounts/current-account/indus-one-business-account.html" data-product-type="${accountType}" id="${cardId}" value="${r+1}">
+                    <label class="custom-control-label" for="${cardId}"></label>
+                </div>
+                ${img}
+                </div>
+                <div class="card-body">
+                    <h5 class=" h5 mb-1 text-bold">
+                        <a href="/in/en/business/accounts/current-account/indus-one-business-account.html" class="card-title text-primary">Indus One Business Account</a>
+                    </h5>
+                    <p class="card-text mt-2 three-lines"><span class="ellip">Indus One Business account revolutionize the way you manage business finances. Whether you <span class="ellip-line">are a start-up or an established business, our flexible banking solutions are designed with dynamic approach that evolves alongside your business needs. </span></span></p>
+                    <h6>Key Features and Benefits</h6>
+                    <ul class="list-arrow-bullet pl-0 ml-0">
+                        <li>Zero non-maintenance charges.</li>
+                        <li>Experience flexibility with 5 tiers benefits to meet evolving business needs.</li>
+                        <li>Higher Cash and Non-Cash Transactions.</li>
+                        <li>Lower Charges on Trade &amp; Forex, POS and CMS services.</li>
 
-      </ul>
-    </div>
-    <div class="card-footer border-0 pt-0">
-      <div class="d-flex justify-content-between align-items-center">
-        <a href="https://www.indusind.com/in/en/personal/customer-enquiry.html?product=indus-one-business-account&amp;utm_source=IBL&amp;utm_medium=website&amp;utm_campaign=Apply-Now" class="btn py-2 btn-sm btn-primary card-btn text-uppercase  btn-primary-option">
-          Apply Now</a> 
-              <a href="/in/en/business/accounts/current-account/indus-one-business-account.html" class="link_view normal-text">Know More </a>
-        </div>
-    </div>
-  </div>
-</div>`;
+                    </ul>
+                </div>
+                <div class="card-footer border-0 pt-0">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a href="https://www.indusind.com/in/en/personal/customer-enquiry.html?product=indus-one-business-account&amp;utm_source=IBL&amp;utm_medium=website&amp;utm_campaign=Apply-Now" class="btn py-2 btn-sm btn-primary card-btn text-uppercase  btn-primary-option">
+                        Apply Now</a> 
+                        <a href="/in/en/business/accounts/current-account/indus-one-business-account.html" class="link_view normal-text">Know More </a>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+        }
     })
 
     console.log(pagePath);
