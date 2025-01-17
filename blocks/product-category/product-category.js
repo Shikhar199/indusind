@@ -17,8 +17,8 @@ export default function decorate(block){
             cardType = row.querySelector('div').firstElementChild.textContent.trim();
         }
 
-        // if(r%3==1 && row.querySelectorAll('div').length>1){
-        if(r==1){
+        if(r%3==1 && row.querySelectorAll('div').length>1){
+        // if(r==1){
             img = row.querySelector('picture');
             let ptags = row.lastElementChild.querySelectorAll('p');
             if(ptags.length===4){
@@ -40,7 +40,7 @@ export default function decorate(block){
         }
 
         // if(row.querySelector('div').children.length!==1 && row.querySelector('div').firstElementChild.tagName!=="P"){
-        if(r==1){
+        if(r!==0 && r%3==0 && row.querySelectorAll('div').length>1){
             console.log(img);
             console.log(tag);
             console.log(cardTitle)
