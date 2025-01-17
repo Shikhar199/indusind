@@ -87,7 +87,9 @@ export default function decorate(block){
         if(tag!==null){
             tagHtml = `<div class="tag">${tag}</div>`;
             console.log(tagHtml);   
-            cardHtml.innerHTML = tagHtml + cardHtml.innerHTML;  
+            let cardHeader = cardHtml.querySelector('.card-header');
+            // cardHtml.innerHTML = tagHtml + cardHtml.innerHTML; 
+            cardHeader.insertBefore(tagHtml, cardHeader.firstElementChild); 
         }
 
         console.log(cardHtml);
