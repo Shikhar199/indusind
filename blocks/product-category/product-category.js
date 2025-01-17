@@ -87,11 +87,22 @@ export default function decorate(block){
         if(tag!==null){
             tagHtml = `<div class="tag">${tag}</div>`;
             console.log(tagHtml);   
-            cardHtml.innerHTML = tagHtml + cardHtml.innerHTML; 
+            // cardHtml.innerHTML = tagHtml + cardHtml.innerHTML; 
             // cardHeader.insertBefore(tagHtml, cardHeader.firstElementChild); 
+            const wrapper = document.createElement('div');
+            wrapper.innerHTML = cardHtml;
+
+            // Locate the card-header element
+            const cardHeader = wrapper.querySelector('.card-header');
+            if (cardHeader) {
+                // Add the tagElement as the first child of card-header
+                cardHeader.insertBefore(tagElement, cardHeader.firstChild);
+            }
+            cardHtml = wrapper.innerHTML;
+
+            console.log(cardHtml);
         }
 
-        console.log(cardHtml);
         }
     })
 
