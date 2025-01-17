@@ -27,7 +27,7 @@ export default function decorate(block){
                 cardTitle = ptags[2].querySelector('a').textContent.trim();
                 pagePath = ptags[2].querySelector('a').getAttribute('href').substring(23);
                 accountType = ptags[3].textContent.trim();
-            } else{
+            } else if(ptags.length===3){
                 console.log("Inside else");
                 console.log(ptags);
                 compareText = ptags[0].textContent.trim();
