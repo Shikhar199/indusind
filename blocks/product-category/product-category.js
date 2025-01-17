@@ -6,13 +6,13 @@ export default function decorate(block){
     block.innerHTML = '';
     console.log(container);
     let cardType;
+    let img,tag;
+    let cardTitle, accountType, compareText;
+    let pagePath;
+    let cardHtml, cardId;
 
     [...container.children].forEach((row,r)=>{
-        let img,tag;
-        let cardTitle, accountType, compareText;
-        let pagePath;
-        let cardHtml;
-        let cardId = "compare_check"+(r+1);
+        cardId = "compare_check"+(r+1);
         if(row.querySelector('div').children.length===1 && row.querySelector('div').firstElementChild.tagName==="P"){
             cardType = row.querySelector('div').firstElementChild.textContent.trim();
         }
