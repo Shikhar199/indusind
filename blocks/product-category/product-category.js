@@ -362,7 +362,13 @@ export default function decorate(block){
 function createCards(divs){
     console.log("Divs hi Divs");
     console.log(divs);
-    let cardType;
+    let cardType, typeIdx;
+    let img,tag;
+    let cardTitle, accountType, compareText;
+    let pagePath, ptagText;
+    let cardHtml, cardId;
+    let cardBodyTitleTag, cardh6Title, unorderedList;
+    let applyNowLink, knowMoreLink;
 
     for(let i=0; i< divs.length; i++){
         if(i==0){
@@ -370,6 +376,26 @@ function createCards(divs){
         }
         else if(i==1){
             console.log(divs[i]);
+            console.log(divs[i].querySelector('picture'));
+            img = divs[i].querySelector('picture').outerHTML;
+            console.log(img);
+            let ptags = divs[i].querySelectorAll('p');
+            if(ptags.length===4){
+                console.log("Inside IF");
+                console.log(ptags);
+                tag = ptags[0].textContent.trim().substring(4);
+                compareText = ptags[1].textContent.trim();
+                cardTitle = ptags[2].querySelector('a').textContent.trim();
+                pagePath = ptags[2].querySelector('a').getAttribute('href').substring(25);
+                accountType = ptags[3].textContent.trim();
+            } else if(ptags.length===3){
+                console.log("Inside else");
+                console.log(ptags);
+                compareText = ptags[0].textContent.trim();
+                cardTitle = ptags[1].querySelector('a').textContent.trim();
+                pagePath = ptags[1].querySelector('a').getAttribute('href').substring(25);
+                accountType = ptags[2].textContent.trim();
+            }
         }
     }
 
