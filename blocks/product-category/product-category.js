@@ -236,9 +236,10 @@ function createCards(divs, rowDiv, tabPanelDiv, tabPanelAllDiv){
                         cardHeader.insertBefore(tagElement, cardHeader.firstChild);
                     }
                 }
-            tabPanelAllDiv.appendChild(wrapper.querySelector('.col-md-6'));    
+            let rowElement = wrapper.querySelector('.col-md-6');
+            tabPanelAllDiv.appendChild(rowElement);    
         
-            rowDiv.appendChild(wrapper.querySelector('.col-md-6'));
+            rowDiv.appendChild(rowElement);
             tabPanelDiv.appendChild(rowDiv);
             // tabPanelAllDiv.appendChild(rowDiv);        
         }
