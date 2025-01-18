@@ -369,16 +369,16 @@ function createCards(divs){
     let cardHtml, cardId;
     let cardBodyTitleTag, cardh6Title, unorderedList;
     let applyNowLink, knowMoreLink;
+    let id = 1;
+    cardId = "compare_check"+id;
 
     for(let i=0; i< divs.length; i++){
         if(i==0){
             cardType = divs[i].querySelector('p').textContent.trim();
         }
-        else if(i==1){
+        else if(i%3===1){
             console.log(divs[i]);
-            console.log(divs[i].querySelector('picture'));
-            img = divs[i].querySelector('picture').outerHTML;
-            console.log(img);
+            img = divs[i].querySelector('picture');
             let ptags = divs[i].querySelectorAll('p');
             if(ptags.length===4){
                 console.log("Inside IF");
@@ -396,6 +396,23 @@ function createCards(divs){
                 pagePath = ptags[1].querySelector('a').getAttribute('href').substring(25);
                 accountType = ptags[2].textContent.trim();
             }
+            id++;
+        } 
+        else if(i%3===2){
+            cardBodyTitleTag = divs[i].querySelector('h5');
+            cardBodyTitleTag.classList.add('h5', 'mb-1', 'text-bold');
+            cardBodyTitleTag.querySelector('a').classList.add('card-title', 'text-primary');
+            ptagText = divs[i].querySelector('p').textContent.trim();
+            cardh6Title = divs[i].querySelector('h6');
+            unorderedList = divs[i].querySelector('ul');
+            unorderedList.classList.add('list-arrow-bullet', 'pl-0', 'ml-0');
+        }
+        else if(i%3==0){
+            let footerLinks = divs[i].querySelectorAll('p');
+            applyNowLink = footerLinks[0].querySelector('a');
+            knowMoreLink = footerLinks[1].querySelector('a');
+            console.log(applyNowLink);
+            console.log(knowMoreLink);
         }
     }
 
