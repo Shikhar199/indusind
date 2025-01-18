@@ -400,7 +400,7 @@ function createCards(divs,rowDiv){
             knowMoreLink = footerLinks[1].querySelector('a');
             applyNowLink.classList.add('btn', 'py-2', 'btn-sm', 'btn-primary', 'card-btn', 'text-uppercase', 'btn-primary-option');
             knowMoreLink.classList.add('link_view', 'normal-text');
-            cardHtml = `<div class="col-md-6 col-lg-4" data-cardType="${cardType}">
+            cardHtml = `<div class="col-md-6 col-lg-4" data-cardType="${cardType} all">
                             <div class="card card-equal-h h-100 chkboxcard card-border-color mt-2 mb-3">
                             <div class="card-header cat-card-header">
                
@@ -419,8 +419,8 @@ function createCards(divs,rowDiv){
                             </div>
                             <div class="card-footer border-0 pt-0">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    ${applyNowLink}
-                                    ${knowMoreLink}
+                                    ${applyNowLink.outerHTML}
+                                    ${knowMoreLink.outerHTML}
                                 </div>
                             </div>
                         </div>
