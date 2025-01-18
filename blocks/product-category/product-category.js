@@ -29,14 +29,14 @@ export default function decorate(block){
                 tag = ptags[0].textContent.trim().substring(4);
                 compareText = ptags[1].textContent.trim();
                 cardTitle = ptags[2].querySelector('a').textContent.trim();
-                pagePath = ptags[2].querySelector('a').getAttribute('href').substring(24);
+                pagePath = ptags[2].querySelector('a').getAttribute('href').substring(25);
                 accountType = ptags[3].textContent.trim();
             } else if(ptags.length===3){
                 console.log("Inside else");
                 console.log(ptags);
                 compareText = ptags[0].textContent.trim();
                 cardTitle = ptags[1].querySelector('a').textContent.trim();
-                pagePath = ptags[1].querySelector('a').getAttribute('href').substring(24);
+                pagePath = ptags[1].querySelector('a').getAttribute('href').substring(25);
                 accountType = ptags[2].textContent.trim();
             }
         }
@@ -51,8 +51,8 @@ export default function decorate(block){
         }
         else if(r%3==0){
             let footerLinks = row.querySelectorAll('p');
-            applyNowLink = footerLinks[0];
-            knowMoreLink = footerLinks[1];
+            applyNowLink = footerLinks[0].querySelector('a');
+            knowMoreLink = footerLinks[1].querySelector('a');
             console.log(applyNowLink);
             console.log(knowMoreLink);
         }
