@@ -30,7 +30,7 @@ export default function decorate(block){
         for(let j=start ; j<end; j++){
             divsToPass.push(allDivs[j]);
         }
-        createCards(divs);
+        createCards(divsToPass);
     }
 
     // for(let i=0; i<brea
