@@ -148,7 +148,8 @@ function createCards(divs, rowDiv, tabPanelDiv, tabPanelAllDiv){
     let cardHtml, cardId;
     let cardBodyTitleTag, cardh6Title, unorderedList;
     let applyNowLink, knowMoreLink;
-    let id = 1, wrapper;
+    let id = 1;
+    let wrapper;
     cardId = "compare_check"+id;
 
     for(let i=0; i< divs.length; i++){
@@ -238,7 +239,7 @@ function createCards(divs, rowDiv, tabPanelDiv, tabPanelAllDiv){
         
             rowDiv.appendChild(wrapper.querySelector('.col-md-6'));
             tabPanelDiv.appendChild(rowDiv);
-            tabPanelAllDiv.appendChild(rowDiv);        
+            // tabPanelAllDiv.appendChild(rowDiv);        
         }
     }
     return tabPanelDiv;
