@@ -386,12 +386,12 @@ function createCards(divs,rowDiv){
             id++;
         } 
         else if(i%3===2){
-            cardBodyTitleTag = divs[i].querySelector('h5');
+            cardBodyTitleTag = divs[i].querySelector('h5').outerHTML;
             cardBodyTitleTag.classList.add('h5', 'mb-1', 'text-bold');
             cardBodyTitleTag.querySelector('a').classList.add('card-title', 'text-primary');
             ptagText = divs[i].querySelector('p').textContent.trim();
             cardh6Title = divs[i].querySelector('h6');
-            unorderedList = divs[i].querySelector('ul');
+            unorderedList = divs[i].querySelector('ul').outerHTML;
             unorderedList.classList.add('list-arrow-bullet', 'pl-0', 'ml-0');
         }
         else if(i%3==0){
