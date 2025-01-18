@@ -346,7 +346,7 @@ export default function decorate(block){
 }
 
 
-function createCards(divs){
+function createCards(divs,rowDiv){
     console.log("Divs hi Divs");
     console.log(divs);
     let cardType, typeIdx;
