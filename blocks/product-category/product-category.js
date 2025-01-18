@@ -38,7 +38,7 @@ export default function decorate(block){
         tabPanelDiv = createAemElement('div', ['tab-pane', 'fade', 'active', 'show',  'position-relative'], {'role':'tabpanel', 'aria-labelledby':'card-recommended-tab'}, "card-recommended");
         const slicedDivs = allDivs.slice(start, end); // Extract divs within the range
         const cards = createCards(slicedDivs, rowDiv, tabPanelDiv, tabPanelAllDiv);
-
+        console.log(cards);
         tabContentDiv.appendChild(cards);
     }
 
@@ -49,6 +49,7 @@ export default function decorate(block){
         rowDiv.classList.add('row');
         const slicedDivs = allDivs.slice(breakPts[breakPts.length - 1], totalDivs);
         const cards = createCards(slicedDivs, rowDiv, tabPanelDiv, tabPanelAllDiv);
+        console.log(cards);
         tabContentDiv.appendChild(cards);
     }
 
