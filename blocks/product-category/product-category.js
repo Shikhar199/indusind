@@ -69,7 +69,10 @@ export default function decorate(block){
         </li>
     </ul>`
 
-    tabContainerDiv.appendChild(tabHtml.outerHTML);
+    const tabWrapper = document.createElement('div');
+    tabWrapper.innerHTML = tabHtml;
+
+    tabContainerDiv.appendChild(tabWrapper.querySelector('ul'));
     tabContainerDiv.appendChild(tabContentDiv);
 
     const productCategoryDiv = createAemElement('div', ['productCategoryGeneric'], null, null);
