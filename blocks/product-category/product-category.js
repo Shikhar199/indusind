@@ -5,117 +5,147 @@ export default function decorate(block){
     container.innerHTML = block.innerHTML;
     block.innerHTML = '';
     console.log(container);
-    let cardType;
+    let cardType, typeIdx;
     let img,tag;
     let cardTitle, accountType, compareText;
     let pagePath, ptagText;
     let cardHtml, cardId;
     let cardBodyTitleTag, cardh6Title, unorderedList;
     let applyNowLink, knowMoreLink;
+    let breakPts;
+    let totalDivs = container.children.length;
+    let allDivs = container.querySelectorAll('div');
 
     [...container.children].forEach((row,r)=>{
-        cardId = "compare_check"+(r+1);
+
         if(row.querySelector('div').children.length===1 && row.querySelector('div').firstElementChild.tagName==="P"){
-            cardType = row.querySelector('div').firstElementChild.textContent.trim();
+            breakPts.push(r);
         }
+    }) 
 
-        if(r%3==1 && row.querySelectorAll('div').length>1){
-        // if(r==1){
-            img = row.querySelector('picture').outerHTML;
-            let ptags = row.lastElementChild.querySelectorAll('p');
-            if(ptags.length===4){
-                console.log("Inside IF");
-                console.log(ptags);
-                tag = ptags[0].textContent.trim().substring(4);
-                compareText = ptags[1].textContent.trim();
-                cardTitle = ptags[2].querySelector('a').textContent.trim();
-                pagePath = ptags[2].querySelector('a').getAttribute('href').substring(25);
-                accountType = ptags[3].textContent.trim();
-            } else if(ptags.length===3){
-                console.log("Inside else");
-                console.log(ptags);
-                compareText = ptags[0].textContent.trim();
-                cardTitle = ptags[1].querySelector('a').textContent.trim();
-                pagePath = ptags[1].querySelector('a').getAttribute('href').substring(25);
-                accountType = ptags[2].textContent.trim();
-            }
+    for(let i=0; i<breakPts.length; i++){
+        let start = breakPts[i];
+        let end = i !== breakPts.length-1 ? breakPts[i+1] : totalDivs; 
+        let divsToPass;
+        for(j=start ; j<end; j++){
+            divsToPass.push(allDivs[j]);
         }
-        else if(r%3==2){
-            cardBodyTitleTag = row.querySelector('h5');
-            cardBodyTitleTag.classList.add('h5', 'mb-1', 'text-bold');
-            cardBodyTitleTag.querySelector('a').classList.add('card-title', 'text-primary');
-            ptagText = row.querySelector('p').textContent.trim();
-            cardh6Title = row.querySelector('h6');
-            unorderedList = row.querySelector('ul');
-            unorderedList.classList.add('list-arrow-bullet', 'pl-0', 'ml-0');
-        }
-        else if(r%3==0){
-            let footerLinks = row.querySelectorAll('p');
-            applyNowLink = footerLinks[0].querySelector('a');
-            knowMoreLink = footerLinks[1].querySelector('a');
-            console.log(applyNowLink);
-            console.log(knowMoreLink);
-        }
+        createCards(divs);
+    }
 
-        // if(row.querySelector('div').children.length!==1 && row.querySelector('div').firstElementChild.tagName!=="P"){
-        // if(r!==0 && r%3==0 && (row.querySelectorAll('div').length>1||row.querySelector('div').querySelectorAll('p').length>1)){
-        if(r!==0 && r%3===0){
-            let tagHtml;
-            console.log(img);
-            console.log(tag);
-            console.log(cardTitle)
-            console.log(accountType) 
-            console.log(compareText);
-            console.log(pagePath);
-            cardHtml = `<div class="col-md-6 col-lg-4" data-cardType="${cardType}">
-                <div class="card card-equal-h h-100 chkboxcard card-border-color mt-2 mb-3">
-                <div class="card-header cat-card-header">
+    // for(let i=0; i<brea
+    // 
+    // kPts.length; i++ ){
+    //     let st = 0;
+    //     let end = i==breakPts.length-1 ? totalDivs-st : breakPts[i+1];
+
+    //     for(let j=st; j<end; j++){
+    //         if(j%3==1){
+    //             img = allDivs[j].querySelector('picture').outerHTML;
+    //         }
+    //     }
+    // }
+        // cardId = "compare_check"+(r+1);
+        // if(row.querySelector('div').children.length===1 && row.querySelector('div').firstElementChild.tagName==="P"){
+        //     cardType = row.querySelector('div').firstElementChild.textContent.trim();
+        //     typeIdx = r;
+        // }
+
+        // if(r%3==1 && row.querySelectorAll('div').length>1){
+        // // if(r==1){
+        //     img = row.querySelector('picture').outerHTML;
+        //     let ptags = row.lastElementChild.querySelectorAll('p');
+        //     if(ptags.length===4){
+        //         console.log("Inside IF");
+        //         console.log(ptags);
+        //         tag = ptags[0].textContent.trim().substring(4);
+        //         compareText = ptags[1].textContent.trim();
+        //         cardTitle = ptags[2].querySelector('a').textContent.trim();
+        //         pagePath = ptags[2].querySelector('a').getAttribute('href').substring(25);
+        //         accountType = ptags[3].textContent.trim();
+        //     } else if(ptags.length===3){
+        //         console.log("Inside else");
+        //         console.log(ptags);
+        //         compareText = ptags[0].textContent.trim();
+        //         cardTitle = ptags[1].querySelector('a').textContent.trim();
+        //         pagePath = ptags[1].querySelector('a').getAttribute('href').substring(25);
+        //         accountType = ptags[2].textContent.trim();
+        //     }
+        // }
+        // else if(r%3==2){
+        //     cardBodyTitleTag = row.querySelector('h5');
+        //     cardBodyTitleTag.classList.add('h5', 'mb-1', 'text-bold');
+        //     cardBodyTitleTag.querySelector('a').classList.add('card-title', 'text-primary');
+        //     ptagText = row.querySelector('p').textContent.trim();
+        //     cardh6Title = row.querySelector('h6');
+        //     unorderedList = row.querySelector('ul');
+        //     unorderedList.classList.add('list-arrow-bullet', 'pl-0', 'ml-0');
+        // }
+        // else if(r%3==0){
+        //     let footerLinks = row.querySelectorAll('p');
+        //     applyNowLink = footerLinks[0].querySelector('a');
+        //     knowMoreLink = footerLinks[1].querySelector('a');
+        //     console.log(applyNowLink);
+        //     console.log(knowMoreLink);
+        // }
+
+        // // if(row.querySelector('div').children.length!==1 && row.querySelector('div').firstElementChild.tagName!=="P"){
+        // // if(r!==0 && r%3==0 && (row.querySelectorAll('div').length>1||row.querySelector('div').querySelectorAll('p').length>1)){
+        // if(r!==0 && r%3===0){
+        //     let tagHtml;
+        //     console.log(img);
+        //     console.log(tag);
+        //     console.log(cardTitle)
+        //     console.log(accountType) 
+        //     console.log(compareText);
+        //     console.log(pagePath);
+        //     cardHtml = `<div class="col-md-6 col-lg-4" data-cardType="${cardType}">
+        //         <div class="card card-equal-h h-100 chkboxcard card-border-color mt-2 mb-3">
+        //         <div class="card-header cat-card-header">
                            
-                <div class="custom-control custom-checkbox">
-                    <span class="addtoCompareTxt">${compareText}</span>
-                    <input type="checkbox" class="custom-control-input cardSelectCheck cardsLabel" data-title="${cardTitle}" data-thumbnail="/content/dam/indusind-platform-images/banner-images/indus-select-current-business/Indus-Business_One_Tile.webp" data-page-path="/in/en/business/accounts/current-account/indus-one-business-account.html" data-product-type="${accountType}" id="${cardId}" value="${r+1}">
-                    <label class="custom-control-label" for="${cardId}"></label>
-                </div>
-                ${img}
-                </div>
-                <div class="card-body">
-                    ${cardBodyTitleTag}
-                    <p class="card-text mt-2 three-lines"><span class="ellip">${ptagText}</span></span></p>
-                    ${cardh6Title}
-                    ${unorderedList}
-                </div>
-                <div class="card-footer border-0 pt-0">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <a href="https://www.indusind.com/in/en/personal/customer-enquiry.html?product=indus-one-business-account&amp;utm_source=IBL&amp;utm_medium=website&amp;utm_campaign=Apply-Now" class="btn py-2 btn-sm btn-primary card-btn text-uppercase  btn-primary-option">
-                        Apply Now</a> 
-                        <a href="/in/en/business/accounts/current-account/indus-one-business-account.html" class="link_view normal-text">Know More </a>
-                    </div>
-                </div>
-            </div>
-        </div>`;
+        //         <div class="custom-control custom-checkbox">
+        //             <span class="addtoCompareTxt">${compareText}</span>
+        //             <input type="checkbox" class="custom-control-input cardSelectCheck cardsLabel" data-title="${cardTitle}" data-thumbnail="/content/dam/indusind-platform-images/banner-images/indus-select-current-business/Indus-Business_One_Tile.webp" data-page-path="/in/en/business/accounts/current-account/indus-one-business-account.html" data-product-type="${accountType}" id="${cardId}" value="${r+1}">
+        //             <label class="custom-control-label" for="${cardId}"></label>
+        //         </div>
+        //         ${img}
+        //         </div>
+        //         <div class="card-body">
+        //             ${cardBodyTitleTag}
+        //             <p class="card-text mt-2 three-lines"><span class="ellip">${ptagText}</span></span></p>
+        //             ${cardh6Title}
+        //             ${unorderedList}
+        //         </div>
+        //         <div class="card-footer border-0 pt-0">
+        //             <div class="d-flex justify-content-between align-items-center">
+        //                 <a href="https://www.indusind.com/in/en/personal/customer-enquiry.html?product=indus-one-business-account&amp;utm_source=IBL&amp;utm_medium=website&amp;utm_campaign=Apply-Now" class="btn py-2 btn-sm btn-primary card-btn text-uppercase  btn-primary-option">
+        //                 Apply Now</a> 
+        //                 <a href="/in/en/business/accounts/current-account/indus-one-business-account.html" class="link_view normal-text">Know More </a>
+        //             </div>
+        //         </div>
+        //     </div>
+        // </div>`;
 
-        if(tag!==null){
-            let tagWrapper = document.createElement('div');
-            tagHtml = `<div class="tag">${tag}</div>`;
-            tagWrapper.innerHTML = tagHtml;
-            let tagElement = tagWrapper.querySelector('.tag');   
-            // cardHtml.innerHTML = tagHtml + cardHtml.innerHTML; 
-            // cardHeader.insertBefore(tagHtml, cardHeader.firstElementChild); 
-            const wrapper = document.createElement('div');
-            wrapper.innerHTML = cardHtml;
+        // if(tag!==null){
+        //     let tagWrapper = document.createElement('div');
+        //     tagHtml = `<div class="tag">${tag}</div>`;
+        //     tagWrapper.innerHTML = tagHtml;
+        //     let tagElement = tagWrapper.querySelector('.tag');   
+        //     // cardHtml.innerHTML = tagHtml + cardHtml.innerHTML; 
+        //     // cardHeader.insertBefore(tagHtml, cardHeader.firstElementChild); 
+        //     const wrapper = document.createElement('div');
+        //     wrapper.innerHTML = cardHtml;
 
-            // Locate the card-header element
-            const cardHeader = wrapper.querySelector('.card-header');
-            if (cardHeader) {
-                // Add the tagElement as the first child of card-header
-                cardHeader.insertBefore(tagElement, cardHeader.firstChild);
-            }
-            cardHtml = wrapper.innerHTML;
-        }
+        //     // Locate the card-header element
+        //     const cardHeader = wrapper.querySelector('.card-header');
+        //     if (cardHeader) {
+        //         // Add the tagElement as the first child of card-header
+        //         cardHeader.insertBefore(tagElement, cardHeader.firstChild);
+        //     }
+        //     cardHtml = wrapper.innerHTML;
+        // }
 
-        }
-    })
-
+        // }
     // const productCategoryDiv = createAemElement('div', ['productCategoryGeneric'], null, null);
 
     // const parentSection = createAemElement('section', ['card_select_wrap', 'bg-grey', 'product-category-section', 'is-active'], {'data-component': 'blade', 'data-category-path':'/content/indusind-corporate/en/business/accounts/current-account', 'data-alertmsg':'Maximum 3 Cards can be selected'}, null);
@@ -350,6 +380,11 @@ export default function decorate(block){
     // console.log(productCategoryDiv);
 }
 
+
+function createCards(divs){
+    console.log("Divs hi Divs");
+    console.log(divs);
+}
 
 // function getScript(){
 //     // Create a script element
