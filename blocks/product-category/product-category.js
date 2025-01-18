@@ -104,33 +104,6 @@ export default function decorate(block){
         //     console.log(accountType) 
         //     console.log(compareText);
         //     console.log(pagePath);
-        //     cardHtml = `<div class="col-md-6 col-lg-4" data-cardType="${cardType}">
-        //         <div class="card card-equal-h h-100 chkboxcard card-border-color mt-2 mb-3">
-        //         <div class="card-header cat-card-header">
-                           
-        //         <div class="custom-control custom-checkbox">
-        //             <span class="addtoCompareTxt">${compareText}</span>
-        //             <input type="checkbox" class="custom-control-input cardSelectCheck cardsLabel" data-title="${cardTitle}" data-thumbnail="/content/dam/indusind-platform-images/banner-images/indus-select-current-business/Indus-Business_One_Tile.webp" data-page-path="/in/en/business/accounts/current-account/indus-one-business-account.html" data-product-type="${accountType}" id="${cardId}" value="${r+1}">
-        //             <label class="custom-control-label" for="${cardId}"></label>
-        //         </div>
-        //         ${img}
-        //         </div>
-        //         <div class="card-body">
-        //             ${cardBodyTitleTag}
-        //             <p class="card-text mt-2 three-lines"><span class="ellip">${ptagText}</span></span></p>
-        //             ${cardh6Title}
-        //             ${unorderedList}
-        //         </div>
-        //         <div class="card-footer border-0 pt-0">
-        //             <div class="d-flex justify-content-between align-items-center">
-        //                 <a href="https://www.indusind.com/in/en/personal/customer-enquiry.html?product=indus-one-business-account&amp;utm_source=IBL&amp;utm_medium=website&amp;utm_campaign=Apply-Now" class="btn py-2 btn-sm btn-primary card-btn text-uppercase  btn-primary-option">
-        //                 Apply Now</a> 
-        //                 <a href="/in/en/business/accounts/current-account/indus-one-business-account.html" class="link_view normal-text">Know More </a>
-        //             </div>
-        //         </div>
-        //     </div>
-        // </div>`;
-
         // if(tag!==null){
         //     let tagWrapper = document.createElement('div');
         //     tagHtml = `<div class="tag">${tag}</div>`;
@@ -389,6 +362,40 @@ export default function decorate(block){
 function createCards(divs){
     console.log("Divs hi Divs");
     console.log(divs);
+    let cardType;
+
+    for(let i=0; i< divs.length; i++){
+        if(i==0){
+            console.log(divs[i]);
+        }
+    }
+
+    cardHtml = `<div class="col-md-6 col-lg-4" data-cardType="${cardType}">
+    <div class="card card-equal-h h-100 chkboxcard card-border-color mt-2 mb-3">
+    <div class="card-header cat-card-header">
+               
+    <div class="custom-control custom-checkbox">
+        <span class="addtoCompareTxt">${compareText}</span>
+        <input type="checkbox" class="custom-control-input cardSelectCheck cardsLabel" data-title="${cardTitle}" data-thumbnail="/content/dam/indusind-platform-images/banner-images/indus-select-current-business/Indus-Business_One_Tile.webp" data-page-path="/in/en/business/accounts/current-account/indus-one-business-account.html" data-product-type="${accountType}" id="${cardId}" value="${r+1}">
+        <label class="custom-control-label" for="${cardId}"></label>
+    </div>
+    ${img}
+    </div>
+    <div class="card-body">
+        ${cardBodyTitleTag}
+        <p class="card-text mt-2 three-lines"><span class="ellip">${ptagText}</span></span></p>
+        ${cardh6Title}
+        ${unorderedList}
+    </div>
+    <div class="card-footer border-0 pt-0">
+        <div class="d-flex justify-content-between align-items-center">
+            <a href="https://www.indusind.com/in/en/personal/customer-enquiry.html?product=indus-one-business-account&amp;utm_source=IBL&amp;utm_medium=website&amp;utm_campaign=Apply-Now" class="btn py-2 btn-sm btn-primary card-btn text-uppercase  btn-primary-option">
+            Apply Now</a> 
+            <a href="/in/en/business/accounts/current-account/indus-one-business-account.html" class="link_view normal-text">Know More </a>
+        </div>
+    </div>
+</div>
+</div>`;
 }
 
 // function getScript(){
