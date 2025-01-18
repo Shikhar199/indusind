@@ -236,6 +236,7 @@ function createCards(divs, rowDiv, tabPanelDiv, tabPanelAllDiv){
                         cardHeader.insertBefore(tagElement, cardHeader.firstChild);
                     }
                 }
+            tabPanelAllDiv.appendChild(wrapper.querySelector('.col-md-6'));    
         
             rowDiv.appendChild(wrapper.querySelector('.col-md-6'));
             tabPanelDiv.appendChild(rowDiv);
