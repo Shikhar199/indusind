@@ -44,7 +44,7 @@ export default function decorate(block) {
       postBodyDiv.appendChild(h6);
       newsContainer.appendChild(postBodyDiv);
 
-      latestNewsDiv.insertAdjacentHTML("beforeend", newsContainer);
+      latestNewsDiv.appendChild(newsContainer);
     });
 
     //Setup bottom CTA
