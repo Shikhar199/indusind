@@ -31,7 +31,7 @@ export default function decorate(block) {
           </div>
         </div>
       `;
-      latestNewsDiv.appendChild(newsContainer);
+      latestNewsDiv.insertAdjacentHTML("beforeend", newsContainer);
     });
 
     //Setup bottom CTA
@@ -253,7 +253,7 @@ export default function decorate(block) {
     `;
 
     //Append colSm9Div after col-sm-3 in the outer structure
-    outerMostStructure.querySelector('div.row').appendChild(colSm9Div);
+    outerMostStructure.querySelector('div.row').insertAdjacentElement("beforeend", colSm9Div);
 
     row.replaceWith(outerMostStructure);
 
