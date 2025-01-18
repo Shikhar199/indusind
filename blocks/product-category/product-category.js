@@ -8,7 +8,7 @@ export default function decorate(block){
     let cardType;
     let img,tag;
     let cardTitle, accountType, compareText;
-    let pagePath;
+    let pagePath, ptagText;
     let cardHtml, cardId;
     let cardBodyTitleTag, cardh6Title, unorderedList;
     let applyNowLink, knowMoreLink;
