@@ -15,6 +15,8 @@ export default function decorate(block){
     let breakPts=[];
     let totalDivs = container.children.length;
     let allDivs = Array.from(container.children);
+    const rowDiv = document.createElement('div');
+    rowDiv.classList.add('row');
 
     console.log(allDivs);
     [...container.children].forEach((row,r)=>{
@@ -28,15 +30,19 @@ export default function decorate(block){
         const start = breakPts[i];
         const end = breakPts[i + 1];
         const slicedDivs = allDivs.slice(start, end); // Extract divs within the range
-        createCards(slicedDivs);
+        const cards = createCards(slicedDivs);
+        rowDiv.appendChild(cards);
         // createCards(divsToPass);
     }
     
     // Handle the remaining divs after the last breakpoint
     if (breakPts[breakPts.length - 1] < totalDivs) {
         const slicedDivs = allDivs.slice(breakPts[breakPts.length - 1], totalDivs);
-        createCards(slicedDivs);
+        const cards = createCards(slicedDivs);
+        rowDiv.appendChild(cards);
     }
+
+    console.log(rowDiv);
         // if(r%3==1 && row.querySelectorAll('div').length>1){
         // // if(r==1){
         //     img = row.querySelector('picture').outerHTML;
@@ -440,6 +446,8 @@ function createCards(divs){
             cardHtml = wrapper.innerHTML;
         }
     }
+
+    return cardHtml;
 
 }
 
