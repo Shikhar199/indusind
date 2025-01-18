@@ -23,6 +23,8 @@ export default function decorate(block){
         }
     }) 
 
+    console.log(breakPts);
+
     for(let i=0; i<breakPts.length; i++){
         let start = breakPts[i];
         let end = i !== breakPts.length-1 ? breakPts[i+1] : totalDivs; 
