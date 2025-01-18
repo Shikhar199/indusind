@@ -26,7 +26,7 @@ export default function decorate(block){
     for(let i=0; i<breakPts.length; i++){
         let start = breakPts[i];
         let end = i !== breakPts.length-1 ? breakPts[i+1] : totalDivs; 
-        let divsToPass;
+        let divsToPass=[];
         for(let j=start ; j<end; j++){
             divsToPass.push(allDivs[j]);
         }
