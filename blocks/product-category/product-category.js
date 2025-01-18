@@ -24,17 +24,18 @@ export default function decorate(block){
         }
     }) 
 
-    for(let i=0; i<breakPts.length; i++){
-        let start = breakPts[i];
-        let end = i !== breakPts.length-1 ? breakPts[i+1] : totalDivs; 
-        let divsToPass=[];
-        console.log(start);
-        console.log(end);
-        for(let j=start ; j<end; j++){
-            console.log(allDivs[j].children.length);
-            divsToPass.push(allDivs[j]);
-        }
+    for(let i=0; i<breakPts.length-1; i++){
+        const start = breakPts[i];
+        const end = breakPts[i + 1];
+        const slicedDivs = allDivs.slice(start, end); // Extract divs within the range
+        createCards(slicedDivs);
         createCards(divsToPass);
+    }
+    
+    // Handle the remaining divs after the last breakpoint
+    if (breakPts[breakPts.length - 1] < totalDivs) {
+        const slicedDivs = allDivs.slice(breakPts[breakPts.length - 1], totalDivs);
+        createCards(slicedDivs);
     }
 
     // for(let i=0; i<brea
