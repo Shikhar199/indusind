@@ -12,7 +12,7 @@ export default function decorate(block){
     let cardHtml, cardId;
     let cardBodyTitleTag, cardh6Title, unorderedList;
     let applyNowLink, knowMoreLink;
-    let breakPts;
+    let breakPts=[];
     let totalDivs = container.children.length;
     let allDivs = container.querySelectorAll('div');
 
