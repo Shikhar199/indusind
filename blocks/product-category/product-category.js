@@ -27,7 +27,7 @@ export default function decorate(block){
         let start = breakPts[i];
         let end = i !== breakPts.length-1 ? breakPts[i+1] : totalDivs; 
         let divsToPass;
-        for(j=start ; j<end; j++){
+        for(let j=start ; j<end; j++){
             divsToPass.push(allDivs[j]);
         }
         createCards(divs);
