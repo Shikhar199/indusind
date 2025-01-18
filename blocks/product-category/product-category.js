@@ -30,6 +30,7 @@ export default function decorate(block){
         console.log(start);
         console.log(end);
         for(let j=start ; j<end; j++){
+            console.log(allDivs[j].children.length);
             divsToPass.push(allDivs[j]);
         }
         createCards(divsToPass);
