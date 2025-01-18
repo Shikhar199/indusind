@@ -5,14 +5,8 @@ export default function decorate(block){
     container.innerHTML = block.innerHTML;
     block.innerHTML = '';
     console.log(container);
-    let cardType, typeIdx;
-    let img,tag;
-    let cardTitle, accountType, compareText;
-    let pagePath, ptagText;
-    let cardHtml, cardId;
-    let cardBodyTitleTag, cardh6Title, unorderedList;
-    let applyNowLink, knowMoreLink;
-    let breakPts=[];
+    let tabsHeadings = [];
+    let breakPts = [];
     let totalDivs = container.children.length;
     let allDivs = Array.from(container.children);
     const rowDiv = document.createElement('div');
@@ -24,62 +18,46 @@ export default function decorate(block){
         if(row.querySelector('div').children.length===1 && row.querySelector('div').firstElementChild.tagName==="P"){
             breakPts.push(r);
         }
-    }) 
+    })
+    
+    for(let i=0; i<breakPts.length-1; i++){
+        const idx = breakPts[i];
+        tabsHeadings.push(allDivs[idx].querySelector('p').textContent.trim());
+    }
+
+    console.log(tabsHeadings);
 
     for(let i=0; i<breakPts.length-1; i++){
         const start = breakPts[i];
         const end = breakPts[i + 1];
         const slicedDivs = allDivs.slice(start, end); // Extract divs within the range
         const cards = createCards(slicedDivs, rowDiv);
-        // rowDiv.appendChild(cards);
-        // createCards(divsToPass);
     }
-    
+
     // Handle the remaining divs after the last breakpoint
     if (breakPts[breakPts.length - 1] < totalDivs) {
         const slicedDivs = allDivs.slice(breakPts[breakPts.length - 1], totalDivs);
         const cards = createCards(slicedDivs, rowDiv);
-        // rowDiv.appendChild(cards);
     }
 
     console.log(rowDiv);
-        // if(r%3==1 && row.querySelectorAll('div').length>1){
-        // // if(r==1){
-        //     img = row.querySelector('picture').outerHTML;
-        //     let ptags = row.lastElementChild.querySelectorAll('p');
-        //     if(ptags.length===4){
-        //         console.log("Inside IF");
-        //         console.log(ptags);
-        //         tag = ptags[0].textContent.trim().substring(4);
-        //         compareText = ptags[1].textContent.trim();
-        //         cardTitle = ptags[2].querySelector('a').textContent.trim();
-        //         pagePath = ptags[2].querySelector('a').getAttribute('href').substring(25);
-        //         accountType = ptags[3].textContent.trim();
-        //     } else if(ptags.length===3){
-        //         console.log("Inside else");
-        //         console.log(ptags);
-        //         compareText = ptags[0].textContent.trim();
-        //         cardTitle = ptags[1].querySelector('a').textContent.trim();
-        //         pagePath = ptags[1].querySelector('a').getAttribute('href').substring(25);
-        //         accountType = ptags[2].textContent.trim();
-        //     }
-        // }
-        // else if(r%3==2){
-        //     cardBodyTitleTag = row.querySelector('h5');
-        //     cardBodyTitleTag.classList.add('h5', 'mb-1', 'text-bold');
-        //     cardBodyTitleTag.querySelector('a').classList.add('card-title', 'text-primary');
-        //     ptagText = row.querySelector('p').textContent.trim();
-        //     cardh6Title = row.querySelector('h6');
-        //     unorderedList = row.querySelector('ul');
-        //     unorderedList.classList.add('list-arrow-bullet', 'pl-0', 'ml-0');
-        // }
-        // else if(r%3==0){
-        //     let footerLinks = row.querySelectorAll('p');
-        //     applyNowLink = footerLinks[0].querySelector('a');
-        //     knowMoreLink = footerLinks[1].querySelector('a');
-        //     console.log(applyNowLink);
-        //     console.log(knowMoreLink);
-        // }
+    const tabContentDiv = document.createElement('div');
+    tabContentDiv.classList.add('tab-content', 'tab-content-number');
+    tabContentDiv.setAttribute('data-number',6);
+
+    const tabPaneDiv = createAemElement('div', ['tab-pane', 'fade', 'active', 'show',  'position-relative'], {'role':'tabpanel', 'aria-labelledby':'card-recommended-tab'}, "card-recommended");
+
+    tabContentDiv.appendChild(tabPaneDiv);
+    tabPaneDiv.appendChild(rowDiv);
+
+    const tabList = createAemElement('ul', ['nav', 'tabs-withdot', 'twotabsonly', 'flex-column', 'flex-sm-row', 'justify-content-center', 'mb-4'], {'role':'tablist'}, null);
+
+    const li1 = document.createElement('li');
+    li1.classList.add('nav-item');
+    li1.setAttribute('id','recm');
+    const a1 = createAemElement('a', ['nav-link', 'tabs-navs', 'mr-3', 'active', 'show'], {'data-toggle':'tab', 'href': '#card-recommended', 'role': 'tab', 'aria-controls': 'card-recommended', 'aria-selected':'true'}, "card-recommended-tab");
+    a1.textContent = "Recommended";
+    li1.appendChild(a1);
 
         // // if(row.querySelector('div').children.length!==1 && row.querySelector('div').firstElementChild.tagName!=="P"){
         // // if(r!==0 && r%3==0 && (row.querySelectorAll('div').length>1||row.querySelector('div').querySelectorAll('p').length>1)){
