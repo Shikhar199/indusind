@@ -50,8 +50,9 @@ export default function decorate(block) {
     //Setup bottom CTA
     const bottomAnchorElement1 = firstColumn.querySelector("p.button-container").firstElementChild;
     bottomAnchorElement1.className = "link text-primary text-bold";
+    const bottomAnchorElement1Text = bottomAnchorElement1.textContent;
     bottomAnchorElement1.innerHTML = `
-      <span class="btn-inner--icon"><i class="far fa-angle-right"></i></span>
+      ${bottomAnchorElement1Text} <span class="btn-inner--icon"><i class="far fa-angle-right"></i></span>
     `;
     const pressLinkDiv = document.createElement("div");
     pressLinkDiv.className = "press-link mt-5";
