@@ -29,7 +29,7 @@ export default function decorate(block){
         const end = breakPts[i + 1];
         const slicedDivs = allDivs.slice(start, end); // Extract divs within the range
         createCards(slicedDivs);
-        createCards(divsToPass);
+        // createCards(divsToPass);
     }
     
     // Handle the remaining divs after the last breakpoint
