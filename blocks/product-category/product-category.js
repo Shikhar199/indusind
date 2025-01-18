@@ -386,12 +386,12 @@ function createCards(divs,rowDiv){
             id++;
         } 
         else if(i%3===2){
-            cardBodyTitleTag = divs[i].querySelector('h5').outerHTML;
+            cardBodyTitleTag = divs[i].querySelector('h5');
             cardBodyTitleTag.classList.add('h5', 'mb-1', 'text-bold');
             cardBodyTitleTag.querySelector('a').classList.add('card-title', 'text-primary');
             ptagText = divs[i].querySelector('p').textContent.trim();
             cardh6Title = divs[i].querySelector('h6');
-            unorderedList = divs[i].querySelector('ul').outerHTML;
+            unorderedList = divs[i].querySelector('ul');
             unorderedList.classList.add('list-arrow-bullet', 'pl-0', 'ml-0');
         }
         else if(i%3==0){
@@ -412,10 +412,10 @@ function createCards(divs,rowDiv){
                                 ${img}
                             </div>
                             <div class="card-body">
-                                ${cardBodyTitleTag}
+                                ${cardBodyTitleTag.outerHTML}
                                 <p class="card-text mt-2 three-lines"><span class="ellip">${ptagText}</span></span></p>
-                                ${cardh6Title}
-                                ${unorderedList}
+                                ${cardh6Title.outerHTML}
+                                ${unorderedList.outerHTML}
                             </div>
                             <div class="card-footer border-0 pt-0">
                                 <div class="d-flex justify-content-between align-items-center">
