@@ -423,7 +423,7 @@ function createCards(divs){
 
         if(tag!==null){
             let tagWrapper = document.createElement('div');
-            tagHtml = `<div class="tag">${tag}</div>`;
+            let tagHtml = `<div class="tag">${tag}</div>`;
             tagWrapper.innerHTML = tagHtml;
             let tagElement = tagWrapper.querySelector('.tag');   
             // cardHtml.innerHTML = tagHtml + cardHtml.innerHTML; 
