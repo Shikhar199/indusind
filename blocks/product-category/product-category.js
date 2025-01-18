@@ -10,7 +10,8 @@ export default function decorate(block){
     let cardTitle, accountType, compareText;
     let pagePath;
     let cardHtml, cardId;
-    let cardBodyTitleTag;
+    let cardBodyTitleTag, cardh6Title, unorderedList;
+    let applyNowLink, knowMoreLink;
 
     [...container.children].forEach((row,r)=>{
         cardId = "compare_check"+(r+1);
@@ -39,12 +40,22 @@ export default function decorate(block){
                 accountType = ptags[2].textContent.trim();
             }
         }
-         else if(r%3==2){
+        else if(r%3==2){
             cardBodyTitleTag = row.querySelector('h5');
             cardBodyTitleTag.classList.add('h5', 'mb-1', 'text-bold');
             cardBodyTitleTag.querySelector('a').classList.add('card-title', 'text-primary');
-            console.log(cardBodyTitleTag);
-         }
+            ptagText = row.querySelector('p').textContent.trim();
+            cardh6Title = row.querySelector('h6');
+            unorderedList = row.querySelector('ul');
+            unorderedList.classList.add('list-arrow-bullet', 'pl-0', 'ml-0');
+        }
+        else if(r%3==0){
+            let footerLinks = row.querySelectorAll('p');
+            applyNowLink = footerLinks[0];
+            knowMoreLink = footerLinks[1];
+            console.log(applyNowLink);
+            console.log(knowMoreLink);
+        }
 
         // if(row.querySelector('div').children.length!==1 && row.querySelector('div').firstElementChild.tagName!=="P"){
         // if(r!==0 && r%3==0 && (row.querySelectorAll('div').length>1||row.querySelector('div').querySelectorAll('p').length>1)){
@@ -68,18 +79,10 @@ export default function decorate(block){
                 ${img}
                 </div>
                 <div class="card-body">
-                    <h5 class=" h5 mb-1 text-bold">
-                        <a href="/in/en/business/accounts/current-account/indus-one-business-account.html" class="card-title text-primary">Indus One Business Account</a>
-                    </h5>
-                    <p class="card-text mt-2 three-lines"><span class="ellip">Indus One Business account revolutionize the way you manage business finances. Whether you <span class="ellip-line">are a start-up or an established business, our flexible banking solutions are designed with dynamic approach that evolves alongside your business needs. </span></span></p>
-                    <h6>Key Features and Benefits</h6>
-                    <ul class="list-arrow-bullet pl-0 ml-0">
-                        <li>Zero non-maintenance charges.</li>
-                        <li>Experience flexibility with 5 tiers benefits to meet evolving business needs.</li>
-                        <li>Higher Cash and Non-Cash Transactions.</li>
-                        <li>Lower Charges on Trade &amp; Forex, POS and CMS services.</li>
-
-                    </ul>
+                    ${cardBodyTitleTag}
+                    <p class="card-text mt-2 three-lines"><span class="ellip">${ptagText}</span></span></p>
+                    ${cardh6Title}
+                    ${unorderedList}
                 </div>
                 <div class="card-footer border-0 pt-0">
                     <div class="d-flex justify-content-between align-items-center">
