@@ -1,7 +1,7 @@
 /* Press Wrap Block for IBL */
 
 export default function decorate(block) {
-  [...block.children].forEach((row) => {	
+  [...block.children].forEach((row) => {
     //Fetch the block heading element and set its classes and attributes
     const blockHeading = document.querySelector('div.press-wrap-container h4').textContent;
 
@@ -91,6 +91,7 @@ export default function decorate(block) {
             </div>
          </section>
     `;
+    const mb2Div = outerMostStructure.querySelector("div.mb-2");
     mb2Div.insertAdjacentElement("beforeend", latestNewsDiv);
     mb2Div.insertAdjacentElement("beforeend", pressLinkDiv);
 
