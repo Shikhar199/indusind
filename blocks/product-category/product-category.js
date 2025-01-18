@@ -446,9 +446,9 @@ function createCards(divs){
             cardHtml = wrapper.innerHTML;
         }
     }
-
-    return cardHtml;
-
+    let cardWrapper = document.createElement('div');
+    cardWrapper.innerHTML = cardHtml;
+    return cardWrapper.querySelector('.col-md-6');
 }
 
 // function getScript(){
