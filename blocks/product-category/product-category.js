@@ -14,8 +14,9 @@ export default function decorate(block){
     let applyNowLink, knowMoreLink;
     let breakPts=[];
     let totalDivs = container.children.length;
-    let allDivs = container.querySelectorAll('div');
+    let allDivs = Array.from(container.children);
 
+    console.log(allDivs);
     [...container.children].forEach((row,r)=>{
 
         if(row.querySelector('div').children.length===1 && row.querySelector('div').firstElementChild.tagName==="P"){
