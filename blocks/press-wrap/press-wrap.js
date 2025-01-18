@@ -2,8 +2,11 @@
 
 export default function decorate(block) {
   [...block.children].forEach((row) => {
-    //Fetch the block heading element and set its classes and attributes
-    const blockHeading = document.querySelector('div.press-wrap-container h4').textContent;
+    //Fetch the block heading text and remove the element from DOM
+    const blockHeading = document.querySelector('div.press-wrap-container h4');
+    const blockHeadingText = blockHeading.textContent;
+    const divToBeRemoved = blockHeading.parentNode;
+    divToBeRemoved.parentNode.removeChild(divToBeRemoved);
 
     //Fetch first column data of the row
     const firstColumn = row.children[0];
@@ -58,8 +61,6 @@ export default function decorate(block) {
     pressLinkDiv.className = "press-link mt-5";
     pressLinkDiv.appendChild(bottomAnchorElement1);
 
-//    latestNewsDiv.insertAdjacentElement('afterend', pressLinkDiv);
-
     //Create Initial Structure with first column
     const outerMostStructure = document.createElement("div");
     outerMostStructure.className = "columnGrid";
@@ -69,7 +70,7 @@ export default function decorate(block) {
             </div>
             <div class="container">
                <div class="heading mb-4">
-                  <h4 class="text-bold text-primary">${blockHeading}</h4>
+                  <h4 class="text-bold text-primary">${blockHeadingText}</h4>
                </div>
                <div class="row">
                   <div class="col-12 col-sm-3">
@@ -111,24 +112,24 @@ export default function decorate(block) {
     //Fetch Third Columns' Data from table
     const thirdColumn = row.children[2];
 
-    //Fetch headings, image, title, para and CTA and set their classes and attributes
+    //Fetch headings and their properties
     const thirdColumnHeadings = thirdColumn.querySelectorAll('h5');
     const thirdColumnHeading1 = thirdColumnHeadings[0].textContent;
     const thirdColumnHeading2 = thirdColumnHeadings[1].textContent;
 
-    //Fetch images and set their classes and attributes
+    //Fetch images and their properties
     const thirdColumnImages = thirdColumn.querySelectorAll('picture img');
     const image1Src = thirdColumnImages[0].src;
     const image2Src = thirdColumnImages[1].src;
     const image1Alt = thirdColumnHeading1.toLowerCase();
     const image2Alt = thirdColumnHeading2.toLowerCase();
 
-    //Fetch title headings and set their classes and attributes
+    //Fetch title headings and their properties
     const postTitleHeadings = thirdColumn.querySelectorAll('h4');
     const postTitleHeading1 = postTitleHeadings[0].textContent;
     const postTitleHeading2 = postTitleHeadings[1].textContent;
 
-    //Fetch anchor elements and set their classes and attributes
+    //Fetch anchor elements and their properties
     const anchorElements = thirdColumn.querySelectorAll('.button-container a');
     const col3AnchorElement1Href = anchorElements[0].getAttribute("href");
     const col3AnchorElement2Href = anchorElements[1].getAttribute("href");
