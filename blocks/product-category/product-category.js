@@ -41,6 +41,8 @@ export default function decorate(block){
         }
          else if(r%3==2){
             cardBodyTitleTag = row.querySelector('h5');
+            cardBodyTitleTag.classList.add('h5', 'mb-1', 'text-bold');
+            cardBodyTitleTag.querySelector('a').classList.add('card-title', 'text-primary');
             console.log(cardBodyTitleTag);
          }
 
