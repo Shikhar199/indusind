@@ -235,7 +235,7 @@ function createCards(divs, rowDiv, tabPanelDiv, tabPanelAllDiv){
             tabPanelAllDiv.appendChild(rowDiv);        
         }
     }
-    return tabPanel;
+    return tabPanelDiv;
 }
 
 function getScript(){
