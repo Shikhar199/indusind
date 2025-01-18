@@ -24,6 +24,9 @@ export default function decorate(block){
     }) 
 
     console.log(breakPts);
+    for(let k=0; k<breakPts.length; k++){
+        console.log(allDivs[k]);
+    }
 
     for(let i=0; i<breakPts.length; i++){
         let start = breakPts[i];
