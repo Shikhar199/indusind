@@ -138,8 +138,9 @@ export default function decorate(block) {
     const postDateText = thirdColumn.querySelector("h6").textContent;
 
     //Create 2nd and 3rd column's structure and add fetched data to it
-    const colSm9Div = `
-      <div class="col-12 col-sm-9">
+    const colSm9Div = document.createElement("div");
+    colSm9Div.className = "col-12 col-sm-9";
+    colSm9Div.innerHTML = `
          <div>
             <div class="listOfTeasers">
                <div id="list-of-teasers-" class="list-of-teasers ">
@@ -249,7 +250,6 @@ export default function decorate(block) {
                <!--/End -->
             </div>
          </div>
-      </div>
     `;
 
     //Append colSm9Div after col-sm-3 in the outer structure
