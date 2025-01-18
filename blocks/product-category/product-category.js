@@ -365,7 +365,7 @@ function createCards(divs,rowDiv){
         }
         else if(i%3===1){
             console.log(divs[i]);
-            img = divs[i].querySelector('picture');
+            img = divs[i].querySelector('picture').outerHTML;
             let ptags = divs[i].querySelectorAll('p');
             if(ptags.length===4){
                 console.log("Inside IF");
