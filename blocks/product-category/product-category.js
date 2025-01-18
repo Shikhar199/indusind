@@ -30,16 +30,16 @@ export default function decorate(block){
         const start = breakPts[i];
         const end = breakPts[i + 1];
         const slicedDivs = allDivs.slice(start, end); // Extract divs within the range
-        const cards = createCards(slicedDivs);
-        rowDiv.appendChild(cards);
+        const cards = createCards(slicedDivs, rowDiv);
+        // rowDiv.appendChild(cards);
         // createCards(divsToPass);
     }
     
     // Handle the remaining divs after the last breakpoint
     if (breakPts[breakPts.length - 1] < totalDivs) {
         const slicedDivs = allDivs.slice(breakPts[breakPts.length - 1], totalDivs);
-        const cards = createCards(slicedDivs);
-        rowDiv.appendChild(cards);
+        const cards = createCards(slicedDivs, rowDiv);
+        // rowDiv.appendChild(cards);
     }
 
     console.log(rowDiv);
@@ -356,7 +356,7 @@ function createCards(divs){
     let cardHtml, cardId;
     let cardBodyTitleTag, cardh6Title, unorderedList;
     let applyNowLink, knowMoreLink;
-    let id = 1;
+    let id = 1, wrapper;
     cardId = "compare_check"+id;
 
     for(let i=0; i< divs.length; i++){
@@ -425,30 +425,29 @@ function createCards(divs){
                             </div>
                         </div>
                     </div>`;
-        }
 
-        if(tag!==null){
-            let tagWrapper = document.createElement('div');
-            let tagHtml = `<div class="tag">${tag}</div>`;
-            tagWrapper.innerHTML = tagHtml;
-            let tagElement = tagWrapper.querySelector('.tag');   
-            // cardHtml.innerHTML = tagHtml + cardHtml.innerHTML; 
-            // cardHeader.insertBefore(tagHtml, cardHeader.firstElementChild); 
-            const wrapper = document.createElement('div');
-            wrapper.innerHTML = cardHtml;
-    
-            // Locate the card-header element
-            const cardHeader = wrapper.querySelector('.card-header');
-            if (cardHeader) {
-                // Add the tagElement as the first child of card-header
-                cardHeader.insertBefore(tagElement, cardHeader.firstChild);
-            }
-            cardHtml = wrapper.innerHTML;
+                if(tag!==null){
+                    let tagWrapper = document.createElement('div');
+                    let tagHtml = `<div class="tag">${tag}</div>`;
+                    tagWrapper.innerHTML = tagHtml;
+                    let tagElement = tagWrapper.querySelector('.tag');   
+                    // cardHtml.innerHTML = tagHtml + cardHtml.innerHTML; 
+                    // cardHeader.insertBefore(tagHtml, cardHeader.firstElementChild); 
+                    wrapper = document.createElement('div');
+                    wrapper.innerHTML = cardHtml;
+                
+                    // Locate the card-header element
+                    const cardHeader = wrapper.querySelector('.card-header');
+                    if (cardHeader) {
+                        // Add the tagElement as the first child of card-header
+                        cardHeader.insertBefore(tagElement, cardHeader.firstChild);
+                    }
+                }
+        
+            rowDiv.appendChild(wrapper.querySelector('.col-md-6'));        
         }
     }
-    let cardWrapper = document.createElement('div');
-    cardWrapper.innerHTML = cardHtml;
-    return cardWrapper.querySelector('.col-md-6');
+    return rowDiv;
 }
 
 // function getScript(){
