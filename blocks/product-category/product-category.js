@@ -10,6 +10,7 @@ export default function decorate(block){
     let cardTitle, accountType, compareText;
     let pagePath;
     let cardHtml, cardId;
+    let cardBodyTitleTag;
 
     [...container.children].forEach((row,r)=>{
         cardId = "compare_check"+(r+1);
@@ -38,6 +39,10 @@ export default function decorate(block){
                 accountType = ptags[2].textContent.trim();
             }
         }
+         else if(r%3==2){
+            cardBodyTitleTag = row.querySelector('h5');
+            console.log(cardBodyTitleTag);
+         }
 
         // if(row.querySelector('div').children.length!==1 && row.querySelector('div').firstElementChild.tagName!=="P"){
         // if(r!==0 && r%3==0 && (row.querySelectorAll('div').length>1||row.querySelector('div').querySelectorAll('p').length>1)){
@@ -101,8 +106,6 @@ export default function decorate(block){
                 cardHeader.insertBefore(tagElement, cardHeader.firstChild);
             }
             cardHtml = wrapper.innerHTML;
-
-            console.log(cardHtml);
         }
 
         }
