@@ -49,8 +49,9 @@ export default function decorate(block) {
 //    latestNewsDiv.insertAdjacentElement('afterend', pressLinkDiv);
 
     //Create Initial Structure with first column
-    const outerMostStructure = `
-      <div class="columnGrid">
+    const outerMostStructure = document.createElement("div");
+    outerMostStructure.className = "columnGrid";
+    outerMostStructure.innerHTML = `
          <section class="press-wrap pt-5 pb-4 border-top border-primary">
             <div id="column-grid-" class="column-grid ">
             </div>
@@ -79,7 +80,6 @@ export default function decorate(block) {
                </div>
             </div>
          </section>
-      </div>
     `;
 
     //Fetch Second Columns' Data from table
