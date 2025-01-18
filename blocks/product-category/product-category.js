@@ -20,7 +20,7 @@ export default function decorate(block){
         }
     })
     
-    for(let i=0; i<breakPts.length-1; i++){
+    for(let i=0; i<breakPts.length; i++){
         const idx = breakPts[i];
         tabsHeadings.push(allDivs[idx].querySelector('p').textContent.trim());
     }
