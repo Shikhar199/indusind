@@ -80,7 +80,6 @@ export default function decorate(block) {
                                     <div class="mb-2">
                                        <h5 class="text-primary text-bold">${firstColumnHeading}</h5>
                                     </div>
-                                    ${pressLinkDiv}
                                  </div>
                               </div>
                            </div>
