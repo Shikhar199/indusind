@@ -400,7 +400,7 @@ function createCards(divs){
                
                                 <div class="custom-control custom-checkbox">
                                     <span class="addtoCompareTxt">${compareText}</span>
-                                    <input type="checkbox" class="custom-control-input cardSelectCheck cardsLabel" data-title="${cardTitle}" data-thumbnail="/content/dam/indusind-platform-images/banner-images/indus-select-current-business/Indus-Business_One_Tile.webp" data-page-path="/in/en/business/accounts/current-account/indus-one-business-account.html" data-product-type="${accountType}" id="${cardId}" value="${r+1}">
+                                    <input type="checkbox" class="custom-control-input cardSelectCheck cardsLabel" data-title="${cardTitle}" data-thumbnail="/content/dam/indusind-platform-images/banner-images/indus-select-current-business/Indus-Business_One_Tile.webp" data-page-path="/in/en/business/accounts/current-account/indus-one-business-account.html" data-product-type="${accountType}" id="${cardId}" value="${id}">
                                     <label class="custom-control-label" for="${cardId}"></label>
                                 </div>
                                 ${img}
