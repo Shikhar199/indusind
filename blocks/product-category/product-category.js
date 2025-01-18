@@ -366,6 +366,9 @@ function createCards(divs){
 
     for(let i=0; i< divs.length; i++){
         if(i==0){
+            cardType = divs[i].querySelector('p').textContent.trim();
+        }
+        else if(i==1){
             console.log(divs[i]);
         }
     }
