@@ -794,6 +794,31 @@ $(document).ready(function(){
   }, function() {
       (this).swiper.autoplay.start();
   });
+
+  tooltipTriggers.forEach(trigger => {
+    trigger.addEventListener('mouseenter', function (e) {
+      // Create tooltip element
+      const tooltip = document.createElement('div');
+      tooltip.className = 'tooltip';
+      tooltip.textContent = trigger.getAttribute('data-original-title'); // Get tooltip text
+
+      // Append tooltip to the body
+      document.body.appendChild(tooltip);
+
+      // Position the tooltip
+      const rect = trigger.getBoundingClientRect();
+      tooltip.style.left = `${rect.left + window.scrollX}px`;
+      tooltip.style.top = `${rect.bottom + window.scrollY}px`;
+
+      // Show the tooltip
+      tooltip.style.display = 'block';
+
+      // Remove the tooltip on mouse leave
+      trigger.addEventListener('mouseleave', () => {
+        tooltip.remove();
+      });
+    });
+  });
   
   // $(".comment-copy").each(function () {
   //     text = $(this).text();
