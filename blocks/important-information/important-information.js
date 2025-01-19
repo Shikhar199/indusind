@@ -6,7 +6,7 @@ export default function decorate(block){
     block.innerHTML = '';
     console.log(container);
 
-    const sectionDiv = createAemElement('div', ['imp-info-wrap', 'pt-5', 'pb-5', 'border-top', 'border-primary'], null, null);
+    const sectionDiv = createAemElement('section', ['imp-info-wrap', 'pt-5', 'pb-5', 'border-top', 'border-primary'], null, null);
     const containerDiv = createAemElement('div', ['container', 'overflow-hidden'], null, null);
     const headingDiv = createAemElement('div', ['heading', 'mb-4'], null, null);
 
