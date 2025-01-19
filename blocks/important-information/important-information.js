@@ -22,8 +22,10 @@ export default function decorate(block){
                 const part1 = words.slice(0,20);
                 const part2 = words.slice(20);
                 const tooltipSpan = `<span class="elipsis text-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="${part2}">  ...Read more</span></a></h6>`;
+                const tooltipWrapper = document.createElement('div');
+                tooltipWrapper.innerHTML = tooltipSpan;
                 anchor.appendChild(document.createTextNode(part1.join(' ')));
-                anchor.appendChild(tooltipSpan.outerHTML);
+                anchor.appendChild(tooltipWrapper.querySelector('span'));
             } else{
                 anchor.textContent = text;
             }
