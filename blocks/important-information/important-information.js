@@ -15,9 +15,9 @@ export default function decorate(block){
         } 
         else{
             const h6 = createAemElement('h6', ['mb-3'], null, null);
-            const anchor = createAemElement('a', ['comment-copy'], {'href': 'javascript:;'});
+            const anchor = createAemElement('a', ['comment-copy'], {'href': 'javascript:;'}, null);
             const text = row.querySelector('h6').textContent.trim();
-            if(text.length>60){
+            if(text.length>100){
                 const words = text.split(' ');
                 const part1 = words.slice(0,20);
                 const part2 = words.slice(20);
