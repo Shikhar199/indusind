@@ -66,6 +66,7 @@ export default function decorate(block){
     swiperContainerDiv.appendChild(paginationDiv);
 
     console.log(sectionDiv);
+    block.appendChild(sectionDiv);
 }
 
 function createPaginationDiv(){
