@@ -795,12 +795,12 @@ $(document).ready(function(){
       (this).swiper.autoplay.start();
   });
   
-  $(".comment-copy").each(function () {
-      text = $(this).text();
-      if (text.length > 131) {
-          $(this).html(text.substr(0, 131) + '<span class="elipsis text-primary" data-toggle="tooltip" data-placement="top" title="'+text+'">  ...Read more</span>');
-      }
-  });
+  // $(".comment-copy").each(function () {
+  //     text = $(this).text();
+  //     if (text.length > 131) {
+  //         $(this).html(text.substr(0, 131) + '<span class="elipsis text-primary" data-toggle="tooltip" data-placement="top" title="'+text+'">  ...Read more</span>');
+  //     }
+  // });
   });
   
 }
