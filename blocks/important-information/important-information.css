@@ -28185,3 +28185,7 @@ border: 2px solid #fff;
 .frag:after {
   content: attr(data-name) "@" attr(data-domain) "." attr(data-tld); 
 }
+
+a{
+    color: #000;
+}
