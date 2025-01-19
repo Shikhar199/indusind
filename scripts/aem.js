@@ -795,6 +795,8 @@ $(document).ready(function(){
       (this).swiper.autoplay.start();
   });
 
+  const tooltipTriggers = document.querySelectorAll('.elipsis.text-primary');
+
   tooltipTriggers.forEach(trigger => {
     trigger.addEventListener('mouseenter', function (e) {
       // Create tooltip element
