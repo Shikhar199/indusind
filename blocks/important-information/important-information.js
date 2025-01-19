@@ -35,9 +35,11 @@ export default function decorate(block){
                                             <small></small><span><img alt="" class="iconinfo img-saturate"></span>
                                         </a>
                                     </h6>`;
+            const linkInfoWrapper = document.createElement('div');
+            linkInfoWrapper.innerHTML = linkInfo;
             
             slideDiv.appendChild(h6);
-            slideDiv.appendChild(linkInfo);
+            slideDiv.appendChild(linkInfoWrapper.querySelector('h6'));
         }
         swiperDiv.appendChild(slideDiv);
     })
