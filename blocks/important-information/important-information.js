@@ -75,7 +75,7 @@ function createPaginationDiv(){
                             <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-3ca1081122fdaac1d" aria-disabled="false"></div>
                             <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-3ca1081122fdaac1d" aria-disabled="false"></div>
                             <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>`;
-    const paginationWrapperDiv = document.createElement(div);
+    const paginationWrapperDiv = document.createElement('div');
     paginationWrapperDiv.innerHTML = paginationHtml;
     return document.createRange().createContextualFragment(paginationHtml);
 }
