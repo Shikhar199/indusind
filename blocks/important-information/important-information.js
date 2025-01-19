@@ -40,8 +40,8 @@ export default function decorate(block){
             
             slideDiv.appendChild(h6);
             slideDiv.appendChild(linkInfoWrapper.querySelector('h6'));
+            swiperDiv.appendChild(slideDiv);
         }
-        swiperDiv.appendChild(slideDiv);
     })
     console.log(swiperDiv);
 }
