@@ -799,6 +799,8 @@ $(document).ready(function(){
 
   tooltipTriggers.forEach(trigger => {
     trigger.addEventListener('mouseenter', function (e) {
+
+      console.log("mouse over button");
       // Create tooltip element
       const tooltip = document.createElement('div');
       tooltip.className = 'tooltip';
