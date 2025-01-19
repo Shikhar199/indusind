@@ -25076,7 +25076,7 @@ ul.slide-ul li:first-child {
 .carrow .swiper-button-prev {
     top: -30px;
     right: 0px;
-    background: url("assets/img/img/arrow.png");
+    background: url("/icons/prev.png");
     width: 32px;
     height: 18px;
 }
@@ -25095,7 +25095,7 @@ ul.slide-ul li:first-child {
 .kyc-slider .swiper-button-prev {
     top: -10px!important;
     right: 0px;
-    background: url("assets/img/img/arrow.png");
+    background: url("/icons/next.png");
     width: 32px;
     height: 18px;
 }
