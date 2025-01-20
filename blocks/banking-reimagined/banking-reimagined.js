@@ -69,7 +69,7 @@ export default function decorate(block){
                       <!-- End -->
                    </div>`;
         }
-        const slideWrapper = document.createElement('div');
+        let slideWrapper = document.createElement('div');
         slideWrapper.innerHTML = slideHtml;
         swiperWrapper.appendChild(slideWrapper.querySelector('.swiper-slide'));
     })
