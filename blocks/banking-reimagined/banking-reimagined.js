@@ -68,11 +68,11 @@ export default function decorate(block){
                       </div>
                       <!-- End -->
                    </div>`;
+                   let slideWrapper = document.createElement('div');
+                   slideWrapper.innerHTML = slideHtml;
+                   console.log(slideWrapper.querySelector('.swiper-slide')); 
+                   swiperWrapper.appendChild(slideWrapper.querySelector('.swiper-slide'));
         }
-        let slideWrapper = document.createElement('div');
-        slideWrapper.innerHTML = slideHtml;
-        console.log(slideWrapper);
-        swiperWrapper.appendChild(slideWrapper.querySelector('.swiper-slide'));
     })
     paginationHtml = `<div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 4" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span></div>`;
     let paginationWrapper = document.createElement('div');
