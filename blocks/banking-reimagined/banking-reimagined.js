@@ -8,6 +8,7 @@ export default function decorate(block){
     let blockTitle, picture, title, description;
     let anchor = "";
     let slideHtml;
+    let parentContainerDiv = createAemElement('div', ['container', 'vid_container_mob', 'mt-4'], null, null);
     let swiperWrapper = createAemElement('div', ['swiper-wrapper'], null, "swiper-wrapper-468156e587f7a5fa");
     let rowDiv = createAemElement('div', ['row'], null, null);
     let colDiv = createAemElement('div', ['col-12', 'aos-init', 'aos-animate'], {'data-aos' :'fade-up'}, null);
@@ -15,6 +16,17 @@ export default function decorate(block){
     let swiperNotificationDiv = `<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>`;
     let swiperNotificationWrapperDiv = document.createElement('div');
     swiperNotificationWrapperDiv.innerHTML = swiperNotificationDiv;
+
+    let footerHtml = `    <div class="row mb-4 justify-content-end">
+       <div class="col-6">
+          <div class="press-link mt-5 text-right">
+             <a href="/in/en/personal/innovation.html" class="link text-primary">View All <span class="btn-inner--icon"><i class="far fa-angle-right"></i></span></a>
+          </div>
+       </div>
+    </div>`;
+
+    let footerHtmlWrapper = document.createElement('div');
+    footerHtmlWrapper.innerHTML = footerHtml;
 
     let headingDiv = createAemElement('div', ['heading', 'mb-4'], null, null);
 
@@ -89,5 +101,9 @@ export default function decorate(block){
     swiperContainerDiv.appendChild(swiperWrapper);
     swiperContainerDiv.appendChild(paginationWrapper);
 
+    parentContainerDiv.appendChild(headingDiv);
+    parentContainerDiv.appendChild(rowDiv);
+    parentContainerDiv.appendChild(footerHtmlWrapper.querySelector('.row'));
 
+    console.log(parentContainerDiv);
 }
