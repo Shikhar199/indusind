@@ -22815,7 +22815,7 @@ box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   border: solid 1px #832625 !important;
 }
 .card_select_wrap .card-border-color .btn-primary-option {
-  padding-top: 10px !important;
+  /* padding-top: 10px !important; */
 }
 
 .card_select_wrap .nav .nav-item {

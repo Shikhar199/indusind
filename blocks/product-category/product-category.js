@@ -10,6 +10,8 @@ export default function decorate(block){
     let totalDivs = container.children.length;
     let allDivs = Array.from(container.children);
     const tabPanelAllDiv = createAemElement('div', ['tab-pane', 'fade', 'position-relative'], {'role':'tabpanel', 'aria-labelledby':'card-all'}, "card-all");
+    const rowAllDiv = createAemElement('div', ['row'], null, null);
+    tabPanelAllDiv.appendChild(rowAllDiv);
 
     const tabContentDiv = document.createElement('div');
     tabContentDiv.classList.add('tab-content', 'tab-content-number');
@@ -36,7 +38,7 @@ export default function decorate(block){
             
         tabPanelDiv = createAemElement('div', ['tab-pane', 'fade', 'active', 'show',  'position-relative'], {'role':'tabpanel', 'aria-labelledby':'card-recommended-tab'}, "card-recommended");
         const slicedDivs = allDivs.slice(start, end); // Extract divs within the range
-        const cards = createCards(slicedDivs, rowDiv, tabPanelDiv, tabPanelAllDiv);
+        const cards = createCards(slicedDivs, rowDiv, tabPanelDiv, rowAllDiv);
         console.log(cards);
         tabContentDiv.appendChild(cards);
     }
@@ -46,7 +48,7 @@ export default function decorate(block){
         let tabPanelDiv = createAemElement('div', ['tab-pane', 'fade'], {'role':'tabpanel', 'aria-labelledby':'card-tab-2'}, "card-tab2");
         const rowDiv = createAemElement('div', ['row'], null, null);
         const slicedDivs = allDivs.slice(breakPts[breakPts.length - 1], totalDivs);
-        const cards = createCards(slicedDivs, rowDiv, tabPanelDiv, tabPanelAllDiv);
+        const cards = createCards(slicedDivs, rowDiv, tabPanelDiv, rowAllDiv);
         console.log(cards);
         tabContentDiv.appendChild(cards);
     }
@@ -136,7 +138,7 @@ const handleTabClick = (event) => {
 
 }
 
-function createCards(divs, rowDiv, tabPanelDiv, tabPanelAllDiv){
+function createCards(divs, rowDiv, tabPanelDiv, tabPanelAllRowDiv){
     console.log("Divs hi Divs");
     console.log(divs);
     let cardType, typeIdx;
@@ -239,7 +241,7 @@ function createCards(divs, rowDiv, tabPanelDiv, tabPanelAllDiv){
             rowDiv.appendChild(rowElement);
             console.log(rowDiv);
             tabPanelDiv.appendChild(rowDiv);
-            tabPanelAllDiv.appendChild(rowElement.cloneNode(true));
+            tabPanelAllRowDiv.appendChild(rowElement.cloneNode(true));
             // tabPanelAllDiv.appendChild(rowDiv);        
         }
     }
