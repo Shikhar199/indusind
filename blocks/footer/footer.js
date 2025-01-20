@@ -25,13 +25,13 @@ export default async function decorate(block) {
   const footerLinksContainer = null;
   const officeDetailsContainer = null;
   const footerBottomContainer = null;
-  [...block.children].forEach((row,i) => {
-      if (i == 1) {
+  [...block.children].forEach((row, i) => {
+      if (i === 0) {
         footerLinksContainer = row;
-      } else if (i == 2) {
+      } else if (i === 1) {
         officeDetailsContainer = row;
       }
-      else if (i == 3) {
+      else if (i === 2) {
         footerBottomContainer = row;
       }
   });
