@@ -109,25 +109,25 @@ const handleTabClick = (event) => {
     // Select all tab content divs
     const tabContents = document.querySelectorAll('.tab-content > div');
     
-    // tabContents.forEach((tabContent) => {
-    //     // Check if the tabContent's ID matches the clicked tab's target ID
-    //     if (tabContent.id === targetId) {
-    //         // Add active, show, and position-relative classes
-    //         tabContent.classList.add('active', 'show', 'position-relative');
-    //     } else {
-    //         // Remove these classes from non-target tab contents
-    //         tabContent.classList.remove('active', 'show', 'position-relative');
-    //     }
-    // });
+    tabContents.forEach((tabContent) => {
+        // Check if the tabContent's ID matches the clicked tab's target ID
+        if (tabContent.id === targetId) {
+            // Add active, show, and position-relative classes
+            tabContent.classList.add('active', 'show', 'position-relative');
+        } else {
+            // Remove these classes from non-target tab contents
+            tabContent.classList.remove('active', 'show', 'position-relative');
+        }
+    });
 
-    //     // Ensure only the clicked tab link is active
-    //     tabLinks.forEach((link) => {
-    //         if (link === clickedTab) {
-    //             link.classList.add('active', 'show');
-    //         } else {
-    //             link.classList.remove('active', 'show');
-    //         }
-    //     });
+        // Ensure only the clicked tab link is active
+        tabLinks.forEach((link) => {
+            if (link === clickedTab) {
+                link.classList.add('active', 'show');
+            } else {
+                link.classList.remove('active', 'show');
+            }
+        });
 
 }
 
