@@ -61,7 +61,7 @@ export default function decorate(block){
             <a class="nav-link tabs-navs  mr-3 active show" id="card-recommended-tab" data-toggle="tab" href="#card-recommended" role="tab" aria-controls="card-recommended" aria-selected="true">${tabsHeadings[0]}</a>
         </li>
         <li class="nav-item" id="tab2">
-            <a class="nav-link tabs-navs  ml-3 " id="card-tab2-tab" data-toggle="tab" href="#card-tab2" role="tab" aria-controls="card-recommended" aria-selected="true">${tabsHeadings[1]}</a>
+            <a class="nav-link tabs-navs  ml-3 " id="card-tab2" data-toggle="tab" href="#card-tab2" role="tab" aria-controls="card-recommended" aria-selected="true">${tabsHeadings[1]}</a>
         </li>  
         <li class="nav-item " id="allCards">
             <a class="nav-link tabs-navs ml-3 " id="card-all-tab" data-toggle="tab" href="#card-all" role="tab" aria-controls="card-all" aria-selected="false">All</a>
