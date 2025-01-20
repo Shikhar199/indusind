@@ -101,11 +101,35 @@ export default function decorate(block){
     });
 }
 
-    const handleTabClick = (event) => {
-        // Get the clicked tab link
-        const clickedTab = event.target;
-        console.log(clickedTab);
-    }
+const handleTabClick = (event) => {
+    // Get the clicked tab link
+    const clickedTab = event.target;
+    const targetId = clickedTab.getAttribute('href').replace('#', '');
+    console.log(targetId);
+    // Select all tab content divs
+    const tabContents = document.querySelectorAll('.tab-content > div');
+    
+    // tabContents.forEach((tabContent) => {
+    //     // Check if the tabContent's ID matches the clicked tab's target ID
+    //     if (tabContent.id === targetId) {
+    //         // Add active, show, and position-relative classes
+    //         tabContent.classList.add('active', 'show', 'position-relative');
+    //     } else {
+    //         // Remove these classes from non-target tab contents
+    //         tabContent.classList.remove('active', 'show', 'position-relative');
+    //     }
+    // });
+
+    //     // Ensure only the clicked tab link is active
+    //     tabLinks.forEach((link) => {
+    //         if (link === clickedTab) {
+    //             link.classList.add('active', 'show');
+    //         } else {
+    //             link.classList.remove('active', 'show');
+    //         }
+    //     });
+
+}
 
 function createCards(divs, rowDiv, tabPanelDiv, tabPanelAllDiv){
     console.log("Divs hi Divs");
