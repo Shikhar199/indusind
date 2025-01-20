@@ -14,7 +14,7 @@ export default function decorate(block){
     let swiperContainerDiv = createAemElement('div', ['swiper-container', 'home_mob_video_slider', 'swiper-initialized', 'swiper-horizontal', 'swiper-backface-hidden'], null, null);
     let swiperNotificationDiv = `<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>`;
 
-    let headingDiv = createAemElement('div', ['heading mb-4'], null, null);
+    let headingDiv = createAemElement('div', ['heading', 'mb-4'], null, null);
 
     rowDiv.appendChild(colDiv);
     colDiv.appendChild(swiperContainerDiv);
@@ -24,6 +24,8 @@ export default function decorate(block){
             blockTitle = row.querySelector('h4');
             blockTitle.classList.add('text-bold', 'text-primary', 'mb-0');
             headingDiv.appendChild(blockTitle);
+        } else if (r==container.children.length-1){
+            console.log(row.querySelector('p').textContent.trim());
         } else if(r%3==1){
             picture = row.querySelector('picture');
             title =  row.querySelector('p').textContent.trim();
