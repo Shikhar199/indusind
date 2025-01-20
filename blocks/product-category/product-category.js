@@ -133,8 +133,21 @@ export default function decorate(block){
     productCategoryDiv.appendChild(compareModel);
     block.appendChild(productCategoryDiv);
     console.log(productCategoryDiv);
+
+    const tabLinks = document.querySelectorAll('.nav-link.tabs-navs');
+
+    tabLinks.forEach((link) => {
+        link.addEventListener('click', handleTabClick);
+    });
 }
 
+function handleTabClick(){
+    const handleTabClick = (event) => {
+        // Get the clicked tab link
+        const clickedTab = event.target;
+        console.log(clickedTab);
+    }
+}
 
 function createCards(divs, rowDiv, tabPanelDiv, tabPanelAllDiv){
     console.log("Divs hi Divs");
