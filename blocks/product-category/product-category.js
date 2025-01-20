@@ -122,6 +122,8 @@ const handleTabClick = (event) => {
         }
     });
 
+    const tabLinks = document.querySelectorAll('.nav-link.tabs-navs');
+
         // Ensure only the clicked tab link is active
         tabLinks.forEach((link) => {
             if (link === clickedTab) {
