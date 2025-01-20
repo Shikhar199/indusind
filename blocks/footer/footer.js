@@ -21,10 +21,19 @@ export default async function decorate(block) {
   // load footer as fragment
   const footerMeta = getMetadata('footer');
   const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer';
+
+  const footerLinksContainer = null;
+  const officeDetailsContainer = null;
+  const footerBottomContainer = null;
   [...block.children].forEach((row,i) => {
-      if (i == 1) {const footerLinksContainer = row;}
-      else if (i == 2) {const officeDetailsContainer = row;}
-      else if (i == 3) {const footerBottomContainer = row;}
+      if (i == 1) {
+        footerLinksContainer = row;
+      } else if (i == 2) {
+        officeDetailsContainer = row;
+      }
+      else if (i == 3) {
+        footerBottomContainer = row;
+      }
   });
 
   const fragment = await loadFragment(footerPath);
