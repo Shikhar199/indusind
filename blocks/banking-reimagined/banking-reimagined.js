@@ -17,18 +17,8 @@ export default function decorate(block){
     let swiperNotificationWrapperDiv = document.createElement('div');
     swiperNotificationWrapperDiv.innerHTML = swiperNotificationDiv;
 
-    let footerHtml = `    <div class="row mb-4 justify-content-end">
-       <div class="col-6">
-          <div class="press-link mt-5 text-right">
-             <a href="/in/en/personal/innovation.html" class="link text-primary">View All <span class="btn-inner--icon"><i class="far fa-angle-right"></i></span></a>
-          </div>
-       </div>
-    </div>`;
-
-    let footerHtmlWrapper = document.createElement('div');
-    footerHtmlWrapper.innerHTML = footerHtml;
-
     let headingDiv = createAemElement('div', ['heading', 'mb-4'], null, null);
+    let footerTitle="";
 
     rowDiv.appendChild(colDiv);
     colDiv.appendChild(swiperContainerDiv);
@@ -39,7 +29,7 @@ export default function decorate(block){
             blockTitle.classList.add('text-bold', 'text-primary', 'mb-0');
             headingDiv.appendChild(blockTitle);
         } else if (r==container.children.length-1){
-            console.log(row.querySelector('p').textContent.trim());
+            footerTitle = row.querySelector('p').textContent.trim();
         } else if(r%3==1){
             picture = row.querySelector('picture');
             title =  row.querySelector('p').textContent.trim();
@@ -101,9 +91,22 @@ export default function decorate(block){
     swiperContainerDiv.appendChild(swiperWrapper);
     swiperContainerDiv.appendChild(paginationWrapper);
 
+    let footerHtml = `    <div class="row mb-4 justify-content-end">
+    <div class="col-6">
+       <div class="press-link mt-5 text-right">
+          <a href="/in/en/personal/innovation.html" class="link text-primary">${footerTitle}<span class="btn-inner--icon"><i class="far fa-angle-right"></i></span></a>
+       </div>
+    </div>
+ </div>`;
+
+ let footerHtmlWrapper = document.createElement('div');
+ footerHtmlWrapper.innerHTML = footerHtml;
+
     parentContainerDiv.appendChild(headingDiv);
     parentContainerDiv.appendChild(rowDiv);
     parentContainerDiv.appendChild(footerHtmlWrapper.querySelector('.row'));
+
+    block.appendChild(parentContainerDiv);
 
     console.log(parentContainerDiv);
 }
