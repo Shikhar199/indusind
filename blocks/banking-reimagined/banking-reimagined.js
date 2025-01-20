@@ -13,12 +13,14 @@ export default function decorate(block){
     let colDiv = createAemElement('div', ['col-12', 'aos-init', 'aos-animate'], {'data-aos' :'fade-up'}, null);
     let swiperContainerDiv = createAemElement('div', ['swiper-container', 'home_mob_video_slider', 'swiper-initialized', 'swiper-horizontal', 'swiper-backface-hidden'], null, null);
     let swiperNotificationDiv = `<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>`;
+    let swiperNotificationWrapperDiv = document.createElement('div');
+    swiperNotificationWrapperDiv.innerHTML = swiperNotificationDiv;
 
     let headingDiv = createAemElement('div', ['heading', 'mb-4'], null, null);
 
     rowDiv.appendChild(colDiv);
     colDiv.appendChild(swiperContainerDiv);
-    colDiv.appendChild(swiperNotificationDiv);
+    colDiv.appendChild(swiperNotificationWrapperDiv.querySelector('.swiper-notification'));
     [...container.children].forEach((row,r)=>{
         if(r==0){
             blockTitle = row.querySelector('h4');
