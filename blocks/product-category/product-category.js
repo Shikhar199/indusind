@@ -97,11 +97,11 @@ export default function decorate(block){
     const tabLinks = document.querySelectorAll('.nav-link.tabs-navs');
     console.log(tabLinks);
     tabLinks.forEach((link) => {
-        link.addEventListener('click', handleTabClick);
+        link.addEventListener('click', handleTabClick(tabLinks));
     });
 }
 
-const handleTabClick = (event) => {
+const handleTabClick = (event, tabLinks) => {
     // Get the clicked tab link
     const clickedTab = event.target;
     const targetId = clickedTab.getAttribute('href').replace('#', '');
