@@ -239,7 +239,7 @@ function createCards(divs, rowDiv, tabPanelDiv, tabPanelAllDiv){
             rowDiv.appendChild(rowElement);
             console.log(rowDiv);
             tabPanelDiv.appendChild(rowDiv);
-            tabPanelAllDiv.appendChild(rowElement);
+            tabPanelAllDiv.appendChild(rowElement.cloneNode(true));
             // tabPanelAllDiv.appendChild(rowDiv);        
         }
     }
