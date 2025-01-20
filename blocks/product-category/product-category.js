@@ -43,7 +43,7 @@ export default function decorate(block){
 
     // Handle the remaining divs after the last breakpoint
     if (breakPts[breakPts.length - 1] < totalDivs) {
-        let tabPanelDiv = createAemElement('div', ['tab-pane', 'fade'], {'role':'tabpanel', 'aria-labelledby':'card-tab-2'}, "card-tab-2");
+        let tabPanelDiv = createAemElement('div', ['tab-pane', 'fade'], {'role':'tabpanel', 'aria-labelledby':'card-tab-2'}, "card-tab2");
         const rowDiv = createAemElement('div', ['row'], null, null);
         const slicedDivs = allDivs.slice(breakPts[breakPts.length - 1], totalDivs);
         const cards = createCards(slicedDivs, rowDiv, tabPanelDiv, tabPanelAllDiv);
