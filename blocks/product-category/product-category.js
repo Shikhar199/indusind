@@ -103,7 +103,9 @@ export default function decorate(block){
 
 const handleTabClick = (event, tabLinks) => {
     // Get the clicked tab link
+    event.preventDefault();
     const clickedTab = event.target;
+    console.log(event.target);
     const targetId = clickedTab.getAttribute('href').replace('#', '');
     console.log(targetId);
     // Select all tab content divs
