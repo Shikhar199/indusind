@@ -87,46 +87,6 @@ export default function decorate(block){
     parentContainer.appendChild(headingDiv);
     parentContainer.appendChild(tabContainerDiv);
 
-
-    
-
-    //     } else if(r%3==2){
-    //         let cardFooter = document.createElement('div');
-    //         cardFooter.classList.add('card-footer', 'border-0', 'pt-0');
-
-    //         let alignItemsDiv = document.createElement('div');
-    //         alignItemsDiv.classList.add('d-flex', 'justify-content-between', 'align-items-center');
-
-    //         let anchor = document.createElement('a');
-    //         anchor.classList.add('btn', 'py-2', 'btn-sm', 'btn-primary', 'card-btn', 'text-uppercase', 'btn-primary-option');
-
-    //         let anchor2 = document.createElement('a');
-    //         anchor2.classList.add('link_view', 'normal-text');
-
-    //         [...row.children].forEach((col,c)=>{
-    //             [...col.children].forEach((child,i)=>{
-    //                 if(i==0){
-    //                     anchor.href = child.textContent.trim();
-    //                 } else if(i==1){
-    //                     anchor.textContent = child.textContent.trim();
-    //                 } else if(i==2){
-    //                     anchor2.href = child.textContent.trim();
-    //                 } else{
-    //                     anchor2.textContent = child.textContent.trim();
-    //                 }
-    //             })
-    //         })
-
-    //         cardFooter.appendChild(alignItemsDiv);
-    //         alignItemsDiv.appendChild(anchor);
-    //         alignItemsDiv.appendChild(anchor2);
-    //         cardParentDiv.appendChild(cardFooter)
-
-    //     }
-
-    //     rowDiv.appendChild(sectionDiv);
-    // })
-
     const scriptDiv = getScript();
     const compareModel = createCompareModel();
     productCategoryDiv.appendChild(scriptDiv);
@@ -135,7 +95,7 @@ export default function decorate(block){
     console.log(productCategoryDiv);
 
     const tabLinks = document.querySelectorAll('.nav-link.tabs-navs');
-
+    console.log(tabLinks);
     tabLinks.forEach((link) => {
         link.addEventListener('click', handleTabClick);
     });
