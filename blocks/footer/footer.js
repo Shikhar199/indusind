@@ -22,9 +22,9 @@ export default async function decorate(block) {
   const footerMeta = getMetadata('footer');
   const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer';
   [...block.children].forEach((row,i) => {
-      if (i == 1) const footerLinksContainer = row;
-      if (i == 2) const officeDetailsContainer = row;
-      if (i == 3) const footerBottomContainer = row;
+      if (i == 1) {const footerLinksContainer = row;}
+      else if (i == 2) {const officeDetailsContainer = row;}
+      else if (i == 3) {const footerBottomContainer = row;}
   });
 
   const fragment = await loadFragment(footerPath);
