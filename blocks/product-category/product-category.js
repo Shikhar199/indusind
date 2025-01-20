@@ -101,13 +101,11 @@ export default function decorate(block){
     });
 }
 
-function handleTabClick(){
     const handleTabClick = (event) => {
         // Get the clicked tab link
         const clickedTab = event.target;
         console.log(clickedTab);
     }
-}
 
 function createCards(divs, rowDiv, tabPanelDiv, tabPanelAllDiv){
     console.log("Divs hi Divs");
