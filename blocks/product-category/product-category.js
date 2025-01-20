@@ -239,6 +239,7 @@ function createCards(divs, rowDiv, tabPanelDiv, tabPanelAllDiv){
             let rowElement = wrapper.querySelector('.col-md-6');    
             console.log(rowElement);
             rowDiv.appendChild(rowElement);
+            console.log(rowDiv);
             tabPanelDiv.appendChild(rowDiv);
             tabPanelAllDiv.appendChild(rowElement);
             // tabPanelAllDiv.appendChild(rowDiv);        
