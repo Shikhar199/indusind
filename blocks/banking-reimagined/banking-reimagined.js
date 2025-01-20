@@ -10,7 +10,7 @@ export default function decorate(block){
     let slideHtml;
     let swiperWrapper = createAemElement('div', ['swiper-wrapper'], null, "swiper-wrapper-468156e587f7a5fa");
     let rowDiv = createAemElement('div', ['row'], null, null);
-    let colDiv = createAemElement('div', ['col-12 aos-init aos-animate'], {'data-aos' :'fade-up'}, null);
+    let colDiv = createAemElement('div', ['col-12', 'aos-init', 'aos-animate'], {'data-aos' :'fade-up'}, null);
     let swiperContainerDiv = createAemElement('div', ['swiper-container', 'home_mob_video_slider', 'swiper-initialized', 'swiper-horizontal', 'swiper-backface-hidden'], null, null);
 
     rowDiv.appendChild(colDiv);
