@@ -1,6 +1,14 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
+function createCustomElement(tagname, className) {
+  const element = document.createElement(tagname);
+  if (className) {
+    element.classList.add(className);
+  }
+  return element;
+}
+
 function decorateFooterLinks(footerLinksContainer) {
   console.log(footerLinksContainer);
 }
@@ -25,18 +33,8 @@ export default async function decorate(block) {
   const footerLinksContainer = block.children[0];
   const officeDetailsContainer = block.children[1];
   const footerBottomContainer = block.children[2];
-//  [...block.children].forEach((row, i) => {
-//      if (i === 0) {
-//        footerLinksContainer = row;
-//      } else if (i === 1) {
-//        officeDetailsContainer = row;
-//      }
-//      else if (i === 2) {
-//        footerBottomContainer = row;
-//      }
-//  });
 
-  const fragment = await loadFragment(footerPath);
+  //const fragment = await loadFragment(footerPath);
 
   // decorate footer DOM
   block.textContent = '';
@@ -45,7 +43,7 @@ export default async function decorate(block) {
   decorateOfficeDetails(officeDetailsContainer);
   decorateFooterBottom(footerBottomContainer);
   const footer = document.createElement('div');
-  while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
+//  while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
   block.append(footer);
 }
