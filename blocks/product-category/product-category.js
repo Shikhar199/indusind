@@ -32,8 +32,7 @@ export default function decorate(block){
         let tabPanelDiv;
         const start = breakPts[i];
         const end = breakPts[i + 1];
-        const rowDiv = document.createElement('div');
-        rowDiv.classList.add('row');
+        const rowDiv = createAemElement('div', ['row'], null, null);
             
         tabPanelDiv = createAemElement('div', ['tab-pane', 'fade', 'active', 'show',  'position-relative'], {'role':'tabpanel', 'aria-labelledby':'card-recommended-tab'}, "card-recommended");
         const slicedDivs = allDivs.slice(start, end); // Extract divs within the range
@@ -45,8 +44,7 @@ export default function decorate(block){
     // Handle the remaining divs after the last breakpoint
     if (breakPts[breakPts.length - 1] < totalDivs) {
         let tabPanelDiv = createAemElement('div', ['tab-pane', 'fade'], {'role':'tabpanel', 'aria-labelledby':'card-tab-2'}, "card-tab-2");
-        const rowDiv = document.createElement('div');
-        rowDiv.classList.add('row');
+        const rowDiv = createAemElement('div', ['row'], null, null);
         const slicedDivs = allDivs.slice(breakPts[breakPts.length - 1], totalDivs);
         const cards = createCards(slicedDivs, rowDiv, tabPanelDiv, tabPanelAllDiv);
         console.log(cards);
