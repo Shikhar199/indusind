@@ -50,7 +50,7 @@ export default function decorate(block){
 
                             <figure class="position-relative">
 
-                                ${picture}
+                                ${picture.outerHTML}
                                <a href="https://youtu.be/P8fdNmRudUY&amp;rel=0" class="btn btn-xl btn-white btn-play btn-icon-only btn-zoom--hover rounded-circle shadow-sm position-absolute m-auto top-0 right-0 bottom-0 left-0" data-fancybox="">
                                   <span class="btn-inner--icon"><i class="fas fa-play"></i></span>
                                </a>
