@@ -19,7 +19,7 @@ function createAemElement(tag, classes, attributes, elementId) {
   return tagElement;
 }
 
-function decorate(block) {
+export default function decorate(block) {
   const container = document.createElement('div');
   container.innerHTML = block.innerHTML;
   block.innerHTML = '';
