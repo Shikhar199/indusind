@@ -1683,3 +1683,7 @@
   li.nav-item-dektop:hover .nav-link-desktop {
     color: white;
   }
+
+  .nav-link-desktop{
+    color: #000;
+  }
