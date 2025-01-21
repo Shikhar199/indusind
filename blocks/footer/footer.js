@@ -212,7 +212,7 @@ function decorateFooterBottom(footerBottomContainer) {
   const bottomLinksDiv = createCustomElement("div", "bottom-links-footer pt-2 pb-4");
 
   // Fetch copyright text
-  const divElements = document.querySelectorAll('div[data-align="center"]');
+  const divElements = footerBottomContainer.querySelectorAll('div[data-align="center"]');
   const secondDiv = divElements[1]; // Access the second <div>
 
   // Get the <p> element inside the second <div> and fetch its textContent
