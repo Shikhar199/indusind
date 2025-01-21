@@ -109,7 +109,7 @@ function decorateFooterLinks(footerLinksContainer) {
         a.setAttribute("target", "_blank");
       });
 
-      const disclaimerPara = sourceDiv.querySelector("p");
+      const disclaimerPara = socialLinksDiv.querySelector("p");
       disclaimerPara.setAttribute('style', 'font-size: 12px; line-height: 14px;');
 
       // Decorate DICGC Icon and QR below
