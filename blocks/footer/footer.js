@@ -209,6 +209,7 @@ function decorateOfficeDetails(officeDetailsContainer) {
 
 function decorateFooterBottom(footerBottomContainer) {
   console.log(footerBottomContainer);
+  return footerBottomContainer;
 }
 
 /**
