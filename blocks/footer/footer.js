@@ -194,7 +194,6 @@ export default async function decorate(block) {
   //Create outermost footer element
   const footerDiv = createCustomElement("footer", "footer bg-primary pt-lg-4 pt-md-0 pt-sm-0 d-print-none");
   const containerDiv = decorateFooterLinks(footerLinksContainer);
-  console.log(containerDiv);
   footerDiv.appendChild(containerDiv);
 
   decorateOfficeDetails(officeDetailsContainer);
