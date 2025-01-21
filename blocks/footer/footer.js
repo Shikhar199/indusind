@@ -168,6 +168,19 @@ export default async function decorate(block) {
   const footerMeta = getMetadata('footer');
   const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer';
 
+  const footerUrl = window.location.pathname + "footer";
+  console.log(footerPath);
+  console.log(footerUrl);
+  let main;
+  if(footerUrl && footerUrl.startsWith('/')){
+      const resp = await fetch(`${footerUrl}.plain.html`);
+      if(resp.ok){
+          main = document.createElement('main');
+          main.innerHTML = await resp.text();
+          console.log(main.innerHTML);
+      }
+      
+  }
   console.log(block);
   console.log(block.children[0]);
   console.log(block.children[1]);
