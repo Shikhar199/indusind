@@ -1677,7 +1677,7 @@
     color: #000 !important;
   }
 
-  header .nav-item.dropdown-animate:hover a{
+  header .nav-item-desktop:hover a{
     color: white !important;
   }
 
