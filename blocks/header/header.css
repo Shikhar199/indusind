@@ -1672,3 +1672,7 @@
   .headerNew{
     background-color: #fff;
   }
+
+  header li a{
+    color: #000;
+  }
