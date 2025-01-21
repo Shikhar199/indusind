@@ -268,6 +268,12 @@ export default async function decorate(block) {
   const footerBottom = decorateFooterBottom(footerBottomContainer);
   footerDiv.appendChild(footerBottom);
 
+  // Decorate Scroll to top button
+  const scrollTopBtn = createCustomElement("a", "scroll_btn show");
+  scrollTopBtn.href = "#";
+  scrollTopBtn.title = "Go to top";
+  footerDiv.appendChild(scrollTopBtn);
+
   const footer = document.createElement('div');
 //  while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
   block.textContent = '';
