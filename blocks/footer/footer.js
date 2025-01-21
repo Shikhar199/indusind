@@ -168,6 +168,10 @@ export default async function decorate(block) {
   const footerMeta = getMetadata('footer');
   const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer';
 
+  console.log(block);
+  console.log(block.children[0]);
+  console.log(block.children[1]);
+  console.log(block.children[2]);
   const footerLinksContainer = block.children[0];
   const officeDetailsContainer = block.children[1];
   const footerBottomContainer = block.children[2];
