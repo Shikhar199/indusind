@@ -489,9 +489,6 @@
     padding: 0 8px;
     border-radius: 5px;
   }
-  li.nav-item-dektop:hover a{
-    color: white;
-  }
   li.nav-item-dektop:hover .nav-link-desktop {
     color: white;
   }
@@ -1675,11 +1672,6 @@
   .headerNew{
     background-color: #fff;
   }
-
-  header li a{
-    color: #000 !important;
-  }
-
   header .nav-link-desktop:hover a{
     color: white !important;
   }
