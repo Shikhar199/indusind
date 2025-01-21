@@ -238,7 +238,7 @@ header .header, footer .footer {
   visibility: visible !important; 
 }
 
-.footer picture img{
+.footer p picture img{
   width: 100px;
   height: 100px;
 }
