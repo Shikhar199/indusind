@@ -30,6 +30,8 @@ function createCustomElement(tagname, className) {
 }
 
 function decorateFooterLinks(footerLinksContainer) {
+  console.log(footerLinksContainer);
+
   const containerDiv = createCustomElement("div", "container");
   const rowDiv = createCustomElement("div", "row");
 
@@ -112,9 +114,6 @@ function decorateFooterLinks(footerLinksContainer) {
 
       const sourceDiv = column.querySelector("h6").parentElement;
       const emailH5 = sourceDiv.querySelector("h5");
-
-      emailH5.remove();
-      
       //Replace the existing h5 with the Email Subscription section created above
 
       [...sourceDiv.children].forEach(child => socialLinksDiv.append(child));
@@ -130,55 +129,10 @@ function decorateFooterLinks(footerLinksContainer) {
         a.setAttribute("target", "_blank");
       });
 
-      // Decorate Icons Container
-      const iconsContainerDiv = document.createElement("div");
-      const indusMultiDiv = createCustomElement("div", "indus-multi-footer");
-      iconsContainerDiv.appendChild(indusMultiDiv);
-      const pTags = socialLinksDiv.querySelectorAll("p");
-      pTags.forEach((p, i) => {
-        if (i === 0) {
-          const disclaimerPara = p;
-          disclaimerPara.setAttribute('style', 'font-size: 12px; line-height: 14px;');
-        }
-        else if (i === 1) {
-          const iconsPara1 = p;
-          const iconImg = iconsPara1.querySelector("picture img");
-          const imgSrc = iconImg.src;
-          const imgAlt = iconImg.alt;
-          const paraText = iconsPara1.textContent.trim();
+      const disclaimerPara = socialLinksDiv.querySelector("p");
+      disclaimerPara.setAttribute('style', 'font-size: 12px; line-height: 14px;');
 
-          indusMultiDiv.innerHTML = `
-            <div class="icons">
-              <a>
-              <img src="${imgSrc}" alt="${imgAlt}">
-              </a>
-              <p></p>
-              <p>${paraText}</p>
-              <p></p>
-            </div>
-          `;
-          p.remove();
-        }
-        else if (i === 2) {
-          const iconsPara2 = p;
-          const iconImg = iconsPara2.querySelector("picture img");
-          const imgSrc = iconImg.src;
-          const imgAlt = iconImg.alt;
-          const paraText = iconsPara2.textContent.trim();
-          const iconsDiv2 = createCustomElement("div", "icons");
-
-          iconsDiv2.innerHTML = `
-            <a>
-              <img src="${imgSrc}" alt="${imgAlt}">
-            </a>
-            <p></p>
-            <p>${paraText}</p>
-            <p></p>
-          `;
-          indusMultiDiv.appendChild(iconsDiv2);
-          p.remove();
-        }
-      });
+      // Decorate DICGC Icon and QR below
 
       // Append elements to create structure
       socialLinksDiv.appendChild(sourceDiv);
@@ -186,9 +140,10 @@ function decorateFooterLinks(footerLinksContainer) {
 
       columnDiv.appendChild(emailInputContainerDiv);
       columnDiv.appendChild(socialLinksContainerDiv);
-
-      columnDiv.appendChild(iconsContainerDiv);
       rowDiv.appendChild(columnDiv);
+
+      console.log(rowDiv);
+
     }
   });
 
@@ -197,68 +152,11 @@ function decorateFooterLinks(footerLinksContainer) {
 }
 
 function decorateOfficeDetails(officeDetailsContainer) {
-  const officeDetailsDiv = createCustomElement("div", "regoff-wrap pt-lg-4 pt-md-4 pt-sm-3 pb-4");
-  const iconImg = officeDetailsContainer.querySelector("picture img");
-  const iconImgSrc = iconImg.src;
-  const iconImgAlt = iconImg.alt;
-  officeDetailsContainer.querySelector("p:has(picture)").remove();
-  const pElements = officeDetailsContainer.querySelectorAll("p");
-
-  officeDetailsDiv.innerHTML = `
-    <div class="container text-center">
-       <div class="row">
-          <div class="col-sm-12 pl-lg-0 pl-md-4 pl-sm-5 pr-lg-0 pr-md-4 pr-sm-5">
-             <p style="text-align: center;" class="paraContainer">
-             </p>
-          </div>
-       </div>
-    </div>
-    <div class="bull-icon-footer">
-       <img src="${iconImgSrc}" alt="${iconImgAlt}">
-    </div>
-  `;
-  pElements.forEach(p => {
-    officeDetailsDiv.querySelector("p.paraContainer").appendChild(p);
-  });
-
-  // return officeDetailsDiv;
+  console.log(officeDetailsContainer);
 }
 
 function decorateFooterBottom(footerBottomContainer) {
-  const anchorElements = footerBottomContainer.querySelectorAll("a");
-  anchorElements.forEach(a => {
-    a.className = "text-white";
-    a.setAttribute("target", "_blank");
-  });
-
-  const bottomLinksDiv = createCustomElement("div", "bottom-links-footer pt-2 pb-4");
-
-  // Fetch copyright text
-  const divElements = footerBottomContainer.querySelectorAll('div[data-align="center"]');
-  const secondDiv = divElements[1]; // Access the second <div>
-
-  // Get the <p> element inside the second <div> and fetch its textContent
-  const copyrightText = secondDiv.querySelector('p').textContent;
-
-  bottomLinksDiv.innerHTML = `
-    <div class="container">
-       <div class="row">
-          <div class="col-lg-8 col-md-12 col-sm-12">
-             <div class="restxt text-lg-left text-center mb-lg-0 mb-2">
-
-             </div>
-          </div>
-          <div class="col-lg-4 col-md-12 col-sm-12 copy-footer text-lg-right text-center">
-             ${copyrightText}
-          </div>
-       </div>
-    </div>
-  `;
-  const firstDiv = divElements[0];
-  const firstDivInnerHTML = firstDiv.innerHTML;
-  bottomLinksDiv.querySelector("div.restxt").innerHTML = firstDivInnerHTML;
-
-  // return bottomLinksDiv;
+  console.log(footerBottomContainer);
 }
 
 /**
@@ -272,7 +170,6 @@ export default async function decorate(block) {
 
   let main;
   if(footerPath && footerPath.startsWith('/')){
-
       const resp = await fetch(`${footerPath}.plain.html`);
       if(resp.ok){
           main = document.createElement('main');
@@ -285,7 +182,6 @@ export default async function decorate(block) {
   console.log(main.querySelector('.footer').children[0]);
   console.log(main.querySelector('.footer').children[1]);
   console.log(main.querySelector('.footer').children[2]);
-
   const footerLinksContainer = main.querySelector('.footer').children[0];
   const officeDetailsContainer = main.querySelector('.footer').children[1];
   const footerBottomContainer = main.querySelector('.footer').children[2];
@@ -298,6 +194,7 @@ export default async function decorate(block) {
   //Create outermost footer element
   const footerDiv = createCustomElement("footer", "footer bg-primary pt-lg-4 pt-md-0 pt-sm-0 d-print-none");
   const containerDiv = decorateFooterLinks(footerLinksContainer);
+  console.log(containerDiv);
   footerDiv.appendChild(containerDiv);
 
   decorateOfficeDetails(officeDetailsContainer);
