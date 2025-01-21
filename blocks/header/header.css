@@ -487,7 +487,6 @@
 
   .nav-item-dektop .nav-link-desktop {
     color: black; /* Default color */
-    text-decoration: none; /* Optional, to remove underline */
   }
   
   /* Styles for hover state on the list item */
