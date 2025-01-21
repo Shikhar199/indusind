@@ -179,6 +179,7 @@ function decorateFooterLinks(footerLinksContainer) {
 
 function decorateOfficeDetails(officeDetailsContainer) {
   console.log(officeDetailsContainer);
+
   const officeDetailsDiv = createCustomElement("div", "regoff-wrap pt-lg-4 pt-md-4 pt-sm-3 pb-4");
   const iconImg = officeDetailsContainer.querySelector("picture img");
   const iconImgSrc = iconImg.src;

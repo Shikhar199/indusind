@@ -92,7 +92,7 @@ letter-spacing:0.3px !important;
 position:relative !important;
 }
 footer .regoff-wrap span{
-  color: #fff!important !important;
+  color: #fff !important;
 }
 footer .bottom-links-footer{
 color:#fff !important;
@@ -184,12 +184,12 @@ footer.bg-primary h6 .device-drop-footer[aria-expanded="true"]:after {
 }
 
 .regoff-wrap a{
-        color: #fff!important !important;
+        color: #fff !important;
     }
 
  @supports (-webkit-overflow-scrolling: touch) {
   .regoff-wrap a{
-        color: #fff! !important;
+        color: #fff !important;
     }
 }
 
