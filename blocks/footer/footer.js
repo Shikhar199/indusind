@@ -17,7 +17,7 @@ function decorateFooterLinks(footerLinksContainer) {
 
   // Create columns
   [...footerLinksContainer.children].forEach((column, i) => {
-    if (i != 5) {
+    if (i < 5) {
       const columnDiv = createCustomElement("div", "col-lg col-md-12");
       const div2 = document.createElement("div");
       const listOfLinksDiv = createCustomElement("div", "list-of-links");
