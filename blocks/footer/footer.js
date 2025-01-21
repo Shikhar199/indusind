@@ -225,9 +225,41 @@ function decorateOfficeDetails(officeDetailsContainer) {
   return officeDetailsDiv;
 }
 
-
 function decorateFooterBottom(footerBottomContainer) {
-  console.log(footerBottomContainer);
+  const anchorElements = footerBottomContainer.querySelectorAll("a");
+  anchorElements.forEach(a => {
+    a.className = "text-white";
+    a.setAttribute("target", "_blank");
+  });
+
+  const bottomLinksDiv = createCustomElement("div", "bottom-links-footer pt-2 pb-4");
+
+  // Fetch copyright text
+  const divElements = footerBottomContainer.querySelectorAll('div[data-align="center"]');
+  const secondDiv = divElements[1]; // Access the second <div>
+
+  // Get the <p> element inside the second <div> and fetch its textContent
+  const copyrightText = secondDiv.querySelector('p').textContent;
+
+  bottomLinksDiv.innerHTML = `
+    <div class="container">
+       <div class="row">
+          <div class="col-lg-8 col-md-12 col-sm-12">
+             <div class="restxt text-lg-left text-center mb-lg-0 mb-2">
+
+             </div>
+          </div>
+          <div class="col-lg-4 col-md-12 col-sm-12 copy-footer text-lg-right text-center">
+             ${copyrightText}
+          </div>
+       </div>
+    </div>
+  `;
+  const firstDiv = divElements[0];
+  const firstDivInnerHTML = firstDiv.innerHTML;
+  bottomLinksDiv.querySelector("div.restxt").innerHTML = firstDivInnerHTML;
+
+  return bottomLinksDiv;
 }
 
 /**
@@ -270,8 +302,8 @@ export default async function decorate(block) {
 
   const officeContainer = decorateOfficeDetails(officeDetailsContainer);
   footerDiv.appendChild(officeContainer);
-  decorateFooterBottom(footerBottomContainer);
-
+  const bottomContainer = decorateFooterBottom(footerBottomContainer);
+  footerDiv.appendChild(bottomContainer);
     // Decorate Scroll to top button
   const scrollTopBtn = createCustomElement("a", "scroll_btn show");
   scrollTopBtn.href = "#";
