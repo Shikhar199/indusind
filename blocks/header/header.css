@@ -1676,3 +1676,7 @@
   header li a{
     color: #000 !important;
   }
+
+  header li a:hover{
+    color: #2f373d; !important;
+  }
