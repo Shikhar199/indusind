@@ -273,7 +273,7 @@ header nav .nav-tools {
 
   body {
     width: 100%;
-    background-color: black;
+    /* background-color: black; */
   }
   li.menu-item-has-mega-menu {
     position: static;
