@@ -179,9 +179,9 @@ export default async function decorate(block) {
       
   }
   console.log(main);
-  console.log(main.children[0]);
-  console.log(main.children[1]);
-  console.log(main.children[2]);
+  console.log(main.querySelector('.footer').children[0]);
+  console.log(main.querySelector('.footer').children[1]);
+  console.log(main.querySelector('.footer').children[2]);
   const footerLinksContainer = main.children[0];
   const officeDetailsContainer = main.children[1];
   const footerBottomContainer = main.children[2];
