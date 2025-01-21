@@ -234,7 +234,7 @@ function decorateFooterBottom(footerBottomContainer) {
   `;
   const firstDiv = divElements[0];
   const firstDivInnerHTML = firstDiv.innerHTML;
-  bottomLinksDiv.querySelector("div.restxt").appendChild(firstDivInnerHTML);
+  bottomLinksDiv.querySelector("div.restxt").innerHTML = firstDivInnerHTML;
 
   return bottomLinksDiv;
 }
