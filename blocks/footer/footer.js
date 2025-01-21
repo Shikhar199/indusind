@@ -209,6 +209,12 @@ function decorateOfficeDetails(officeDetailsContainer) {
 
 function decorateFooterBottom(footerBottomContainer) {
   console.log(footerBottomContainer);
+  const anchorElements = footerBottomContainer.querySelectorAll("a");
+  anchorElements.forEach(a => {
+    a.className = "text-white";
+    a.setAttribute("target", "_blank");
+  });
+
   const bottomLinksDiv = createCustomElement("div", "bottom-links-footer pt-2 pb-4");
 
   // Fetch copyright text
