@@ -1,3 +1,23 @@
+// import { getMetadata } from '../../scripts/aem.js';
+// import { loadFragment } from '../fragment/fragment.js';
+
+// /**
+//  * loads and decorates the footer
+//  * @param {Element} block The footer block element
+//  */
+// export default async function decorate(block) {
+//   // load footer as fragment
+//   const footerMeta = getMetadata('footer');
+//   const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer';
+//   const fragment = await loadFragment(footerPath);
+
+//   // decorate footer DOM
+//   block.textContent = '';
+//   const footer = document.createElement('div');
+//   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
+
+//   block.append(footer);
+// }
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
@@ -92,7 +112,9 @@ function decorateFooterLinks(footerLinksContainer) {
 
       const sourceDiv = column.querySelector("h6").parentElement;
       const emailH5 = sourceDiv.querySelector("h5");
+
       emailH5.remove();
+      
       //Replace the existing h5 with the Email Subscription section created above
 
       [...sourceDiv.children].forEach(child => socialLinksDiv.append(child));
@@ -164,6 +186,7 @@ function decorateFooterLinks(footerLinksContainer) {
 
       columnDiv.appendChild(emailInputContainerDiv);
       columnDiv.appendChild(socialLinksContainerDiv);
+
       columnDiv.appendChild(iconsContainerDiv);
       rowDiv.appendChild(columnDiv);
     }
@@ -198,7 +221,7 @@ function decorateOfficeDetails(officeDetailsContainer) {
     officeDetailsDiv.querySelector("p.paraContainer").appendChild(p);
   });
 
-  return officeDetailsDiv;
+  // return officeDetailsDiv;
 }
 
 function decorateFooterBottom(footerBottomContainer) {
@@ -235,7 +258,7 @@ function decorateFooterBottom(footerBottomContainer) {
   const firstDivInnerHTML = firstDiv.innerHTML;
   bottomLinksDiv.querySelector("div.restxt").innerHTML = firstDivInnerHTML;
 
-  return bottomLinksDiv;
+  // return bottomLinksDiv;
 }
 
 /**
@@ -249,41 +272,40 @@ export default async function decorate(block) {
 
   let main;
   if(footerPath && footerPath.startsWith('/')){
-    const resp = await fetch(`${footerPath}.plain.html`);
-    if(resp.ok){
-      main = document.createElement('main');
-      main.innerHTML = await resp.text();
-    }
+
+      const resp = await fetch(`${footerPath}.plain.html`);
+      if(resp.ok){
+          main = document.createElement('main');
+          main.innerHTML = await resp.text();
+          console.log(main.innerHTML);
+      }
+      
   }
+  console.log(main);
+  console.log(main.querySelector('.footer').children[0]);
+  console.log(main.querySelector('.footer').children[1]);
+  console.log(main.querySelector('.footer').children[2]);
 
   const footerLinksContainer = main.querySelector('.footer').children[0];
   const officeDetailsContainer = main.querySelector('.footer').children[1];
   const footerBottomContainer = main.querySelector('.footer').children[2];
 
-  //const fragment = await loadFragment(footerPath); // Default footer code
+  //const fragment = await loadFragment(footerPath); //Commented because going in infinite loop
 
   // decorate footer DOM
-  // block.textContent = ''; // Default footer code
+//  block.textContent = ''; Commented because function running 2 times!
 
   //Create outermost footer element
   const footerDiv = createCustomElement("footer", "footer bg-primary pt-lg-4 pt-md-0 pt-sm-0 d-print-none");
-  const linksContainer = decorateFooterLinks(footerLinksContainer);
-  footerDiv.appendChild(linksContainer);
+  const containerDiv = decorateFooterLinks(footerLinksContainer);
+  console.log(containerDiv);
+  footerDiv.appendChild(containerDiv);
 
-  const officeDetails = decorateOfficeDetails(officeDetailsContainer);
-  footerDiv.appendChild(officeDetails);
+  decorateOfficeDetails(officeDetailsContainer);
+  decorateFooterBottom(footerBottomContainer);
 
-  const footerBottom = decorateFooterBottom(footerBottomContainer);
-  footerDiv.appendChild(footerBottom);
-
-  // Decorate Scroll to top button
-  const scrollTopBtn = createCustomElement("a", "scroll_btn show");
-  scrollTopBtn.href = "#";
-  scrollTopBtn.title = "Go to top";
-  footerDiv.appendChild(scrollTopBtn);
-
-  // while (fragment.firstElementChild) footer.append(fragment.firstElementChild); // Default footer code
-
+  const footer = document.createElement('div');
+//  while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
   block.textContent = '';
   block.append(footerDiv);
 }

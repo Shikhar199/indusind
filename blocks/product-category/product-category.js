@@ -1,4 +1,4 @@
-import { createAemElement } from "../../scripts/aem.js";
+import { createAemElement, waitForFirstImage } from "../../scripts/aem.js";
 
 export default function decorate(block){
     const container = document.createElement('div');
@@ -101,6 +101,8 @@ export default function decorate(block){
     tabLinks.forEach((link) => {
         link.addEventListener('click', handleTabClick);
     });
+
+    waitForFirstImage(tabContentDiv);
 }
 
 const handleTabClick = (event) => {
