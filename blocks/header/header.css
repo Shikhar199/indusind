@@ -1677,7 +1677,7 @@
     color: #000 !important;
   }
 
-  header li:hover a{
+  header .nav-item.dropdown-animate:hover a{
     color: white !important;
   }
 
