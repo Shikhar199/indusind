@@ -101,6 +101,8 @@ export default function decorate(block){
     tabLinks.forEach((link) => {
         link.addEventListener('click', handleTabClick);
     });
+
+    waitForFirstImage(productCategoryDiv);
 }
 
 const handleTabClick = (event) => {
