@@ -161,6 +161,7 @@ export default async function decorate(block) {
   const footerDiv = createCustomElement("footer", "footer bg-primary pt-lg-4 pt-md-0 pt-sm-0 d-print-none");
   const containerDiv = decorateFooterLinks(footerLinksContainer);
   console.log(containerDiv);
+  footerDiv.appendChild(containerDiv);
 
   decorateOfficeDetails(officeDetailsContainer);
   decorateFooterBottom(footerBottomContainer);
@@ -168,5 +169,5 @@ export default async function decorate(block) {
   const footer = document.createElement('div');
 //  while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
   block.textContent = '';
-  block.append(containerDiv);
+  block.append(footerDiv);
 }
