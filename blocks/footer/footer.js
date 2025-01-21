@@ -10,8 +10,6 @@ function createCustomElement(tagname, className) {
 }
 
 function decorateFooterLinks(footerLinksContainer) {
-  console.log(footerLinksContainer);
-
   const containerDiv = createCustomElement("div", "container");
   const rowDiv = createCustomElement("div", "row");
 
@@ -168,8 +166,6 @@ function decorateFooterLinks(footerLinksContainer) {
       columnDiv.appendChild(socialLinksContainerDiv);
       columnDiv.appendChild(iconsContainerDiv);
       rowDiv.appendChild(columnDiv);
-
-      console.log(rowDiv);
     }
   });
 
@@ -178,8 +174,6 @@ function decorateFooterLinks(footerLinksContainer) {
 }
 
 function decorateOfficeDetails(officeDetailsContainer) {
-  console.log(officeDetailsContainer);
-
   const officeDetailsDiv = createCustomElement("div", "regoff-wrap pt-lg-4 pt-md-4 pt-sm-3 pb-4");
   const iconImg = officeDetailsContainer.querySelector("picture img");
   const iconImgSrc = iconImg.src;
@@ -203,13 +197,11 @@ function decorateOfficeDetails(officeDetailsContainer) {
   pElements.forEach(p => {
     officeDetailsDiv.querySelector("p.paraContainer").appendChild(p);
   });
-  console.log("officeDetailsDiv: ");
-  console.log(officeDetailsDiv);
+
   return officeDetailsDiv;
 }
 
 function decorateFooterBottom(footerBottomContainer) {
-  console.log(footerBottomContainer);
   const anchorElements = footerBottomContainer.querySelectorAll("a");
   anchorElements.forEach(a => {
     a.className = "text-white";
@@ -255,14 +247,23 @@ export default async function decorate(block) {
   const footerMeta = getMetadata('footer');
   const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer';
 
-  const footerLinksContainer = block.children[0];
-  const officeDetailsContainer = block.children[1];
-  const footerBottomContainer = block.children[2];
+  let main;
+  if(footerPath && footerPath.startsWith('/')){
+    const resp = await fetch(`${footerPath}.plain.html`);
+    if(resp.ok){
+      main = document.createElement('main');
+      main.innerHTML = await resp.text();
+    }
+  }
 
-  //const fragment = await loadFragment(footerPath); //Commented because going in infinite loop
+  const footerLinksContainer = main.querySelector('.footer').children[0];
+  const officeDetailsContainer = main.querySelector('.footer').children[1];
+  const footerBottomContainer = main.querySelector('.footer').children[2];
+
+  //const fragment = await loadFragment(footerPath); // Default footer code
 
   // decorate footer DOM
-//  block.textContent = ''; Commented because function running 2 times!
+  // block.textContent = ''; // Default footer code
 
   //Create outermost footer element
   const footerDiv = createCustomElement("footer", "footer bg-primary pt-lg-4 pt-md-0 pt-sm-0 d-print-none");
@@ -281,8 +282,8 @@ export default async function decorate(block) {
   scrollTopBtn.title = "Go to top";
   footerDiv.appendChild(scrollTopBtn);
 
-  const footer = document.createElement('div');
-//  while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
+  // while (fragment.firstElementChild) footer.append(fragment.firstElementChild); // Default footer code
+
   block.textContent = '';
   block.append(footerDiv);
 }
