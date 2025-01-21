@@ -179,7 +179,32 @@ function decorateFooterLinks(footerLinksContainer) {
 
 function decorateOfficeDetails(officeDetailsContainer) {
   console.log(officeDetailsContainer);
+  const officeDetailsDiv = createCustomElement("div", "regoff-wrap pt-lg-4 pt-md-4 pt-sm-3 pb-4");
+  const iconImg = officeDetailsContainer.querySelector("picture img");
+  const iconImgSrc = iconImg.src;
+  const iconImgAlt = iconImg.alt;
+  officeDetailsContainer.querySelector("p:has(picture)").remove();
+  const pElements = officeDetailsContainer.querySelectorAll("p");
 
+  officeDetailsDiv.innerHTML = `
+    <div class="container text-center">
+       <div class="row">
+          <div class="col-sm-12 pl-lg-0 pl-md-4 pl-sm-5 pr-lg-0 pr-md-4 pr-sm-5">
+             <p style="text-align: center;" class="paraContainer">
+             </p>
+          </div>
+       </div>
+    </div>
+    <div class="bull-icon-footer">
+       <img src="${iconImgSrc}" alt="${iconImgAlt}">
+    </div>
+  `;
+  pElements.forEach(p => {
+    officeDetailsDiv.querySelector("p.paraContainer").appendChild(p);
+  });
+  console.log("officeDetailsDiv: ");
+  console.log(officeDetailsDiv);
+  return officeDetailsDiv;
 }
 
 function decorateFooterBottom(footerBottomContainer) {
@@ -206,14 +231,14 @@ export default async function decorate(block) {
 
   //Create outermost footer element
   const footerDiv = createCustomElement("footer", "footer bg-primary pt-lg-4 pt-md-0 pt-sm-0 d-print-none");
-  const containerDiv = decorateFooterLinks(footerLinksContainer);
-  console.log(containerDiv);
-  footerDiv.appendChild(containerDiv);
-  footerDiv.appendChild(officeDetailsContainer);
-  footerDiv.appendChild(footerBottomContainer);
+  footerLinksContainer = decorateFooterLinks(footerLinksContainer);
+  footerDiv.appendChild(footerLinksContainer);
 
-  decorateOfficeDetails(officeDetailsContainer);
-  decorateFooterBottom(footerBottomContainer);
+  officeDetailsContainer = decorateOfficeDetails(officeDetailsContainer);
+  footerDiv.appendChild(officeDetailsContainer);
+
+  footerBottomContainer = decorateFooterBottom(footerBottomContainer);
+  footerDiv.appendChild(footerBottomContainer);
 
   const footer = document.createElement('div');
 //  while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
