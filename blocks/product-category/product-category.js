@@ -102,7 +102,7 @@ export default function decorate(block){
         link.addEventListener('click', handleTabClick);
     });
 
-    waitForFirstImage(productCategoryDiv);
+    waitForFirstImage(parentSection);
 }
 
 const handleTabClick = (event) => {
