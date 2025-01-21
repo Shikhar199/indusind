@@ -209,7 +209,34 @@ function decorateOfficeDetails(officeDetailsContainer) {
 
 function decorateFooterBottom(footerBottomContainer) {
   console.log(footerBottomContainer);
-  return footerBottomContainer;
+  const bottomLinksDiv = createCustomElement("div", "bottom-links-footer pt-2 pb-4");
+
+  // Fetch copyright text
+  const divElements = document.querySelectorAll('div[data-align="center"]');
+  const secondDiv = divElements[1]; // Access the second <div>
+
+  // Get the <p> element inside the second <div> and fetch its textContent
+  const copyrightText = secondDiv.querySelector('p').textContent;
+
+  bottomLinksDiv.innerHTML = `
+    <div class="container">
+       <div class="row">
+          <div class="col-lg-8 col-md-12 col-sm-12">
+             <div class="restxt text-lg-left text-center mb-lg-0 mb-2">
+
+             </div>
+          </div>
+          <div class="col-lg-4 col-md-12 col-sm-12 copy-footer text-lg-right text-center">
+             ${copyrightText}
+          </div>
+       </div>
+    </div>
+  `;
+  const firstDiv = divElements[0];
+  const firstDivInnerHTML = firstDiv.innerHTML;
+  bottomLinksDiv.querySelector("div.restxt").appendChild(firstDivInnerHTML);
+
+  return bottomLinksDiv;
 }
 
 /**
