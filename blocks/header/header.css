@@ -142,7 +142,6 @@
   .headerNew .tg-navigation-new > ul > li:hover > a,
   .headerNew .tg-navigation-new > ul > li.current-menu-item > a {
     background: #832625;
-    color: white;
   }
   .headerNew .tg-navigation-new > ul > li > a {
     color: #fff;
@@ -1676,4 +1675,8 @@
 
   header li a{
     color: #000 !important;
+  }
+
+  header li:hover{
+    color: white !important;
   }
