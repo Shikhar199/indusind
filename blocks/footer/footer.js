@@ -268,8 +268,8 @@ export default async function decorate(block) {
   console.log(containerDiv);
   footerDiv.appendChild(containerDiv);
 
-  const officeDetailsContainer = decorateOfficeDetails(officeDetailsContainer);
-  footerDiv.appendChild(officeDetailsContainer);
+  const officeContainer = decorateOfficeDetails(officeDetailsContainer);
+  footerDiv.appendChild(officeContainer);
   decorateFooterBottom(footerBottomContainer);
 
     // Decorate Scroll to top button
