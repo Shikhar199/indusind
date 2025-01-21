@@ -879,6 +879,5 @@ export {
   wrapTextNodes,
   createAemElement,
   loadBanner,
-  loadImportantBanner,
-  waitForFirstImage
+  loadImportantBanner
 };
