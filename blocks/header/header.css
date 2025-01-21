@@ -489,6 +489,9 @@
     padding: 0 8px;
     border-radius: 5px;
   }
+  li.nav-item-dektop:hover a{
+    color: white;
+  }
   li.nav-item-dektop:hover .nav-link-desktop {
     color: white;
   }
