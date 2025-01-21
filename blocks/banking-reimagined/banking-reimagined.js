@@ -23,7 +23,24 @@ export default function decorate(block){
     rowDiv.appendChild(colDiv);
     colDiv.appendChild(swiperContainerDiv);
     colDiv.appendChild(swiperNotificationWrapperDiv.querySelector('.swiper-notification'));
+
+    const ulDots = createAemElement('ul', []);
+
     [...container.children].forEach((row,r)=>{
+
+        liHtml = `<li class="dot one active">
+                         <div class="bullet"></div>
+                         <div class="number d-none">${r+1}</div>
+                         <svg class="circle-border  d-none">
+                            <use xlink:href="#circle"></use>
+                         </svg>
+                         <svg class="circle-timer js-circle-timer  d-none" style="stroke-dashoffset: 190px;">
+                            <use xlink:href="#circle"></use>
+                         </svg>
+                      </li>`;
+
+        
+
         if(r==0){
             blockTitle = row.querySelector('h4');
             blockTitle.classList.add('text-bold', 'text-primary', 'mb-0');
