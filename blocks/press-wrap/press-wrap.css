@@ -1,0 +1,7 @@
+.card-border-color {
+    border: 2px solid #832625 !important;
+}
+
+.fa-angle-right:before {
+    content: "\3e" !important;
+}
