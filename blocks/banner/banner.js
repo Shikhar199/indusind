@@ -1,4 +1,4 @@
-import { createAemElement, loadBanner} from "../../scripts/aem.js";
+import { createAemElement, loadBanner, waitForFirstImage} from "../../scripts/aem.js";
 
 export default function decorate(block){
     const container = document.createElement('div');
@@ -60,6 +60,7 @@ export default function decorate(block){
 
     // callBannerSwipper();
     // setTimeout(loadBanner,1500);
+    waitForFirstImage(section);
 }
 
 function getMaskContentDiv(){
