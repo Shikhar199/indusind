@@ -484,6 +484,11 @@
   .nav-item-dektop:hover .nav-link-desktop.active:after {
     bottom: -7px;
   }
+
+  .nav-link-desktop{
+    color: #000;
+  }
+
   li.nav-item-dektop:hover {
     background: #832625;
     padding: 0 8px;
@@ -1682,8 +1687,4 @@
 
   li.nav-item-dektop:hover .nav-link-desktop {
     color: white;
-  }
-
-  .nav-link-desktop{
-    color: #000 !important;
   }
