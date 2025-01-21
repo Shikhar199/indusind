@@ -1680,3 +1680,7 @@
   header li:hover a{
     color: white !important;
   }
+
+  .rowInnerDesktop a{
+    color: black !important;
+  }
