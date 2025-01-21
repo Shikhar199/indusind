@@ -182,9 +182,9 @@ export default async function decorate(block) {
   console.log(main.querySelector('.footer').children[0]);
   console.log(main.querySelector('.footer').children[1]);
   console.log(main.querySelector('.footer').children[2]);
-  const footerLinksContainer = main.children[0];
-  const officeDetailsContainer = main.children[1];
-  const footerBottomContainer = main.children[2];
+  const footerLinksContainer = main.querySelector('.footer').children[0];
+  const officeDetailsContainer = main.querySelector('.footer').children[1];
+  const footerBottomContainer = main.querySelector('.footer').children[2];
 
   //const fragment = await loadFragment(footerPath); //Commented because going in infinite loop
 
