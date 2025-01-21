@@ -168,12 +168,9 @@ export default async function decorate(block) {
   const footerMeta = getMetadata('footer');
   const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer';
 
-  const footerUrl = window.location.pathname + "footer";
-  console.log(footerPath);
-  console.log(footerUrl);
   let main;
-  if(footerUrl && footerUrl.startsWith('/')){
-      const resp = await fetch(`${footerUrl}.plain.html`);
+  if(footerPath && footerPath.startsWith('/')){
+      const resp = await fetch(`${footerPath}.plain.html`);
       if(resp.ok){
           main = document.createElement('main');
           main.innerHTML = await resp.text();
@@ -181,13 +178,13 @@ export default async function decorate(block) {
       }
       
   }
-  console.log(block);
-  console.log(block.children[0]);
-  console.log(block.children[1]);
-  console.log(block.children[2]);
-  const footerLinksContainer = block.children[0];
-  const officeDetailsContainer = block.children[1];
-  const footerBottomContainer = block.children[2];
+  console.log(main);
+  console.log(main.children[0]);
+  console.log(main.children[1]);
+  console.log(main.children[2]);
+  const footerLinksContainer = main.children[0];
+  const officeDetailsContainer = main.children[1];
+  const footerBottomContainer = main.children[2];
 
   //const fragment = await loadFragment(footerPath); //Commented because going in infinite loop
 
