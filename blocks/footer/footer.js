@@ -122,29 +122,41 @@ function decorateFooterLinks(footerLinksContainer) {
         }
         else if (i === 1) {
           const iconsPara1 = p;
+          const iconImg = p.querySelector("picture img");
+          const imgSrc = iconImg.src;
+          const imgAlt = iconImg.alt;
+          const paraText = iconsPara1.textContent.trim();
+
           indusMultiDiv.innerHTML = `
             <div class="icons">
               <a>
-              iconsPara1.querySelector("picture");
+              <img src="${imgSrc}" alt="${imgAlt}">
               </a>
               <p></p>
-              <p>iconsPara1.textContent.trim();</p>
+              <p>${paraText}</p>
               <p></p>
             </div>
           `;
+          p.remove();
         }
         else if (i === 2) {
           const iconsPara2 = p;
+          const iconImg = p.querySelector("picture img");
+          const imgSrc = iconImg.src;
+          const imgAlt = iconImg.alt;
+          const paraText = iconsPara1.textContent.trim();
           const iconsDiv2 = createCustomElement("div", "icons");
+
           iconsDiv2.innerHTML = `
             <a>
-              iconsPara2.querySelector("picture");
+              <img src="${imgSrc}" alt="${imgAlt}">
             </a>
             <p></p>
-            <p>iconsPara2.textContent.trim();</p>
+            <p>${paraText}</p>
             <p></p>
           `;
           indusMultiDiv.appendChild(iconsDiv2);
+          p.remove();
         }
       });
 
