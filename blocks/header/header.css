@@ -1677,7 +1677,7 @@
     color: #000 !important;
   }
 
-  header .nav-item-desktop:hover a{
+  header .nav-link-desktop:hover a{
     color: white !important;
   }
 
