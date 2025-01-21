@@ -485,18 +485,31 @@
     bottom: -7px;
   }
 
-  .nav-link-desktop{
-    color: #000;
+  .nav-item-dektop .nav-link-desktop {
+    color: black; /* Default color */
+    text-decoration: none; /* Optional, to remove underline */
   }
-
-  li.nav-item-dektop:hover {
+  
+  /* Styles for hover state on the list item */
+  .nav-item-dektop:hover {
     background: #832625;
     padding: 0 8px;
     border-radius: 5px;
   }
-  li.nav-item-dektop:hover .nav-link-desktop {
+  
+  /* Change anchor color on hover */
+  .nav-item-dektop:hover .nav-link-desktop {
     color: white;
   }
+
+  /* li.nav-item-dektop:hover {
+    background: #832625;
+    padding: 0 8px;
+    border-radius: 5px;
+  } */
+  /* li.nav-item-dektop:hover .nav-link-desktop {
+    color: white;
+  } */
   .nav-item-login .modal-login .btn_wrap a {
     padding: 5px 10px;
     border: 1px solid #832625;
