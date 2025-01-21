@@ -94,6 +94,7 @@ function decorateFooterLinks(footerLinksContainer) {
 
       const sourceDiv = column.querySelector("h6").parentElement;
       const emailH5 = sourceDiv.querySelector("h5");
+      emailH5.remove();
       //Replace the existing h5 with the Email Subscription section created above
 
       [...sourceDiv.children].forEach(child => socialLinksDiv.append(child));
@@ -109,10 +110,43 @@ function decorateFooterLinks(footerLinksContainer) {
         a.setAttribute("target", "_blank");
       });
 
-      const disclaimerPara = socialLinksDiv.querySelector("p");
-      disclaimerPara.setAttribute('style', 'font-size: 12px; line-height: 14px;');
-
-      // Decorate DICGC Icon and QR below
+      // Decorate Icons Container
+      const iconsContainerDiv = document.createElement("div");
+      const indusMultiDiv = createCustomElement("div", "indus-multi-footer");
+      iconsContainerDiv.appendChild(indusMultiDiv);
+      const pTags = socialLinksDiv.querySelectorAll("p");
+      pTags.forEach((p, i) => {
+        if (i === 0) {
+          const disclaimerPara = p;
+          disclaimerPara.setAttribute('style', 'font-size: 12px; line-height: 14px;');
+        }
+        else if (i === 1) {
+          const iconsPara1 = p;
+          indusMultiDiv.innerHTML = `
+            <div class="icons">
+              <a>
+              iconsPara1.querySelector("picture");
+              </a>
+              <p></p>
+              <p>iconsPara1.textContent.trim();</p>
+              <p></p>
+            </div>
+          `;
+        }
+        else if (i === 2) {
+          const iconsPara2 = p;
+          const iconsDiv2 = createCustomElement("div", "icons");
+          iconsDiv2.innerHTML = `
+            <a>
+              iconsPara2.querySelector("picture");
+            </a>
+            <p></p>
+            <p>iconsPara2.textContent.trim();</p>
+            <p></p>
+          `;
+          indusMultiDiv.appendChild(iconsDiv2);
+        }
+      });
 
       // Append elements to create structure
       socialLinksDiv.appendChild(sourceDiv);
@@ -120,10 +154,10 @@ function decorateFooterLinks(footerLinksContainer) {
 
       columnDiv.appendChild(emailInputContainerDiv);
       columnDiv.appendChild(socialLinksContainerDiv);
+      columnDiv.appendChild(iconsContainerDiv);
       rowDiv.appendChild(columnDiv);
 
       console.log(rowDiv);
-
     }
   });
 
