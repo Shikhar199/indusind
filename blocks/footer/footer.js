@@ -122,7 +122,7 @@ function decorateFooterLinks(footerLinksContainer) {
         }
         else if (i === 1) {
           const iconsPara1 = p;
-          const iconImg = p.querySelector("picture img");
+          const iconImg = iconsPara1.querySelector("picture img");
           const imgSrc = iconImg.src;
           const imgAlt = iconImg.alt;
           const paraText = iconsPara1.textContent.trim();
@@ -141,10 +141,10 @@ function decorateFooterLinks(footerLinksContainer) {
         }
         else if (i === 2) {
           const iconsPara2 = p;
-          const iconImg = p.querySelector("picture img");
+          const iconImg = iconsPara2.querySelector("picture img");
           const imgSrc = iconImg.src;
           const imgAlt = iconImg.alt;
-          const paraText = iconsPara1.textContent.trim();
+          const paraText = iconsPara2.textContent.trim();
           const iconsDiv2 = createCustomElement("div", "icons");
 
           iconsDiv2.innerHTML = `
