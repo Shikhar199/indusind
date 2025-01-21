@@ -179,6 +179,7 @@ function decorateFooterLinks(footerLinksContainer) {
 
 function decorateOfficeDetails(officeDetailsContainer) {
   console.log(officeDetailsContainer);
+
 }
 
 function decorateFooterBottom(footerBottomContainer) {
@@ -208,6 +209,8 @@ export default async function decorate(block) {
   const containerDiv = decorateFooterLinks(footerLinksContainer);
   console.log(containerDiv);
   footerDiv.appendChild(containerDiv);
+  footerDiv.appendChild(officeDetailsContainer);
+  footerDiv.appendChild(footerBottomContainer);
 
   decorateOfficeDetails(officeDetailsContainer);
   decorateFooterBottom(footerBottomContainer);
