@@ -495,3 +495,12 @@ color: #797979;
 	color: #832625!important;
 }
 }
+
+.card-footer a.text-uppercase{
+  padding-top: 5px !important;
+  background-color: #832625 !important;
+}
+
+.card-footer a.normal-text{
+  background-color: white !important;
+}

@@ -744,6 +744,96 @@ function loadBanner(){
   })
 }
 
+function loadImportantBanner(){
+  
+$(document).ready(function(){
+  var infoslider = new Swiper('.important-info-slider', {
+      slidesPerView: 5,
+      spaceBetween: 2,
+      loop: false,
+      /*freeMode: true,
+      freeModeFluid: true,*/
+      autoplay: {
+          delay: 2500,
+          disableOnInteraction: true,
+          pauseOnMouseEnter: true,
+      },
+      speed: 1200,
+      grabCursor: true,
+      // init: false,
+      pagination: {
+          el: '.swiper-pagination-info',
+          clickable: false,
+      },
+      navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+          1024: {
+              slidesPerView: 5,
+              spaceBetween: 2,
+          },
+          768: {
+              slidesPerView: 4,
+              spaceBetween: 2,
+          },
+          640: {
+              slidesPerView: 3,
+              spaceBetween: 2,
+          },
+          360: {
+              slidesPerView: 2,                
+              spaceBetween: 1,
+          }
+      }
+  });
+  
+  $(".important-info-slider").hover(function() {
+      (this).swiper.autoplay.stop();
+  }, function() {
+      (this).swiper.autoplay.start();
+  });
+
+  const tooltipTriggers = document.querySelectorAll('.elipsis.text-primary');
+
+  tooltipTriggers.forEach(trigger => {
+    trigger.addEventListener('mouseenter', function (e) {
+
+      console.log("mouse over button");
+      // Create tooltip element
+      const tooltip = document.createElement('div');
+      tooltip.className = 'tooltip';
+      tooltip.textContent = trigger.getAttribute('data-original-title'); // Get tooltip text
+
+      // Append tooltip to the body
+      document.body.appendChild(tooltip);
+
+      // Position the tooltip
+      const rect = trigger.getBoundingClientRect();
+      tooltip.style.left = `${rect.left + window.scrollX}px`;
+      tooltip.style.top = `${rect.bottom + window.scrollY}px`;
+
+      // Show the tooltip
+      tooltip.style.display = 'block';
+
+      // Remove the tooltip on mouse leave
+      trigger.addEventListener('mouseleave', () => {
+        tooltip.remove();
+      });
+    });
+  });
+  
+  // $(".comment-copy").each(function () {
+  //     text = $(this).text();
+  //     if (text.length > 131) {
+  //         $(this).html(text.substr(0, 131) + '<span class="elipsis text-primary" data-toggle="tooltip" data-placement="top" title="'+text+'">  ...Read more</span>');
+  //     }
+  // });
+  });
+  
+}
+
 /**
  * Loads all sections.
  * @param {Element} element The parent element of sections to load
@@ -788,5 +878,6 @@ export {
   waitForFirstImage,
   wrapTextNodes,
   createAemElement,
-  loadBanner
+  loadBanner,
+  loadImportantBanner
 };
