@@ -237,3 +237,8 @@ display:flex !important;
 header .header, footer .footer {
   visibility: visible !important; 
 }
+
+.footer picture img{
+  width: 100px;
+  height: 100px;
+}
