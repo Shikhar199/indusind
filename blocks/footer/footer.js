@@ -231,14 +231,14 @@ export default async function decorate(block) {
 
   //Create outermost footer element
   const footerDiv = createCustomElement("footer", "footer bg-primary pt-lg-4 pt-md-0 pt-sm-0 d-print-none");
-  footerLinksContainer = decorateFooterLinks(footerLinksContainer);
-  footerDiv.appendChild(footerLinksContainer);
+  const linksContainer = decorateFooterLinks(footerLinksContainer);
+  footerDiv.appendChild(linksContainer);
 
-  officeDetailsContainer = decorateOfficeDetails(officeDetailsContainer);
-  footerDiv.appendChild(officeDetailsContainer);
+  const officeDetails = decorateOfficeDetails(officeDetailsContainer);
+  footerDiv.appendChild(officeDetails);
 
-  footerBottomContainer = decorateFooterBottom(footerBottomContainer);
-  footerDiv.appendChild(footerBottomContainer);
+  const footerBottom = decorateFooterBottom(footerBottomContainer);
+  footerDiv.appendChild(footerBottom);
 
   const footer = document.createElement('div');
 //  while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
