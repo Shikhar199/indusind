@@ -239,7 +239,7 @@ function decorateFooterBottom(footerBottomContainer) {
   const secondDiv = divElements[1]; // Access the second <div>
 
   // Get the <p> element inside the second <div> and fetch its textContent
-  const copyrightText = secondDiv.querySelector('p').textContent;
+  // const copyrightText = secondDiv.querySelector('p').textContent;
 
   bottomLinksDiv.innerHTML = `
     <div class="container">
@@ -250,7 +250,7 @@ function decorateFooterBottom(footerBottomContainer) {
              </div>
           </div>
           <div class="col-lg-4 col-md-12 col-sm-12 copy-footer text-lg-right text-center">
-             ${copyrightText}
+             Copyright © 2025 IndusInd Bank.
           </div>
        </div>
     </div>
