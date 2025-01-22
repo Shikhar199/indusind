@@ -15,8 +15,8 @@ export default function decorate(block) {
     const h5Text = textHeadingLink.querySelector("h5").textContent;
 
     const pElements = textHeadingLink.querySelectorAll("p");
-    const text = p[0].textContent;
-    const link = p[1].textContent;
+    const text = pElements[0].textContent;
+    const link = pElements[1].textContent;
 //    pElements.forEach((p, i) => {
 //      if (i === 0) {
 //        text = p.textContent;
