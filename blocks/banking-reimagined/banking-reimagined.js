@@ -119,7 +119,8 @@ export default function decorate(block){
     parentSection.appendChild(parentContainerDiv);
 
     homeVideoParentDiv.appendChild(parentSection);
-    homeVideoParentDiv.appendChild(scriptTags);
+    // homeVideoParentDiv.appendChild(scriptTags);
+    homeVideoParentDiv.innerHTML += scriptTags;
     block.appendChild(homeVideoParentDiv);
 
     console.log(homeVideoParentDiv);
@@ -532,7 +533,8 @@ function getScriptTags(){
       "embedUrl": "https://youtu.be/P8fdNmRudUY&amp;rel=0",
       "interactionCount": "197"
     }</script>`;
-    const scriptWrapper = document.createElement('div');
-    scriptWrapper.innerHTML = scriptHtml;
-    return scriptWrapper.outerHTML;
+    // const scriptWrapper = document.createElement('div');
+    // scriptWrapper.innerHTML = scriptHtml;
+    // return scriptWrapper.outerHTML;
+    return scriptHtml;
 }
