@@ -15,16 +15,16 @@ export default function decorate(block) {
     const h5Text = textHeadingLink.querySelector("h5").textContent;
 
     const pElements = textHeadingLink.querySelectorAll("p");
-    const text = "";
-    const link = "#";
-    pElements.forEach((p, i) => {
-      if (i === 0) {
-        text = p.textContent;
-      }
-      else if (i === 1) {
-        link = p.textContent;
-      }
-    });
+    const text = p[0].textContent;
+    const link = p[1].textContent;
+//    pElements.forEach((p, i) => {
+//      if (i === 0) {
+//        text = p.textContent;
+//      }
+//      else if (i === 1) {
+//        link = p.textContent;
+//      }
+//    });
 
     const section = document.createElement("section");
     section.className = "home-card-wrap border-top border-primary";
