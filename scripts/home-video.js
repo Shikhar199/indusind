@@ -6393,7 +6393,8 @@ var Swiper = function() {
     for (var r = "function" == typeof require && require, s = 0; s < i.length; s++)
         o(i[s]);
     return o
-}({
+}
+({
     1: [function(e, t, n) {
         "use strict";
         var i = e("jquery")

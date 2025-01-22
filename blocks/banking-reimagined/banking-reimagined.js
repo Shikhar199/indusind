@@ -793,4 +793,39 @@ function callSwiper(){
             }
         }
     })
-})();
+}
+$(".modal.modal_video").on("shown.bs.modal", function(e) {
+    $("video").prop("muted", !0)
+}),
+$(".modal.modal_video").on("hidden.bs.modal", function(e) {
+    $(".modal_video .modal-body iframe").attr("src", ""),
+    $("video").prop("muted", !1)
+});
+
+/*  */
+if ($(".video-carousel").length) {
+    $(".video-carousel").owlCarousel({
+        items: 1,
+        loop: false,
+        nav: true,
+        dots: true,
+        autoplay: false,
+        mouseDrag: false,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true
+    });
+}
+
+$(".video-caroselWrap .video-link").click(function() {
+    var datalink = $(this).attr('data-link');
+    var videolink = 'https://www.youtube.com/embed/' + datalink + '?autoplay=1;enablejsapi=1';
+    $('.video-modal').find('iframe').attr('src', videolink);
+    $('.video-modal').fadeIn();
+    //console.log(videolink)
+});
+$(".video-modal .close-video-modal").click(function() {
+    $(this).parents('.video-modal').find('iframe').attr('src', '');
+    $(this).parents('.video-modal').hide();
+});
+
+)();
