@@ -125,8 +125,6 @@ export default function decorate(block){
 
     console.log(homeVideoParentDiv);
 
-    func();
-
     callSwiper();
 }
 
@@ -563,7 +561,7 @@ function callSwiper(){
     
 }
 
-function func(e, t, n) {
+(function (e, t, n) {
     "use strict";
     var i = e("jquery")
       , o = e("../lib/MinimalClass")
@@ -795,4 +793,4 @@ function func(e, t, n) {
             }
         }
     })
-}
+})();
