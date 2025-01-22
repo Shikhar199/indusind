@@ -1,3 +1,4 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css');
 body {
   width: 100%;
   background-color: black;
@@ -227,7 +228,7 @@ body .flyout-menu-desktop {
   right: 0;
 }
 .headerLocatorIcon::after {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 free";
   -webkit-font-smoothing: antialiased;
   content: "\f3c5";
   font-weight: 600;
@@ -238,7 +239,7 @@ body .flyout-menu-desktop {
   vertical-align: middle;
 }
 .headerSearchIcon::after {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 free";
   -webkit-font-smoothing: antialiased;
   content: "\f002";
   font-weight: 600;
@@ -256,7 +257,7 @@ body .flyout-menu-desktop {
   padding-right: 25px;
 }
 .headerThemeIcon:after {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 free";
   -webkit-font-smoothing: antialiased;
   content: "\f390";
   font-weight: 600;
@@ -278,7 +279,7 @@ body .flyout-menu-desktop {
   box-shadow: 0 1px 9px rgba(0, 0, 0, 0.05);
 }
 .headerLevel1CallIcon::after {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 free";
   -webkit-font-smoothing: antialiased;
   content: "\f095";
   font-weight: 600;
@@ -351,7 +352,7 @@ body .flyout-menu-desktop {
   border: 0;
 }
 .nav-item-login .btn-login.btn-action2:after {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 free";
   -webkit-font-smoothing: antialiased;
   content: "\f078";
   font-weight: 500;
@@ -430,7 +431,7 @@ body .flyout-menu-desktop {
   align-items: center;
 }
 .headerLevel1Heading:after {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 free";
   -webkit-font-smoothing: antialiased;
   content: "\f078";
   font-weight: 500;
@@ -440,7 +441,7 @@ body .flyout-menu-desktop {
   vertical-align: middle;
 }
 .headerLevel1Heading.arrowDown:after {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 free";
   -webkit-font-smoothing: antialiased;
   content: "\f077";
   font-weight: 700;
@@ -698,7 +699,7 @@ li.menu-item-has-children > a:after,
     border-bottom-left-radius: 10px;
   }
   .headerMobileSecondOpen .hamburger-box-new:before {
-    font-family: "Font Awesome 5 Pro";
+    font-family: "Font Awesome 6 free";
     -webkit-font-smoothing: antialiased;
     content: "\f0c9";
     font-weight: 700;
@@ -803,7 +804,7 @@ li.menu-item-has-children > a:after,
     cursor: pointer;
   }
   .headerRatesRight:after {
-    font-family: "Font Awesome 5 Pro";
+    font-family: "Font Awesome 6 free";
     -webkit-font-smoothing: antialiased;
     content: "\f295";
     font-weight: 500;
@@ -950,7 +951,7 @@ body .navbar-nav .nav-item:last-child {
   font-size: 12px;
 }
 .flyoutDesktopContentBox .mainCategoryHeadingBtnLink:after {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 free";
   font-weight: 400;
   margin-left: 7px;
   content: "\f061";
