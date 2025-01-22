@@ -9,8 +9,6 @@
 
 .carrow .swiper-button-next,
 .carrow .swiper-button-prev {
-    top: -30px;
-    right: 0px;
     background: url("/icons/prev.png");
     width: 32px;
     height: 18px;
