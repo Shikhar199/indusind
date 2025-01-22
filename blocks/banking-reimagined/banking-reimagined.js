@@ -468,7 +468,7 @@ function getVideoCards(){
 }
 
 function getScriptTags(){
-    scriptHtml = `<script type="application/ld+json">
+    const scriptHtml = `<script type="application/ld+json">
     { "@context": "http://schema.org/",
       "@type": "VideoObject",
       

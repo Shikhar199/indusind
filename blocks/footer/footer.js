@@ -174,7 +174,6 @@ export default async function decorate(block) {
       if(resp.ok){
           main = document.createElement('main');
           main.innerHTML = await resp.text();
-          console.log(main.innerHTML);
       }
       
   }
