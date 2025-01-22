@@ -542,6 +542,7 @@ function getScriptTags(){
 }
 
 function callSwiper(){
+    console.log("Inside Banking carousel");
     var home_mob_video_slider = new Swiper('.home_mob_video_slider',{
         slidesPerView: 1,
         spaceBetween: 30,
