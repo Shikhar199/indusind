@@ -4,12 +4,12 @@ export default function decorate(block) {
   [...block.children].forEach((row) => {
     // Fetch first row items
     const firstImgDiv = row.children[0];
-    const img1 = firstImg.querySelector("picture img");
+    const img1 = firstImgDiv.querySelector("picture img");
     img1.className = "indus-mobile";
 
     // Fetch second row items
     const secondImgDiv = row.children[1];
-    const img2 = firstImg.querySelector("picture img");
+    const img2 = secondImgDiv.querySelector("picture img");
 
     const textHeadingLink = row.children[2];
     const h5Text = textHeadingLink.querySelector("h5").textContent;
