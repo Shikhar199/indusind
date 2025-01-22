@@ -462,7 +462,7 @@ function getVideoCards(){
              </section>
           </div>`;
 
-    videoCardWrapper = document.createElement('div');
+    const videoCardWrapper = document.createElement('div');
     videoCardWrapper.innerHTML = videocomponentHtml;
     return videoCardWrapper.querySelector('.vid_container_desktop');
 }
