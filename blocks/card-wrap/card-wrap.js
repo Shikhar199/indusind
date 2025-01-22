@@ -49,7 +49,7 @@ export default function decorate(block) {
       </div>
     `;
     section.querySelector("div.mr-2").appendChild(img1);
-    section.querySelector("mobile-iconhome").appendChild(img2);
+    section.querySelector("div.mobile-iconhome").appendChild(img2);
 
     row.replaceWith(section);
   });
