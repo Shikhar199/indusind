@@ -5,3 +5,14 @@
 .fa-angle-right:before {
     content: "\3e" !important;
 }
+
+.link_view:before {
+    position: absolute;
+    content: "\3e" !important;
+    font-family: "Font Awesome 5 Pro" !important;
+    font-size: 1.125rem;
+    font-weight: 400;
+    right: 8px;
+    top: 0px;
+    color: #832625;
+}

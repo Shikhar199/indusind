@@ -1,23 +1,3 @@
-// import { getMetadata } from '../../scripts/aem.js';
-// import { loadFragment } from '../fragment/fragment.js';
-
-// /**
-//  * loads and decorates the footer
-//  * @param {Element} block The footer block element
-//  */
-// export default async function decorate(block) {
-//   // load footer as fragment
-//   const footerMeta = getMetadata('footer');
-//   const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer';
-//   const fragment = await loadFragment(footerPath);
-
-//   // decorate footer DOM
-//   block.textContent = '';
-//   const footer = document.createElement('div');
-//   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
-
-//   block.append(footer);
-// }
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
@@ -193,10 +173,6 @@ function decorateFooterLinks(footerLinksContainer) {
   return containerDiv;
 }
 
-// function decorateOfficeDetails(officeDetailsContainer) {
-//   console.log(officeDetailsContainer);
-// }
-
 function decorateOfficeDetails(officeDetailsContainer) {
   const officeDetailsDiv = createCustomElement("div", "regoff-wrap pt-lg-4 pt-md-4 pt-sm-3 pb-4");
   const iconImg = officeDetailsContainer.querySelector("picture img");
@@ -279,12 +255,8 @@ export default async function decorate(block) {
           main.innerHTML = await resp.text();
           console.log(main.innerHTML);
       }
-      
   }
-  console.log(main);
-  console.log(main.querySelector('.footer').children[0]);
-  console.log(main.querySelector('.footer').children[1]);
-  console.log(main.querySelector('.footer').children[2]);
+
   const footerLinksContainer = main.querySelector('.footer').children[0];
   const officeDetailsContainer = main.querySelector('.footer').children[1];
   const footerBottomContainer = main.querySelector('.footer').children[2];
@@ -297,14 +269,15 @@ export default async function decorate(block) {
   //Create outermost footer element
   const footerDiv = createCustomElement("footer", "footer bg-primary pt-lg-4 pt-md-0 pt-sm-0 d-print-none");
   const containerDiv = decorateFooterLinks(footerLinksContainer);
-  console.log(containerDiv);
   footerDiv.appendChild(containerDiv);
 
   const officeContainer = decorateOfficeDetails(officeDetailsContainer);
   footerDiv.appendChild(officeContainer);
+
   const bottomContainer = decorateFooterBottom(footerBottomContainer);
   footerDiv.appendChild(bottomContainer);
-    // Decorate Scroll to top button
+
+  // Decorate Scroll to top button
   const scrollTopBtn = createCustomElement("a", "scroll_btn show");
   scrollTopBtn.href = "#";
   scrollTopBtn.title = "Go to top";
