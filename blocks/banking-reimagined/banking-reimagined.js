@@ -124,6 +124,8 @@ export default function decorate(block){
     block.appendChild(homeVideoParentDiv);
 
     console.log(homeVideoParentDiv);
+
+    callSwiper();
 }
 
 function getModalVideo(){
@@ -537,4 +539,23 @@ function getScriptTags(){
     // scriptWrapper.innerHTML = scriptHtml;
     // return scriptWrapper.outerHTML;
     return scriptHtml;
+}
+
+function callSwiper(){
+    var home_mob_video_slider = new Swiper('.home_mob_video_slider',{
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        centeredSlides: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        speed: 1200,
+    });
+    
 }
