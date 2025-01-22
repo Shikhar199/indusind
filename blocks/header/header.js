@@ -20,7 +20,6 @@ function createAemElement(tag, classes, attributes, elementId) {
 }
 
 export default function decorate(block) {
-
   const container = document.createElement('div');
   container.innerHTML = block.innerHTML;
   block.innerHTML = '';
@@ -58,226 +57,77 @@ export default function decorate(block) {
       null
   );
 
-  const navItems = [
-      { text: 'PERSONAL', href: '/in/en/personal.html', active: true },
-      { text: 'PIONEER PRIVATE', href: 'https://bank.indusind.com/pioneer-private/home.html' },
-      { text: 'PIONEER', href: 'https://bank.indusind.com/pioneer/home.html' },
-      { text: 'NRI', href: '/in/en/nri.html' },
-      { text: 'BUSINESS', href: '/in/en/business.html' },
-      { text: 'CORPORATE', href: '/in/en/corporate.html' },
-      { text: 'GIFT CITY', href: 'https://bank.indusind.com/pioneer/gift-city.html' }
-  ];
+  // Data structure for navigation items
+  const NAVIGATION_DATA = {
+      // Top level navigation
+      topNav: [
+          { text: 'PERSONAL', href: '/in/en/personal.html', active: true },
+          { text: 'PIONEER PRIVATE', href: 'https://bank.indusind.com/pioneer-private/home.html' },
+          { text: 'PIONEER', href: 'https://bank.indusind.com/pioneer/home.html' },
+          { text: 'NRI', href: '/in/en/nri.html' },
+          { text: 'BUSINESS', href: '/in/en/business.html' },
+          { text: 'CORPORATE', href: '/in/en/corporate.html' },
+          { text: 'GIFT CITY', href: 'https://bank.indusind.com/pioneer/gift-city.html' }
+      ],
 
-
-
-
-// Data structure for navigation items
-const NAVIGATION_DATA = {
-  // Top level navigation
-  topNav: [
-      { text: 'PERSONAL', href: '/in/en/personal.html', active: true },
-      { text: 'PIONEER PRIVATE', href: 'https://bank.indusind.com/pioneer-private/home.html' },
-      { text: 'PIONEER', href: 'https://bank.indusind.com/pioneer/home.html' },
-      { text: 'NRI', href: '/in/en/nri.html' },
-      { text: 'BUSINESS', href: '/in/en/business.html' },
-      { text: 'CORPORATE', href: '/in/en/corporate.html' },
-      { text: 'GIFT CITY', href: 'https://bank.indusind.com/pioneer/gift-city.html' }
-  ],
-
-  // Main navigation items with flyout content
-  mainNav: [
-      {
-          title: 'Accounts & Deposits',
-          sections: [
-              {
-                  title: 'Accounts',
-                  links: [
-                      {
-                          text: 'Savings Account',
-                          href: 'https://www.indusind.com/in/en/personal/accounts/saving-account.html',
-                          highlight: 'Up to 7% p.a.',
-                          highlightColor: '#008000',
-                          utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-savings_account'
-                      },
-                      {
-                          text: 'Zero Balance Savings Account',
-                          href: 'https://www.indusind.com/in/en/personal/accounts/saving-account/indus-delite.html',
-                          utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-zero_balance_savings_account'
-                      },
-                      {
-                          text: 'Corporate Salary Account',
-                          href: 'https://www.indusind.com/in/en/personal/accounts/corporate-salary-account.html',
-                          utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-corporate_salary_account'
-                      },
-                      {
-                          text: 'Uniformed Personnel Account',
-                          href: 'https://www.indusind.com/in/en/personal/accounts/uniformed-personnel-account.html',
-                          utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-uniformed_personnel_account'
-                      },
-                      {
-                          text: 'Current Account',
-                          href: 'https://www.indusind.com/in/en/business/accounts/current-account.html',
-                          utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-current_account'
-                      }
-                  ]
+      // Main navigation items with flyout content
+      mainNav: [
+          {
+              title: 'Accounts & Deposits',
+              sections: [
+                  {
+                      title: 'Accounts',
+                      links: [
+                          {
+                              text: 'Savings Account',
+                              href: 'https://www.indusind.com/in/en/personal/accounts/saving-account.html',
+                              highlight: 'Up to 7% p.a.',
+                              highlightColor: '#008000',
+                              utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-savings_account'
+                          },
+                          // Other account links...
+                      ]
+                  },
+                  // Other sections...
+              ],
+              promo: {
+                  heading: 'Save Today, Enjoy More Tomorrow',
+                  subHeading: 'Earn high interest up to 7% p.a. on savings',
+                  ctaText: 'Open a Savings Account',
+                  ctaLink: 'https://myaccount.indusind.com/SavingsAccount/index.aspx',
+                  utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-open_a_savings_account_CTA',
+                  image: 'https://www.indusind.com/content/dam/indusind-platform-images/header/Accounts-and-Deposits_Navigation-Section-Banner_1.webp'
               },
-              {
-                  title: 'Deposits',
-                  links: [
-                      {
-                          text: 'Fixed Deposit',
-                          href: 'https://www.indusind.com/in/en/personal/deposits/fixed-deposit.html',
-                          highlight: 'Up to 7.99% p.a.',
-                          highlightColor: '#008000',
-                          utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-fixed_deposit'
-                      },
-                      {
-                          text: 'Recurring Deposit',
-                          href: 'https://www.indusind.com/in/en/personal/deposits/recurring-deposit.html',
-                          utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-recurring_deposit'
-                      },
-                      {
-                          text: 'Senior Citizen FD',
-                          href: 'https://www.indusind.com/in/en/personal/deposits/senior-citizen-scheme.html',
-                          highlight: 'Up to 8.49% p.a.',
-                          highlightColor: '#008000',
-                          utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-senior_citizen_scheme'
-                      },
-                      {
-                          text: 'Auto Sweep FD',
-                          href: 'https://www.indusind.com/in/en/personal/deposits/sweep-in-sweep-out.html',
-                          utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-auto_sweep_fd'
-                      }
-                  ]
-              },
-              {
-                  title: 'Locker',
-                  links: [
-                      {
-                          text: 'Safe Deposit Locker',
-                          href: 'https://www.indusind.com/in/en/personal/safe-deposit-locker.html',
-                          utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-safe_deposit_locker'
-                      }
-                  ]
-              }
-          ],
-          promo: {
-              heading: 'Save Today, Enjoy More Tomorrow',
-              subHeading: 'Earn high interest up to 7% p.a. on savings',
-              ctaText: 'Open a Savings Account',
-              ctaLink: 'https://myaccount.indusind.com/SavingsAccount/index.aspx',
-              utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-open_a_savings_account_CTA',
-              image: 'https://www.indusind.com/content/dam/indusind-platform-images/header/Accounts-and-Deposits_Navigation-Section-Banner_1.webp'
+              quickLinks: [
+                  {
+                      text: 'Compare Savings Account',
+                      href: 'https://www.indusind.com/in/en/personal/accounts/savings-account-comparison.html',
+                      utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-compare_savings_account'
+                  },
+                  // Other quick links...
+              ]
           },
-          quickLinks: [
+          // Other main navigation items...
+      ],
+
+      // Header right section data
+      headerRight: {
+          contact: {
+              phone: '18602677777'
+          },
+          rates: [
               {
-                  text: 'Compare Savings Account',
-                  href: 'https://www.indusind.com/in/en/personal/accounts/savings-account-comparison.html',
-                  utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-compare_savings_account'
+                  text: 'Savings Account (Up to)',
+                  value: '7%*',
+                  href: 'https://www.indusind.com/in/en/personal/accounts/savings-account-interest-rate.html'
               },
-              {
-                  text: 'FD Calculator',
-                  href: 'https://www.indusind.com/in/en/personal/deposits/fd-calculator.html',
-                  utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-fd_calculator'
-              }
+              // Other rates...
           ]
-      },
-      {
-          title: 'Cards',
-          sections: [
-              {
-                  title: 'Credit Cards',
-                  links: [
-                      {
-                          text: 'PIONEER Heritage Credit Card',
-                          href: 'https://www.indusind.com/in/en/personal/cards/credit-cards/pioneer-heritage.html',
-                          highlight: 'NEW',
-                          highlightColor: '#008000'
-                      },
-                      {
-                          text: 'PIONEER Legacy Credit Card',
-                          href: 'https://www.indusind.com/in/en/personal/cards/credit-cards/pioneer-legacy.html'
-                      }
-                      // Add more credit card links
-                  ]
-              },
-              {
-                  title: 'Debit Cards',
-                  links: [
-                      {
-                          text: 'Platinum Debit Card',
-                          href: 'https://www.indusind.com/in/en/personal/cards/debit-cards/platinum.html'
-                      }
-                      // Add more debit card links
-                  ]
-              }
-          ]
-          // Add promo and quickLinks for Cards section
-      },
-      {
-          title: 'Loans',
-          sections: [
-              {
-                  title: 'Personal Loans',
-                  links: [
-                      {
-                          text: 'Personal Loan',
-                          href: 'https://www.indusind.com/in/en/personal/loans/personal-loan.html'
-                      }
-                      // Add more personal loan links
-                  ]
-              },
-              {
-                  title: 'Home Loans',
-                  links: [
-                      {
-                          text: 'Home Loan',
-                          href: 'https://www.indusind.com/in/en/personal/loans/home-loan.html',
-                          highlight: 'Starting @ 8.65%',
-                          highlightColor: '#008000'
-                      }
-                      // Add more home loan links
-                  ]
-              }
-          ]
-          // Add promo and quickLinks for Loans section
       }
-      // Add more main navigation items
-  ],
+  };
 
-  // Header right section data
-  headerRight: {
-      contact: {
-          phone: '18602677777'
-      },
-      rates: [
-          {
-              text: 'Savings Account (Up to)',
-              value: '7%*',
-              href: 'https://www.indusind.com/in/en/personal/accounts/savings-account-interest-rate.html'
-          },
-          {
-              text: 'Fixed Deposit (Up to)',
-              value: '7.99%*',
-              href: 'https://www.indusind.com/in/en/personal/fixed-deposit-interest-rate.html'
-          },
-          {
-              text: 'Fixed Deposit Sr. Citizen',
-              value: '8.49%*',
-              href: 'https://www.indusind.com/in/en/personal/rates.html#term-deposit-tab'
-          }
-      ]
-  }
-};
-
-
-
-
-
-
-
-
-  navItems.forEach(item => {
+  // Populate top navigation items
+  NAVIGATION_DATA.topNav.forEach(item => {
       const li = createAemElement('li', 
           ['nav-item-dektop', 'position-relative'], 
           null, 
@@ -568,9 +418,7 @@ function createMainNavigation() {
       'Investments & Insurance'
   ];
 
-
-
-mainNavItems.forEach((itemText) => {
+  mainNavItems.forEach((itemText) => {
       const navItem = createAemElement('li', 
           ['nav-item', 'navigation_desktop', 'dropdown', 'dropdown-animate', 'menu-item-has-children', 'menu-item-has-mega-menu'],
           {
@@ -697,23 +545,28 @@ function createFlyoutContainer() {
                   text: 'Savings Account',
                   href: 'https://www.indusind.com/in/en/personal/accounts/saving-account.html',
                   highlight: 'Up to 7% p.a.',
-                  highlightColor: '#008000'
+                  highlightColor: '#008000',
+                  utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-savings_account'
               },
               {
                   text: 'Zero Balance Savings Account',
-                  href: 'https://www.indusind.com/in/en/personal/accounts/saving-account/indus-delite.html'
+                  href: 'https://www.indusind.com/in/en/personal/accounts/saving-account/indus-delite.html',
+                  utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-zero_balance_savings_account'
               },
               {
                   text: 'Corporate Salary Account',
-                  href: 'https://www.indusind.com/in/en/personal/accounts/corporate-salary-account.html'
+                  href: 'https://www.indusind.com/in/en/personal/accounts/corporate-salary-account.html',
+                  utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-corporate_salary_account'
               },
               {
                   text: 'Uniformed Personnel Account',
-                  href: 'https://www.indusind.com/in/en/personal/accounts/uniformed-personnel-account.html'
+                  href: 'https://www.indusind.com/in/en/personal/accounts/uniformed-personnel-account.html',
+                  utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-uniformed_personnel_account'
               },
               {
                   text: 'Current Account',
-                  href: 'https://www.indusind.com/in/en/business/accounts/current-account.html'
+                  href: 'https://www.indusind.com/in/en/business/accounts/current-account.html',
+                  utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-current_account'
               }
           ]
       },
@@ -724,21 +577,25 @@ function createFlyoutContainer() {
                   text: 'Fixed Deposit',
                   href: 'https://www.indusind.com/in/en/personal/deposits/fixed-deposit.html',
                   highlight: 'Up to 7.99% p.a.',
-                  highlightColor: '#008000'
+                  highlightColor: '#008000',
+                  utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-fixed_deposit'
               },
               {
                   text: 'Recurring Deposit',
-                  href: 'https://www.indusind.com/in/en/personal/deposits/recurring-deposit.html'
+                  href: 'https://www.indusind.com/in/en/personal/deposits/recurring-deposit.html',
+                  utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-recurring_deposit'
               },
               {
                   text: 'Senior Citizen FD',
                   href: 'https://www.indusind.com/in/en/personal/deposits/senior-citizen-scheme.html',
                   highlight: 'Up to 8.49% p.a.',
-                  highlightColor: '#008000'
+                  highlightColor: '#008000',
+                  utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-senior_citizen_scheme'
               },
               {
                   text: 'Auto Sweep FD',
-                  href: 'https://www.indusind.com/in/en/personal/deposits/sweep-in-sweep-out.html'
+                  href: 'https://www.indusind.com/in/en/personal/deposits/sweep-in-sweep-out.html',
+                  utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-auto_sweep_fd'
               }
           ]
       },
@@ -747,7 +604,8 @@ function createFlyoutContainer() {
           links: [
               {
                   text: 'Safe Deposit Locker',
-                  href: 'https://www.indusind.com/in/en/personal/safe-deposit-locker.html'
+                  href: 'https://www.indusind.com/in/en/personal/safe-deposit-locker.html',
+                  utmParams: 'utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-safe_deposit_locker'
               }
           ]
       }
@@ -830,18 +688,67 @@ function createFlyoutContainer() {
   );
   quickLinksHeading.textContent = 'Quick Links';
 
+  const quickLinksInner = createAemElement('ul',
+      ['quick-linksInner', 'text-bold'],
+      null,
+      null
+  );
+
+  const quickLinksItems = [
+      {
+          text: 'Savings Account Interest Rate',
+          href: 'https://www.indusind.com/in/en/personal/accounts/savings-account-interest-rate.html?utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-quick_links-sa_interest_rate'
+      },
+      {
+          text: 'FD Calculator',
+          href: 'https://www.indusind.com/in/en/personal/calculators/fixed-deposit-calculator.html?utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-quick_links-fd_calculator'
+      },
+      {
+          text: 'FD Interest Rates',
+          href: 'https://www.indusind.com/in/en/personal/fixed-deposit-interest-rate.html?utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-quick_links-fd_interest_rate'
+      },
+      {
+          text: 'Open a Savings Account',
+          href: 'https://myaccount.indusind.com/SavingsAccount/index.aspx?utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-quick_links-apply_for_savings_account_CTA'
+      },
+      {
+          text: 'Open a Fixed Deposit',
+          href: 'https://myaccount.indusind.com/fdonline/index.aspx?utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-quick_links-open_fixed_deposit_CTA'
+      },
+      {
+          text: 'CASA Welcome Kit',
+          href: 'https://www.indusind.com/in/en/personal/welcom-kit.html?utm_source=website&utm_medium=header_nav&utm_campaign=accounts_deposits-quick_links-casa_welcome_kit'
+      },
+      {
+          text: 'FAQs',
+          href: 'https://www.indusind.com/in/en/personal/faq.html?utm_source=website&utm_medium=header_nav&utm_campaign=apply_online-hub-faqs'
+      },
+      {
+          text: 'Manage Mandate(s)',
+          href: 'https://www.indusind.com/content/enach/welcome.html?utm_source=website&utm_medium=header_nav&utm_campaign=apply_online-hub-manage_mandate'
+      }
+  ];
+
+  quickLinksItems.forEach(item => {
+      const li = createAemElement('li', null, null, null);
+      const link = createAemElement('a', null, {'href': item.href}, null);
+      link.textContent = item.text;
+      li.appendChild(link);
+      quickLinksInner.appendChild(li);
+  });
+
   quickLinksOuter.appendChild(quickLinksHeading);
+  quickLinksOuter.appendChild(quickLinksInner);
   contentBox.appendChild(quickLinksOuter);
-  flyout.appendChild(contentBox);
 
   // Add image box with promo content
   const imageBox = createFlyoutImageBox();
+  flyout.appendChild(contentBox);
   flyout.appendChild(imageBox);
   container.appendChild(flyout);
 
   return container;
 }
-
 function createFlyoutImageBox() {
   const imageBox = createAemElement('div',
       ['flyoutDesktopImageBox'],
@@ -894,11 +801,6 @@ function createFlyoutImageBox() {
   return imageBox;
 }
 
-
-
-
-
-
 function initializeEventListeners() {
   // Add sticky header functionality
   window.addEventListener('scroll', () => {
@@ -927,3 +829,12 @@ function initializeEventListeners() {
   });
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  try {
+      const headerBlock = document.querySelector(".header-block");
+      console.log("Decorating header block:", headerBlock);
+      decorate(headerBlock);
+  } catch (error) {
+      console.error("Error decorating header:", error);
+  }
+});
