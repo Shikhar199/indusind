@@ -19,7 +19,7 @@ export default function decorate(block) {
 
     const crumbsContainer = breadCrumbSection.querySelector("ol.breadcrumb");
 
-    const crumbs = rowContent.querySelector("li");
+    const crumbs = rowContent.querySelectorAll("li");
     crumbs.forEach(crumb => {
       // Setup last crumb
       if (crumb.querySelector("a") != null && crumb.nextElementSibling != null) {
