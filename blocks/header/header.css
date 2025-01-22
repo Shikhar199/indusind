@@ -1,7 +1,7 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css');
 body {
   width: 100%;
-  background-color: black;
+  background-color: #fff;
 }
 li.menu-item-has-mega-menu {
   position: static;
