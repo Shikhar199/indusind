@@ -125,7 +125,7 @@ export default function decorate(block){
 
     console.log(homeVideoParentDiv);
 
-    makeEqualWidth();
+    setTimeout(makeEqualWidth, 2000);
 
 }
 
