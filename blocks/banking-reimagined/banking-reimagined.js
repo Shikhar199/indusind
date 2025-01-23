@@ -544,8 +544,7 @@ function getScriptTags(){
 function makeEqualWidth(){
     const parentDiv = document.querySelector('.banking-reimagined-wrapper');
     const childDiv = document.querySelector('.banking-reimagined.block');
-    console.log(parentDiv);
-    console.log(childDiv);
+
     // Ensure both elements exist to avoid errors
     if (parentDiv && childDiv) {
         // Get the computed width of the parent element
@@ -553,5 +552,8 @@ function makeEqualWidth(){
 
         // Set the child's width to match the parent's width
         childDiv.style.width = parentWidth;
+
+        console.log(parentWidth);
+        console.log(childDiv.style.width);
     }
 }
