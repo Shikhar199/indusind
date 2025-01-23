@@ -1264,4 +1264,9 @@
       height: 366px;
   }
   }
+
+  .banking-reimagined-wrapper{
+    padding-left : 0px !important;
+    padding-right : 0px !important;
+  }
   /* @end video modal */

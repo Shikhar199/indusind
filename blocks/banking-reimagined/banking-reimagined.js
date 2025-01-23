@@ -125,7 +125,6 @@ export default function decorate(block){
 
     console.log(homeVideoParentDiv);
 
-    makeEqualWidth();
 }
 
 function getModalVideo(){
@@ -541,19 +540,19 @@ function getScriptTags(){
     return scriptHtml;
 }
 
-function makeEqualWidth(){
-    const parentDiv = document.querySelector('.banking-reimagined-wrapper');
-    const childDiv = document.querySelector('.banking-reimagined.block');
+// function makeEqualWidth(){
+//     const parentDiv = document.querySelector('.banking-reimagined-wrapper');
+//     const childDiv = document.querySelector('.banking-reimagined.block');
 
-    // Ensure both elements exist to avoid errors
-    if (parentDiv && childDiv) {
-        // Get the computed width of the parent element
-        const parentWidth = window.getComputedStyle(parentDiv).width;
+//     // Ensure both elements exist to avoid errors
+//     if (parentDiv && childDiv) {
+//         // Get the computed width of the parent element
+//         const parentWidth = window.getComputedStyle(parentDiv).width;
 
-        // Set the child's width to match the parent's width
-        childDiv.style.width = parentWidth;
+//         // Set the child's width to match the parent's width
+//         childDiv.style.width = parentWidth;
 
-        console.log(parentWidth);
-        console.log(childDiv.style.width);
-    }
-}
+//         console.log(parentWidth);
+//         console.log(childDiv.style.width);
+//     }
+// }
