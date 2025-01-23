@@ -1277,4 +1277,8 @@
   .home_video_component .row .col-12 a{
     color: white !important;
   }
+
+  .home_video_component .link-view{
+    content: ">" !important;
+  }
   /* @end video modal */
