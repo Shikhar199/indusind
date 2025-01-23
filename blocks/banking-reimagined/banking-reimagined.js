@@ -542,6 +542,8 @@ function getScriptTags(){
     return scriptHtml;
 }
 
+// function to make equal width
+
 function makeEqualWidth(){
     const parentDiv = document.querySelector('.banking-reimagined-container');
     const childDiv = document.querySelector('.banking-reimagined-wrapper');
