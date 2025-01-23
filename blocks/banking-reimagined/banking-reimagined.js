@@ -549,7 +549,7 @@ function makeEqualWidth(){
     // Ensure both elements exist to avoid errors
     if (parentDiv && childDiv) {
         // Get the computed width of the parent element
-        const parentWidth = window.getComputedStyle(parentDiv).width;
+        const parentWidth = parentDiv.offsetWidth + 'px';
 
         // Set the child's width to match the parent's width
         childDiv.style.width = parentWidth;
