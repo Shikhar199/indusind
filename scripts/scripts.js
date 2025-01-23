@@ -118,7 +118,7 @@ async function loadLazy(doc) {
   if (hash && element) element.scrollIntoView();
   loadBanner();
   loadImportantBanner();
-
+  await loadScript(`${window.hlx.codeBasePath}/scripts/home-video.js`, null);
   loadHeader(doc.querySelector('header'));
   loadFooter(doc.querySelector('footer'));
 

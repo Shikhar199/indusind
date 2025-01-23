@@ -2,3 +2,14 @@
     width: 245px;
     margin-right: 20px;
 }
+
+.link_view:before{
+    content: ">" !important;
+}
+
+.carrow .swiper-button-next,
+.carrow .swiper-button-prev {
+    background: url("/icons/prev.png");
+    width: 32px;
+    height: 18px;
+}
