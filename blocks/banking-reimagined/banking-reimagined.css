@@ -1271,6 +1271,6 @@
   }
 
   main > .section > div {
-    max-width: 2000px;
+    max-width: 2000px !important;
   }
   /* @end video modal */
