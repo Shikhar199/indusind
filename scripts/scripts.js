@@ -82,7 +82,6 @@ async function loadEager(doc) {
     // await loadScript(`${window.hlx.codeBasePath}/scripts/banner.js`, null);
     await loadScript(`${window.hlx.codeBasePath}/scripts/font-awesome.js`, null);
     await loadScript(`${window.hlx.codeBasePath}/scripts/product-category-clientlibs.js`, null);
-    await loadScript(`${window.hlx.codeBasePath}/scripts/global1.js`, null);
     await loadCSS(`${window.hlx.codeBasePath}/styles/swipper.css`, null);
   } catch(err){
     console.log(err);
