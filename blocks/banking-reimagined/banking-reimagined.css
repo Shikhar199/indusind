@@ -1269,4 +1269,8 @@
     padding-left : 0px !important;
     padding-right : 0px !important;
   }
+
+  main > .section > div {
+    max-width: 2000px;
+  }
   /* @end video modal */
