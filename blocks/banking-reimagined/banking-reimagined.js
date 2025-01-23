@@ -313,7 +313,7 @@ function getVideoCards(){
                          <div class="card smaller js-card" vimeo-id="yneR1sXOCYs" style="width: 360px; height: 253px; transform: translateX(1799px);">
                             <div class="visual js-visual with-video" style="width: 360px; height: 253px;">
                                <div class="img">
-                                  <video style="width: 100%; height: auto" class="youtubeVideo" data-link="https://www.youtube.com/watch?v=yneR1sXOCYs" preload="metadata" muted="" loop="" poster="video_thumb03.jpg">
+                                  <video style="width: 100%; height: auto" class="youtubeVideo" data-link="https://www.youtube.com/watch?v=yneR1sXOCYs" preload="metadata" muted="" loop="" poster="/icons/video_thumb03.jpg">
                                      <source src="https://www.youtube.com/watch?v=yneR1sXOCYs" type="video/mp4">
                                   </video>
     
