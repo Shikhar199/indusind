@@ -38,6 +38,9 @@ function decorateTabsContainer() {
 
 function decorateTab(tabImgSrc, tabText, tabIndex) {
   const tab = createCustomElement("div", "swiper-slide y-yellow-rop swiper-slide-visible swiper-slide-fully-visible swiper-slide-active");
+  if (tabIndex != 1) {
+    tab.classList.remove("swiper-slide-active");
+  }
   tab.setAttribute("style", "width: 148.125px;");
   tab.setAttribute("role", "group");
   tab.setAttribute("aria-label", tabIndex + " / 8");
