@@ -1278,7 +1278,7 @@
     color: white !important;
   }
 
-  .home_video_component .link-view{
+  .home_video_component .link-view:before{
     content: ">" !important;
   }
   /* @end video modal */
