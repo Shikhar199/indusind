@@ -187,7 +187,7 @@ function getVideoCards(){
                          <div class="card smaller js-card active expand open" vimeo-id="eIbW6vu3RMI" style="width: 360px; height: 253px; transform: translateX(128px);">
                             <div class="visual js-visual with-video" style="width: 360px; height: 253px;">
                                <div class="img">
-                                  <video style="width: 100%; height: auto" class="youtubeVideo" data-link="https://www.youtube.com/watch?v=eIbW6vu3RMI" preload="metadata" muted="" loop="" poster="/content/dam/indusind-platform-images/home/desktop-img/Salary-AC.jpg">
+                                  <video style="width: 100%; height: auto" class="youtubeVideo" data-link="https://www.youtube.com/watch?v=eIbW6vu3RMI" preload="metadata" muted="" loop="" poster="/icons/Salary-AC.jpg">
                                      <source src="https://www.youtube.com/watch?v=eIbW6vu3RMI" type="video/mp4">
                                   </video>
     
