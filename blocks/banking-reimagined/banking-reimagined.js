@@ -229,7 +229,7 @@ function getVideoCards(){
                          <div class="card smaller js-card" vimeo-id="NudF1K0FSKE" style="width: 360px; height: 253px; transform: translateX(925px);">
                             <div class="visual js-visual with-video" style="width: 360px; height: 253px;">
                                <div class="img">
-                                  <video style="width: 100%; height: auto" class="youtubeVideo" data-link="https://www.youtube.com/watch?v=NudF1K0FSKE" preload="metadata" muted="" loop="" poster="/content/dam/indusind-platform-images/home/desktop-img/Website-thumbnail-Image-Updated.jpg">
+                                  <video style="width: 100%; height: auto" class="youtubeVideo" data-link="https://www.youtube.com/watch?v=NudF1K0FSKE" preload="metadata" muted="" loop="" poster="/icons/Website-thumbnail-Image-Updated.jpg">
                                      <source src="https://www.youtube.com/watch?v=NudF1K0FSKE" type="video/mp4">
                                   </video>
     
@@ -271,7 +271,7 @@ function getVideoCards(){
                          <div class="card smaller js-card" vimeo-id="8QIyqBf091w" style="width: 360px; height: 253px; transform: translateX(1362px);">
                             <div class="visual js-visual with-video" style="width: 360px; height: 253px;">
                                <div class="img">
-                                  <video style="width: 100%; height: auto" class="youtubeVideo" data-link="https://www.youtube.com/watch?v=8QIyqBf091w&amp;rel=0" preload="metadata" muted="" loop="" poster="/content/dam/indusind-platform-images/home/desktop-img/indusDirect-hm.jpg">
+                                  <video style="width: 100%; height: auto" class="youtubeVideo" data-link="https://www.youtube.com/watch?v=8QIyqBf091w&amp;rel=0" preload="metadata" muted="" loop="" poster="/icons/indusDirect-hm.jpg">
                                      <source src="https://www.youtube.com/watch?v=8QIyqBf091w&amp;rel=0" type="video/mp4">
                                   </video>
     
@@ -313,7 +313,7 @@ function getVideoCards(){
                          <div class="card smaller js-card" vimeo-id="yneR1sXOCYs" style="width: 360px; height: 253px; transform: translateX(1799px);">
                             <div class="visual js-visual with-video" style="width: 360px; height: 253px;">
                                <div class="img">
-                                  <video style="width: 100%; height: auto" class="youtubeVideo" data-link="https://www.youtube.com/watch?v=yneR1sXOCYs" preload="metadata" muted="" loop="" poster="/content/dam/indusind-platform-images/home/desktop-img/video_thumb03.jpg">
+                                  <video style="width: 100%; height: auto" class="youtubeVideo" data-link="https://www.youtube.com/watch?v=yneR1sXOCYs" preload="metadata" muted="" loop="" poster="video_thumb03.jpg">
                                      <source src="https://www.youtube.com/watch?v=yneR1sXOCYs" type="video/mp4">
                                   </video>
     
@@ -355,7 +355,7 @@ function getVideoCards(){
                          <div class="card smaller js-card" vimeo-id="P8fdNmRudUY" style="width: 360px; height: 253px; transform: translateX(2236px);">
                             <div class="visual js-visual with-video" style="width: 360px; height: 253px;">
                                <div class="img">
-                                  <video style="width: 100%; height: auto" class="youtubeVideo" data-link="https://youtu.be/P8fdNmRudUY&amp;rel=0" preload="metadata" muted="" loop="" poster="/content/dam/indusind-platform-images/home/desktop-img/Finish-Line-02-hm-pg-640x360px.jpg">
+                                  <video style="width: 100%; height: auto" class="youtubeVideo" data-link="https://youtu.be/P8fdNmRudUY&amp;rel=0" preload="metadata" muted="" loop="" poster="/icons/Finish-Line-02-hm-pg-640x360px.jpg">
                                      <source src="https://youtu.be/P8fdNmRudUY&amp;rel=0" type="video/mp4">
                                   </video>
     
