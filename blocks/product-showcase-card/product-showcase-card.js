@@ -73,7 +73,7 @@ export default function decorate(block) {
 
   const tabsContainerDiv = decorateTabsContainer();
 
-  const tabIndex = 1;
+  let tabIndex = 1;
   [...block.children].forEach((row) => {
     if(row.childElementCount === 2){
       // It is a tab item
