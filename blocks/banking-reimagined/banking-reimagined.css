@@ -1273,4 +1273,8 @@
   main > .section > div {
     max-width: 2000px !important;
   }
+
+  .home_video_component .row .col-12 a{
+    color: white !important;
+  }
   /* @end video modal */
